@@ -19,9 +19,22 @@ class ViewController: UIViewController {
     @IBOutlet weak var dexAgiLabel: UILabel!
     @IBOutlet weak var charismaLabel: UILabel!
     
+    var userStats = User()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        userStats.charisma += 1
+        levelLabel.text = "Level: \(userStats.level)"
+        strengthLabel.text = "Strength: \(userStats.strength)"
+        constitutionLabel.text = "Constitution: \(userStats.constitution)"
+        intelligenceLabel.text = "Intelligence: \(userStats.intelligence)"
+        wisdomLabel.text = "Wisdom: \(userStats.wisdom)"
+        dexAgiLabel.text = "Dex/Agi: \(userStats.dexAgi)"
+        charismaLabel.text = "Charisma: \(userStats.charisma)"
     }
 
 

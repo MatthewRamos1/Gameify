@@ -9,6 +9,7 @@
 import Foundation
 
 class User {
+    var level = 0
     var strength = 0
     var constitution = 0
     var intelligence = 0
