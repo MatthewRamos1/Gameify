@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -133,34 +132,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2wI-fF-8Qa">
-                                <rect key="frame" x="20" y="88" width="374" height="725"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gY8-rI-GVL">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xsV-Ky-7HL">
-                                    <size key="itemSize" width="369" height="266"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="uHr-Bf-jHJ">
-                                        <rect key="frame" x="2.5" y="0.0" width="369" height="266"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="JcY-mF-F74">
-                                            <rect key="frame" x="0.0" y="0.0" width="369" height="266"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="169" id="4j9-S2-5ol">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="169"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4j9-S2-5ol" id="xjx-Zo-Jhb">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="169"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="369" height="266"/>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PRo-M8-dQz">
+                                                    <rect key="frame" x="0.0" y="0.0" width="186.5" height="169"/>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="repeat" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Y6s-pX-Ljk">
+                                                    <rect key="frame" x="380.5" y="1" width="25.5" height="23"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="Y6s-pX-Ljk" secondAttribute="height" multiplier="1:1" id="iJZ-ln-78k"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CiB-QY-RNf">
+                                                    <rect key="frame" x="194.5" y="2" width="178" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Y6s-pX-Ljk" firstAttribute="height" secondItem="xjx-Zo-Jhb" secondAttribute="height" multiplier="0.15" id="1I5-yF-z8h"/>
+                                                <constraint firstItem="PRo-M8-dQz" firstAttribute="width" secondItem="xjx-Zo-Jhb" secondAttribute="width" multiplier="0.45" id="1Jo-v7-QP5"/>
+                                                <constraint firstAttribute="trailing" secondItem="Y6s-pX-Ljk" secondAttribute="trailing" constant="8" id="7MS-9P-d6A"/>
+                                                <constraint firstAttribute="bottom" secondItem="PRo-M8-dQz" secondAttribute="bottom" id="FNa-Cl-NOr"/>
+                                                <constraint firstItem="PRo-M8-dQz" firstAttribute="top" secondItem="xjx-Zo-Jhb" secondAttribute="top" id="HSq-Wm-grC"/>
+                                                <constraint firstItem="Y6s-pX-Ljk" firstAttribute="leading" secondItem="CiB-QY-RNf" secondAttribute="trailing" constant="8" id="M3i-1t-8th"/>
+                                                <constraint firstItem="CiB-QY-RNf" firstAttribute="top" secondItem="xjx-Zo-Jhb" secondAttribute="top" constant="2" id="QdO-bs-jQ4"/>
+                                                <constraint firstItem="CiB-QY-RNf" firstAttribute="leading" secondItem="PRo-M8-dQz" secondAttribute="trailing" constant="8" id="R17-Hl-JLG"/>
+                                                <constraint firstItem="PRo-M8-dQz" firstAttribute="leading" secondItem="xjx-Zo-Jhb" secondAttribute="leading" id="dRj-gv-Co8"/>
+                                                <constraint firstItem="Y6s-pX-Ljk" firstAttribute="top" secondItem="xjx-Zo-Jhb" secondAttribute="top" id="qBo-uR-g5I"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="2wI-fF-8Qa" firstAttribute="top" secondItem="Q8N-zD-02b" secondAttribute="top" id="Y0t-0q-6jB"/>
-                            <constraint firstItem="Q8N-zD-02b" firstAttribute="trailing" secondItem="2wI-fF-8Qa" secondAttribute="trailing" constant="20" id="fPG-go-tFt"/>
-                            <constraint firstItem="2wI-fF-8Qa" firstAttribute="leading" secondItem="Q8N-zD-02b" secondAttribute="leading" constant="20" id="szD-vS-qQD"/>
-                            <constraint firstItem="2wI-fF-8Qa" firstAttribute="bottom" secondItem="Q8N-zD-02b" secondAttribute="bottom" id="ucA-mN-Awg"/>
+                            <constraint firstItem="gY8-rI-GVL" firstAttribute="trailing" secondItem="Q8N-zD-02b" secondAttribute="trailing" id="HGU-bP-EQ3"/>
+                            <constraint firstItem="gY8-rI-GVL" firstAttribute="bottom" secondItem="Q8N-zD-02b" secondAttribute="bottom" id="PZN-Gd-0mS"/>
+                            <constraint firstItem="gY8-rI-GVL" firstAttribute="leading" secondItem="Q8N-zD-02b" secondAttribute="leading" id="ZWv-Go-ukk"/>
+                            <constraint firstItem="gY8-rI-GVL" firstAttribute="top" secondItem="Q8N-zD-02b" secondAttribute="top" id="t0a-kA-UNE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Q8N-zD-02b"/>
                     </view>
@@ -230,5 +252,6 @@
     </scenes>
     <resources>
         <image name="person.circle" catalog="system" width="128" height="121"/>
+        <image name="repeat" catalog="system" width="128" height="99"/>
     </resources>
 </document>
