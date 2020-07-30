@@ -119,6 +119,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="7Hp-nV-OnS"/>
                     </view>
+                    <navigationItem key="navigationItem" id="cK4-Ne-gSb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NdP-Xl-vGr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -136,7 +137,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="169" id="4j9-S2-5ol">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="taskCell" rowHeight="169" id="4j9-S2-5ol" customClass="TaskCell" customModule="Gameify" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="169"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4j9-S2-5ol" id="xjx-Zo-Jhb">
@@ -222,6 +223,14 @@
                                                 <constraint firstItem="x1B-Vl-PzM" firstAttribute="top" secondItem="Y6s-pX-Ljk" secondAttribute="bottom" constant="8" id="zhH-Bk-2qg"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="x1B-Vl-PzM" id="ZyU-sB-1vd"/>
+                                            <outlet property="repeatableRep" destination="Y6s-pX-Ljk" id="fs1-kv-h5L"/>
+                                            <outlet property="statRep1" destination="eRG-tR-50t" id="g2X-Hd-G4G"/>
+                                            <outlet property="statRep2" destination="WlA-Fi-Uf8" id="b6z-7o-c7t"/>
+                                            <outlet property="taskIV" destination="PRo-M8-dQz" id="i6W-U7-RH5"/>
+                                            <outlet property="taskName" destination="CiB-QY-RNf" id="JZq-t9-Oi5"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
@@ -237,7 +246,11 @@
                         <viewLayoutGuide key="safeArea" id="Q8N-zD-02b"/>
                     </view>
                     <navigationItem key="navigationItem" id="u05-rw-GJZ">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="rJH-ND-OnY"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="rJH-ND-OnY">
+                            <connections>
+                                <segue destination="u1A-79-eeA" kind="show" id="sKb-dZ-ndr"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="taskTV" destination="gY8-rI-GVL" id="W2W-Di-F47"/>
