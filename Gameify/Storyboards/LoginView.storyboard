@@ -33,7 +33,7 @@
                                 <state key="normal" title="Log In"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="raF-7X-ZNX">
-                                <rect key="frame" x="180" y="674" width="54" height="30"/>
+                                <rect key="frame" x="180" y="537" width="54" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>

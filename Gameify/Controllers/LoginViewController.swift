@@ -32,9 +32,16 @@ class LoginViewController: UIViewController {
             case .success:
                 DispatchQueue.main.async {
                     print("stuff happened")// self?.navigateToMainView()
+                    self?.navigateToTaskVC()
                 }
             }
         }
+    }
+    
+    private func navigateToTaskVC() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateInitialViewController()
+        present(vc!, animated: true)
     }
     
     @IBAction func signUpPressed(_ sender: UIButton) {
@@ -47,6 +54,7 @@ class LoginViewController: UIViewController {
             case .success(let result):
                 DispatchQueue.main.async {
                     self?.createDatabaseUser(authDataResult: result)
+                    
                 }
             }
         }
