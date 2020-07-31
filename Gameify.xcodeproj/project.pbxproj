@@ -19,6 +19,10 @@
 		0C5C53DD24CE35E7004867F6 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5C53DC24CE35E7004867F6 /* TaskViewController.swift */; };
 		0C5C53E024CE3C56004867F6 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5C53DF24CE3C56004867F6 /* Task.swift */; };
 		0C5C53E324CE61AF004867F6 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5C53E224CE61AF004867F6 /* TaskCell.swift */; };
+		0C5C53E624D29399004867F6 /* LoginView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C5C53E524D29399004867F6 /* LoginView.storyboard */; };
+		0C5C53E824D29466004867F6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5C53E724D29466004867F6 /* LoginViewController.swift */; };
+		0C5C53EA24D3C4A9004867F6 /* AuthenticationSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5C53E924D3C4A9004867F6 /* AuthenticationSession.swift */; };
+		0C5C53EC24D3C691004867F6 /* UIViewController + Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5C53EB24D3C691004867F6 /* UIViewController + Alerts.swift */; };
 		15324189A3D3436A5B8490DE /* Pods_Gameify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF8EDD8691BB4B645A649777 /* Pods_Gameify.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +41,10 @@
 		0C5C53DC24CE35E7004867F6 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		0C5C53DF24CE3C56004867F6 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		0C5C53E224CE61AF004867F6 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		0C5C53E524D29399004867F6 /* LoginView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginView.storyboard; sourceTree = "<group>"; };
+		0C5C53E724D29466004867F6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0C5C53E924D3C4A9004867F6 /* AuthenticationSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationSession.swift; sourceTree = "<group>"; };
+		0C5C53EB24D3C691004867F6 /* UIViewController + Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Alerts.swift"; sourceTree = "<group>"; };
 		462B6D58934BE1335ABDA065 /* Pods-Gameify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gameify.debug.xcconfig"; path = "Target Support Files/Pods-Gameify/Pods-Gameify.debug.xcconfig"; sourceTree = "<group>"; };
 		C6C402FB890FB4AF6E19A8E8 /* Pods-Gameify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gameify.release.xcconfig"; path = "Target Support Files/Pods-Gameify/Pods-Gameify.release.xcconfig"; sourceTree = "<group>"; };
 		EF8EDD8691BB4B645A649777 /* Pods_Gameify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gameify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,17 +83,19 @@
 		0C4BC13D24156A9D00F00300 /* Gameify */ = {
 			isa = PBXGroup;
 			children = (
+				0C5C53E424D2934D004867F6 /* Storyboards */,
 				0C5C53E124CE3F33004867F6 /* Models */,
 				0C5C53DE24CE35EE004867F6 /* Controllers */,
 				0C4BC13E24156A9D00F00300 /* AppDelegate.swift */,
 				0C4BC14024156A9D00F00300 /* SceneDelegate.swift */,
-				0C4BC14424156A9D00F00300 /* Main.storyboard */,
 				0C5C53D824C579FE004867F6 /* DatabaseServices.swift */,
 				0C4BC14724156AA000F00300 /* Assets.xcassets */,
 				0C4BC14924156AA100F00300 /* LaunchScreen.storyboard */,
 				0C4BC14C24156AA100F00300 /* Info.plist */,
 				0C5C53DA24C57B3D004867F6 /* GoogleService-Info.plist */,
 				0C5C53E224CE61AF004867F6 /* TaskCell.swift */,
+				0C5C53E924D3C4A9004867F6 /* AuthenticationSession.swift */,
+				0C5C53EB24D3C691004867F6 /* UIViewController + Alerts.swift */,
 			);
 			path = Gameify;
 			sourceTree = "<group>";
@@ -93,6 +103,7 @@
 		0C5C53DE24CE35EE004867F6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0C5C53E724D29466004867F6 /* LoginViewController.swift */,
 				0C4BC14224156A9D00F00300 /* ViewController.swift */,
 				0C5C53DC24CE35E7004867F6 /* TaskViewController.swift */,
 			);
@@ -106,6 +117,15 @@
 				0C4BC1542415708500F00300 /* UserData.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		0C5C53E424D2934D004867F6 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				0C4BC14424156A9D00F00300 /* Main.storyboard */,
+				0C5C53E524D29399004867F6 /* LoginView.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		284D388229F0ECB2354ED044 /* Frameworks */ = {
@@ -189,6 +209,7 @@
 				0C5C53DB24C57B3D004867F6 /* GoogleService-Info.plist in Resources */,
 				0C4BC14824156AA000F00300 /* Assets.xcassets in Resources */,
 				0C4BC14624156A9D00F00300 /* Main.storyboard in Resources */,
+				0C5C53E624D29399004867F6 /* LoginView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,13 +262,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C5C53E824D29466004867F6 /* LoginViewController.swift in Sources */,
 				0C4BC14324156A9D00F00300 /* ViewController.swift in Sources */,
 				0C4BC13F24156A9D00F00300 /* AppDelegate.swift in Sources */,
 				0C5C53D924C579FE004867F6 /* DatabaseServices.swift in Sources */,
+				0C5C53EC24D3C691004867F6 /* UIViewController + Alerts.swift in Sources */,
 				0C4BC1552415708500F00300 /* UserData.swift in Sources */,
 				0C5C53E324CE61AF004867F6 /* TaskCell.swift in Sources */,
 				0C4BC14124156A9D00F00300 /* SceneDelegate.swift in Sources */,
 				0C5C53E024CE3C56004867F6 /* Task.swift in Sources */,
+				0C5C53EA24D3C4A9004867F6 /* AuthenticationSession.swift in Sources */,
 				0C5C53DD24CE35E7004867F6 /* TaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
