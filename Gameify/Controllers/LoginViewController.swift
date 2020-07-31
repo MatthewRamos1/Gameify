@@ -30,8 +30,21 @@ class LoginViewController: UIViewController {
                     self?.showAlert(title: "Account error", message: error.localizedDescription)
                 }
             case .success(let uid):
-                DatabaseServices.shared.createUserStats(uid: <#T##String#>, completion: <#T##(Result<Bool, Error>) -> ()#>)          }
+                DatabaseServices.shared.createUserStats(uid: uid) { (result) in
+                switch result {
+                case .failure(let error):
+                    DispatchQueue.main.async {
+                        self?.showAlert(title: "Error", message: error.localizedDescription)
+                    }
+                case .success:
+                    print("nice")
+                    DispatchQueue.main.async {
+                        self?.navigateToTaskVC()
+                    }
+                }
+            }
         }
+    }
     }
     
     private func navigateToTaskVC() {
