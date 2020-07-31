@@ -29,12 +29,8 @@ class LoginViewController: UIViewController {
                 DispatchQueue.main.async {
                     self?.showAlert(title: "Account error", message: error.localizedDescription)
                 }
-            case .success:
-                DispatchQueue.main.async {
-                    print("stuff happened")// self?.navigateToMainView()
-                    self?.navigateToTaskVC()
-                }
-            }
+            case .success(let uid):
+                DatabaseServices.shared.createUserStats(uid: <#T##String#>, completion: <#T##(Result<Bool, Error>) -> ()#>)          }
         }
     }
     
@@ -52,10 +48,8 @@ class LoginViewController: UIViewController {
                     self?.showAlert(title: "Error", message: error.localizedDescription)
                 }
             case .success(let result):
-                DispatchQueue.main.async {
                     self?.createDatabaseUser(authDataResult: result)
                     
-                }
             }
         }
     }
