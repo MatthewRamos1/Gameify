@@ -36,6 +36,17 @@ class ViewController: UIViewController {
         dexAgiLabel.text = "Dex/Agi: \(userStats.dexAgi)"
         charismaLabel.text = "Charisma: \(userStats.charisma)"
     }
+    
+    private func expCap(level: Int) -> Int {
+        var val = level / 10
+        let mod = level % 10
+        var total = mod * (val + 2)
+        while val != 0 {
+            total += (val + 1) * 10
+            val = val - 1
+        }
+        return total
+    }
 
 
 }
