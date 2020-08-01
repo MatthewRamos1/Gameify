@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import FirebaseAuth
 class CreateTaskViewController: UIViewController {
 
     @IBOutlet weak var taskImageView: UIImageView!
@@ -21,11 +21,11 @@ class CreateTaskViewController: UIViewController {
     }
     
     @IBAction func createTaskPressed(_ sender: UIButton) {
-        guard let title = titleTextField.text, let description = descriptionTextView.text else {
+        guard let title = titleTextField.text, let description = descriptionTextView.text, let uid = Auth.auth().currentUser?.uid else {
             return
         }
-        let task = Task(title: title, description: description, rating: 0, statUps: [], repeatable: .always, id: "")
-        DatabaseServices.shared.createUserTask(uid: "", task: task) { [weak self] (result) in
+        let task = Task(title: title, description: description, rating: 0, statUps: [.strength], repeatable: .always, id: UUID().uuidString)
+        DatabaseServices.shared.createUserTask(uid: uid, task: task) { [weak self] (result) in
             switch result {
             case .failure(let error):
                 self?.showAlert(title: "Error", message: error.localizedDescription)
