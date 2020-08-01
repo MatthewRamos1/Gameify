@@ -14,6 +14,7 @@ class DatabaseServices {
     
     static let userCollection = "users"
     static let statsCollection = "stats"
+    static let taskCollection = "tasks"
     
     private let db = Firestore.firestore()
     
@@ -36,6 +37,16 @@ class DatabaseServices {
     
     public func createUserStats(uid: String, completion: @escaping (Result<Bool, Error>) -> ()) {
         db.collection(DatabaseServices.userCollection).document(uid).collection(DatabaseServices.statsCollection).document(uid).setData(["level": 0, "strength": 0, "constitution": 0, "intelligence": 0, "wisdom": 0, "dexAgi": 0, "charisma": 0 ]) { (error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(true))
+            }
+        }
+    }
+    
+    public func createUserTask(uid: String, task: Task, completion: @escaping (Result<Bool, Error>) -> ()) {
+        db.collection(DatabaseServices.userCollection).document(uid).collection(DatabaseServices.statsCollection).document(task.id).setData(["title": task.title, "description": task.description, "rating": task.rating, "statUps": task.statUps.first!, "repeatable": task.repeatable.rawValue, "id": task.id]) { (error) in
             if let error = error {
                 completion(.failure(error))
             } else {

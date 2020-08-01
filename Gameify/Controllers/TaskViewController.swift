@@ -12,7 +12,7 @@ class TaskViewController: UIViewController {
     
     @IBOutlet weak var taskTV: UITableView!
     
-    var tasks = [Task(title: "Work on Passion Project", description: "Duration: 1 Hour", rating: 4, statUps: [.constitution], repeatable: .daily)]
+    var tasks = [Task(title: "Work on Passion Project", description: "Duration: 1 Hour", rating: 4, statUps: [.constitution], repeatable: .daily, id: "0")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
