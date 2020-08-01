@@ -109,10 +109,10 @@
             </objects>
             <point key="canvasLocation" x="2868" y="119"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Task View Controller-->
         <scene sceneID="lzP-Mz-xV9">
             <objects>
-                <viewController id="u1A-79-eeA" sceneMemberID="viewController">
+                <viewController id="u1A-79-eeA" customClass="CreateTaskViewController" customModule="Gameify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tk5-aj-t9j">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -140,12 +140,34 @@
                                     <segment title="Repeatable"/>
                                 </segments>
                             </segmentedControl>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kqA-zK-P21">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kqA-zK-P21">
                                 <rect key="frame" x="20" y="693" width="374" height="110"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LkM-6d-uLk">
+                                        <rect key="frame" x="0.0" y="0.0" width="124.5" height="110"/>
+                                        <state key="normal" backgroundImage="vitality"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tOG-we-HCs">
+                                        <rect key="frame" x="124.5" y="0.0" width="125" height="110"/>
+                                        <state key="normal" backgroundImage="dex"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ncc-Ln-oCw">
+                                        <rect key="frame" x="249.5" y="0.0" width="124.5" height="110"/>
+                                        <state key="normal" backgroundImage="dex"/>
+                                    </button>
+                                </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbs-PF-ja5">
+                                <rect key="frame" x="184" y="383" width="46" height="30"/>
+                                <state key="normal" title="Create"/>
+                                <connections>
+                                    <action selector="createTaskPressed:" destination="u1A-79-eeA" eventType="touchUpInside" id="M9k-t5-M8x"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="vbs-PF-ja5" firstAttribute="leading" secondItem="7Hp-nV-OnS" secondAttribute="leading" constant="184" id="2cf-A3-avo"/>
                             <constraint firstItem="7Hp-nV-OnS" firstAttribute="trailing" secondItem="EGw-mI-ZgF" secondAttribute="trailing" constant="20" id="7Cs-OA-cHs"/>
                             <constraint firstItem="kqA-zK-P21" firstAttribute="leading" secondItem="7Hp-nV-OnS" secondAttribute="leading" constant="20" id="CVw-eC-N0j"/>
                             <constraint firstItem="7Hp-nV-OnS" firstAttribute="trailing" secondItem="NYM-ZC-AVd" secondAttribute="trailing" constant="20" id="FI0-s7-HLZ"/>
@@ -155,6 +177,8 @@
                             <constraint firstItem="EGw-mI-ZgF" firstAttribute="height" secondItem="tk5-aj-t9j" secondAttribute="height" multiplier="0.142857" id="ZYj-oa-ICm"/>
                             <constraint firstItem="7Hp-nV-OnS" firstAttribute="bottom" secondItem="kqA-zK-P21" secondAttribute="bottom" constant="10" id="b0o-G2-46l"/>
                             <constraint firstItem="2T8-SQ-VOS" firstAttribute="top" secondItem="7Hp-nV-OnS" secondAttribute="top" id="enn-pT-IYm"/>
+                            <constraint firstItem="7Hp-nV-OnS" firstAttribute="trailing" secondItem="vbs-PF-ja5" secondAttribute="trailing" constant="184" id="eo6-Bm-1Ni"/>
+                            <constraint firstItem="vbs-PF-ja5" firstAttribute="top" secondItem="2T8-SQ-VOS" secondAttribute="bottom" constant="8" id="hFZ-g1-4ro"/>
                             <constraint firstItem="V8n-Sn-SP0" firstAttribute="leading" secondItem="7Hp-nV-OnS" secondAttribute="leading" constant="20" id="i8h-Ef-grx"/>
                             <constraint firstItem="NYM-ZC-AVd" firstAttribute="leading" secondItem="7Hp-nV-OnS" secondAttribute="leading" constant="20" id="ifl-yZ-OeM"/>
                             <constraint firstItem="2T8-SQ-VOS" firstAttribute="leading" secondItem="7Hp-nV-OnS" secondAttribute="leading" constant="20" id="izr-Kh-7V3"/>
@@ -168,6 +192,12 @@
                         <viewLayoutGuide key="safeArea" id="7Hp-nV-OnS"/>
                     </view>
                     <navigationItem key="navigationItem" id="cK4-Ne-gSb"/>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="EGw-mI-ZgF" id="bWQ-z2-laB"/>
+                        <outlet property="repeatRepSegmented" destination="NYM-ZC-AVd" id="8jn-av-f2j"/>
+                        <outlet property="taskImageView" destination="2T8-SQ-VOS" id="fQu-ZG-Wfg"/>
+                        <outlet property="titleTextField" destination="V8n-Sn-SP0" id="sjx-RZ-kac"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NdP-Xl-vGr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
