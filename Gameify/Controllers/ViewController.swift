@@ -19,22 +19,37 @@ class ViewController: UIViewController {
     @IBOutlet weak var dexAgiLabel: UILabel!
     @IBOutlet weak var charismaLabel: UILabel!
     
-    var userStats = User()
+    var userStats: User? {
+        didSet {
+            DispatchQueue.main.async {
+                self.levelLabel.text = "Level: \(self.userStats!.level)"
+                self.strengthLabel.text = "Strength: \(self.userStats!.strength)"
+                self.constitutionLabel.text = "Constitution: \(self.userStats!.constitution)"
+                self.intelligenceLabel.text = "Intelligence: \(self.userStats!.intelligence)"
+                self.wisdomLabel.text = "Wisdom: \(self.userStats!.wisdom)"
+                self.dexAgiLabel.text = "Dex/Agi: \(self.userStats!.dexAgi)"
+                self.charismaLabel.text = "Charisma: \(self.userStats!.charisma)"
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchUser()
        
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        userStats.charisma += 1
-        levelLabel.text = "Level: \(userStats.level)"
-        strengthLabel.text = "Strength: \(userStats.strength)"
-        constitutionLabel.text = "Constitution: \(userStats.constitution)"
-        intelligenceLabel.text = "Intelligence: \(userStats.intelligence)"
-        wisdomLabel.text = "Wisdom: \(userStats.wisdom)"
-        dexAgiLabel.text = "Dex/Agi: \(userStats.dexAgi)"
-        charismaLabel.text = "Charisma: \(userStats.charisma)"
+    private func fetchUser() {
+        DatabaseServices.shared.getUser { [weak self] (result) in
+            switch result {
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self?.showAlert(title: "Error", message: error.localizedDescription)
+                }
+            case .success(let user):
+                self?.userStats = user
+            }
+        }
     }
     
     private func expCap(level: Int) -> Int {

@@ -54,4 +54,20 @@ class DatabaseServices {
             }
         }
     }
+    
+    public func getUser(completion: @escaping (Result <User, Error>) -> ())  {
+        
+        guard let currentUser = Auth.auth().currentUser else {
+            return
+        }
+        db.collection(DatabaseServices.userCollection).document(currentUser.uid).collection(DatabaseServices.statsCollection).getDocuments { (snapshot, error) in
+            if let error = error {
+                completion(.failure(error))
+            } else if let snapshot = snapshot {
+                let user = snapshot.documents.map { User($0.data())}
+                completion(.success(user.first!))
+            }
+            
+        }
+    }
 }
