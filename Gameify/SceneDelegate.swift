@@ -22,9 +22,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = scene
-        let storyboard = UIStoryboard(name: "LoginView", bundle: nil)
-        let newVC = storyboard.instantiateViewController(identifier: "LoginViewController")
-        window?.rootViewController = newVC
+        if let _ = Auth.auth().currentUser {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let newVC = storyboard.instantiateInitialViewController()
+            window?.rootViewController = newVC
+        } else {
+            let storyboard = UIStoryboard(name: "LoginView", bundle: nil)
+            let newVC = storyboard.instantiateInitialViewController()
+            window?.rootViewController = newVC
+        }
         window?.makeKeyAndVisible()
     }
     
