@@ -18,17 +18,25 @@ class ViewController: UIViewController {
     @IBOutlet weak var wisdomLabel: UILabel!
     @IBOutlet weak var dexAgiLabel: UILabel!
     @IBOutlet weak var charismaLabel: UILabel!
+    @IBOutlet weak var strengthExp: UILabel!
+    @IBOutlet weak var constitutionExp: UILabel!
+    @IBOutlet weak var intelligenceExp: UILabel!
+    @IBOutlet weak var wisdomExp: UILabel!
+    @IBOutlet weak var dexAgiExp: UILabel!
+    @IBOutlet weak var charismaExp: UILabel!
+    @IBOutlet weak var strengthProgress: UIProgressView!
+    @IBOutlet weak var constitutionProgress: UIProgressView!
+    @IBOutlet weak var intelligenceProgress: UIProgressView!
+    @IBOutlet weak var wisdomProgress: UIProgressView!
+    @IBOutlet weak var dexAgiProgress: UIProgressView!
+    @IBOutlet weak var charismaProgress: UIProgressView!
     
     var userStats: User? {
         didSet {
             DispatchQueue.main.async {
-                self.levelLabel.text = "Level: \(self.userStats!.level)"
-                self.strengthLabel.text = "Strength: \(self.userStats!.strength)"
-                self.constitutionLabel.text = "Constitution: \(self.userStats!.constitution)"
-                self.intelligenceLabel.text = "Intelligence: \(self.userStats!.intelligence)"
-                self.wisdomLabel.text = "Wisdom: \(self.userStats!.wisdom)"
-                self.dexAgiLabel.text = "Dex/Agi: \(self.userStats!.dexAgi)"
-                self.charismaLabel.text = "Charisma: \(self.userStats!.charisma)"
+                self.updateStats(stats: self.userStats!)
+                self.updateExpProgress(stats: self.userStats!)
+                self.updateProgressBars(stats: self.userStats!)
             }
         }
     }
@@ -61,6 +69,30 @@ class ViewController: UIViewController {
             val = val - 1
         }
         return total
+    }
+    
+    private func updateStats(stats: User) {
+        levelLabel.text = "Level: \(stats.level)"
+        strengthLabel.text = "Strength: \(stats.strength)"
+        constitutionLabel.text = "Constitution: \(stats.constitution)"
+        intelligenceLabel.text = "Intelligence: \(stats.intelligence)"
+        wisdomLabel.text = "Wisdom: \(stats.wisdom)"
+        dexAgiLabel.text = "Dex/Agi: \(stats.dexAgi)"
+        charismaLabel.text = "Charisma: \(stats.charisma)"
+    }
+    
+    private func updateExpProgress(stats: User) {
+        strengthExp.text = createExpProgressText(exp: stats.strengthExp, cap: stats.strengthCap )
+        constitutionExp.text = createExpProgressText(exp: stats.constitutionExp, cap: stats.constitutionCap )
+        
+    }
+    
+    private func updateProgressBars(stats: User) {
+        strengthProgress.progress = (Float(stats.strengthExp)) / (Float(stats.strengthCap))
+    }
+    
+    private func createExpProgressText(exp: Int, cap: Int) -> String {
+        return "\(String(exp)) / \(String(cap))"
     }
 
 

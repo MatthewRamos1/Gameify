@@ -93,14 +93,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 / 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWj-yd-77a">
-                                <rect key="frame" x="307" y="589.5" width="25" height="14"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 / 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isD-QB-8xp">
+                                <rect key="frame" x="307" y="548.5" width="25" height="14"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 / 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isD-QB-8xp">
-                                <rect key="frame" x="307" y="548.5" width="25" height="14"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 / 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWj-yd-77a">
+                                <rect key="frame" x="307" y="589.5" width="25" height="14"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -179,14 +179,26 @@
                     </view>
                     <navigationItem key="navigationItem" id="sfZ-Q3-6v7"/>
                     <connections>
+                        <outlet property="charismaExp" destination="QZ3-oh-geY" id="Q0J-PO-RjD"/>
                         <outlet property="charismaLabel" destination="2YF-dC-y0m" id="msX-bk-D01"/>
+                        <outlet property="charismaProgress" destination="ol4-kG-RGg" id="AYD-Vq-lTd"/>
+                        <outlet property="constitutionExp" destination="tWg-YG-IlT" id="RgZ-u2-f2H"/>
                         <outlet property="constitutionLabel" destination="2k4-yw-mC1" id="NS6-25-FJj"/>
+                        <outlet property="constitutionProgress" destination="EIn-KW-3L7" id="kNu-ow-lZ6"/>
+                        <outlet property="dexAgiExp" destination="lUh-4U-2Sx" id="9aJ-eN-CTa"/>
                         <outlet property="dexAgiLabel" destination="wZT-wf-jFI" id="cdo-td-1ya"/>
+                        <outlet property="dexAgiProgress" destination="uMK-ek-2DR" id="8iR-Zm-GEA"/>
+                        <outlet property="intelligenceExp" destination="isD-QB-8xp" id="Bct-Na-Wq1"/>
                         <outlet property="intelligenceLabel" destination="Pk6-3D-3ec" id="sw8-oj-0jq"/>
+                        <outlet property="intelligenceProgress" destination="yvS-rb-jPF" id="tc5-nH-kr2"/>
                         <outlet property="levelLabel" destination="8TS-eO-tvb" id="roV-Hz-zoL"/>
                         <outlet property="playerImage" destination="bUT-FX-Q52" id="sT2-TL-caT"/>
+                        <outlet property="strengthExp" destination="V1C-21-0c9" id="4j3-4s-1V0"/>
                         <outlet property="strengthLabel" destination="ol2-ri-PKY" id="eST-BS-uOv"/>
+                        <outlet property="strengthProgress" destination="6Mt-di-RhS" id="fYk-F3-cwL"/>
+                        <outlet property="wisdomExp" destination="mWj-yd-77a" id="4NT-w3-MCG"/>
                         <outlet property="wisdomLabel" destination="bWA-cd-Gg7" id="FfK-x9-S0y"/>
+                        <outlet property="wisdomProgress" destination="1oe-Ow-O85" id="xe3-TB-bql"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
