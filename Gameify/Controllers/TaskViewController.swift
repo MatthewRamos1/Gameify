@@ -14,12 +14,7 @@ class TaskViewController: UIViewController {
     
     var tasks = [Task(title: "Work on Passion Project", description: "Duration: 1 Hour", rating: 4, statUps: [.dexAgi], repeatable: .always, id: "0")]
     
-    var user: User? {
-        didSet {
-            let statsDict = userToDict(user: user!)
-            updateUser(dict: statsDict)
-        }
-    }
+    var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +58,9 @@ class TaskViewController: UIViewController {
     }
     
     private func expCap(level: Int) -> Int {
+        if level == 1 {
+            return 2
+        }
         var val = level / 10
         let mod = level % 10
         var total = mod * (val + 2)
@@ -106,5 +104,8 @@ extension TaskViewController: UITableViewDelegate {
             user!.dexAgiExp = diff
             user!.dexAgiCap = expCap(level: user!.dexAgi)
         }
+        
+        let statsDict = userToDict(user: user!)
+        updateUser(dict: statsDict)
     }
 }
