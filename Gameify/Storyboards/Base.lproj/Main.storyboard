@@ -222,7 +222,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EGw-mI-ZgF">
-                                <rect key="frame" x="20" y="457" width="374" height="128"/>
+                                <rect key="frame" x="20" y="457" width="374" height="89.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -260,6 +260,9 @@
                                     <action selector="createTaskPressed:" destination="u1A-79-eeA" eventType="touchUpInside" id="M9k-t5-M8x"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0hW-8P-cDH">
+                                <rect key="frame" x="20" y="554.5" width="374" height="44"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -269,9 +272,13 @@
                             <constraint firstItem="7Hp-nV-OnS" firstAttribute="trailing" secondItem="NYM-ZC-AVd" secondAttribute="trailing" constant="20" id="FI0-s7-HLZ"/>
                             <constraint firstItem="kqA-zK-P21" firstAttribute="height" secondItem="tk5-aj-t9j" secondAttribute="height" multiplier="0.122768" id="JyI-kb-EWz"/>
                             <constraint firstItem="7Hp-nV-OnS" firstAttribute="trailing" secondItem="2T8-SQ-VOS" secondAttribute="trailing" constant="20" id="Mub-F4-LvM"/>
+                            <constraint firstItem="0hW-8P-cDH" firstAttribute="height" secondItem="tk5-aj-t9j" secondAttribute="height" multiplier="0.0491071" id="NWq-lx-NB8"/>
                             <constraint firstItem="7Hp-nV-OnS" firstAttribute="trailing" secondItem="V8n-Sn-SP0" secondAttribute="trailing" constant="20" id="VHN-Ks-Bai"/>
-                            <constraint firstItem="EGw-mI-ZgF" firstAttribute="height" secondItem="tk5-aj-t9j" secondAttribute="height" multiplier="0.142857" id="ZYj-oa-ICm"/>
+                            <constraint firstItem="EGw-mI-ZgF" firstAttribute="height" secondItem="tk5-aj-t9j" secondAttribute="height" multiplier="0.1" id="ZYj-oa-ICm"/>
+                            <constraint firstItem="0hW-8P-cDH" firstAttribute="leading" secondItem="7Hp-nV-OnS" secondAttribute="leading" constant="20" id="ZkI-2I-vTg"/>
                             <constraint firstItem="7Hp-nV-OnS" firstAttribute="bottom" secondItem="kqA-zK-P21" secondAttribute="bottom" constant="10" id="b0o-G2-46l"/>
+                            <constraint firstItem="0hW-8P-cDH" firstAttribute="top" secondItem="EGw-mI-ZgF" secondAttribute="bottom" constant="8" id="cK2-Do-y3q"/>
+                            <constraint firstItem="7Hp-nV-OnS" firstAttribute="trailing" secondItem="0hW-8P-cDH" secondAttribute="trailing" constant="20" id="eNU-us-ypv"/>
                             <constraint firstItem="2T8-SQ-VOS" firstAttribute="top" secondItem="7Hp-nV-OnS" secondAttribute="top" id="enn-pT-IYm"/>
                             <constraint firstItem="7Hp-nV-OnS" firstAttribute="trailing" secondItem="vbs-PF-ja5" secondAttribute="trailing" constant="184" id="eo6-Bm-1Ni"/>
                             <constraint firstItem="vbs-PF-ja5" firstAttribute="top" secondItem="2T8-SQ-VOS" secondAttribute="bottom" constant="8" id="hFZ-g1-4ro"/>

@@ -14,7 +14,7 @@ class TaskViewController: UIViewController {
     
     var tasks = [Task(title: "Work on Passion Project", description: "Duration: 1 Hour", rating: 4, statUps: [.dexAgi], repeatable: .always, id: "0")]
     
-    var user: User?
+    var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,15 +97,19 @@ extension TaskViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        user?.dexAgiExp += 1
-        if user!.dexAgiExp >= user!.dexAgiCap {
-            let diff = user!.dexAgiExp - user!.dexAgiCap
-            user!.dexAgi += 1
-            user!.dexAgiExp = diff
-            user!.dexAgiCap = expCap(level: user!.dexAgi)
+        user.dexAgiExp += 1
+        if user.dexAgiExp >= user.dexAgiCap {
+            let diff = user.dexAgiExp - user.dexAgiCap
+            user.dexAgi += 1
+            user.dexAgiExp = diff
+            user.dexAgiCap = expCap(level: user.dexAgi)
+            let totalLevel = user.strength + user.constitution + user.intelligence + user.wisdom + user.dexAgi + user.charisma
+            if totalLevel >= user.level / 6 {
+                user.level += 1
+            }
         }
         
-        let statsDict = userToDict(user: user!)
+        let statsDict = userToDict(user: user)
         updateUser(dict: statsDict)
     }
 }
