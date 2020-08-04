@@ -45,6 +45,19 @@ class DatabaseServices {
         }
     }
     
+    public func updateUserStats(dict: [String:Any], completion: @escaping (Result<Bool, Error>) -> ())  {
+        guard let uid = Auth.auth().currentUser?.uid else {
+            return
+        }
+        db.collection(DatabaseServices.userCollection).document(uid).collection(DatabaseServices.statsCollection).document(uid).updateData(dict) { (error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(true))
+            }
+        }
+    }
+    
     public func createUserTask(uid: String, task: Task, completion: @escaping (Result<Bool, Error>) -> ()) {
         db.collection(DatabaseServices.userCollection).document(uid).collection(DatabaseServices.taskCollection).document(task.id).setData(["title": task.title, "description": task.description, "rating": task.rating, "statUps": task.statUps.first!.rawValue, "repeatable": task.repeatable.rawValue, "id": task.id]) { (error) in
             if let error = error {

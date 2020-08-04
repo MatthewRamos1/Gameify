@@ -47,7 +47,7 @@ class ViewController: UIViewController {
        
     }
     
-    private func fetchUser() {
+    public func fetchUser() {
         DatabaseServices.shared.getUser { [weak self] (result) in
             switch result {
             case .failure(let error):
@@ -58,17 +58,6 @@ class ViewController: UIViewController {
                 self?.userStats = user
             }
         }
-    }
-    
-    private func expCap(level: Int) -> Int {
-        var val = level / 10
-        let mod = level % 10
-        var total = mod * (val + 2)
-        while val != 0 {
-            total += (val + 1) * 10
-            val = val - 1
-        }
-        return total
     }
     
     private func updateStats(stats: User) {
@@ -84,11 +73,13 @@ class ViewController: UIViewController {
     private func updateExpProgress(stats: User) {
         strengthExp.text = createExpProgressText(exp: stats.strengthExp, cap: stats.strengthCap )
         constitutionExp.text = createExpProgressText(exp: stats.constitutionExp, cap: stats.constitutionCap )
+        dexAgiExp.text = createExpProgressText(exp: stats.dexAgiExp, cap: stats.dexAgiCap)
         
     }
     
     private func updateProgressBars(stats: User) {
         strengthProgress.progress = (Float(stats.strengthExp)) / (Float(stats.strengthCap))
+        dexAgiProgress.progress = (Float(stats.dexAgiExp)) / (Float(stats.dexAgiCap))
     }
     
     private func createExpProgressText(exp: Int, cap: Int) -> String {
