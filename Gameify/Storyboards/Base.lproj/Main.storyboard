@@ -260,8 +260,45 @@
                                     <action selector="createTaskPressed:" destination="u1A-79-eeA" eventType="touchUpInside" id="M9k-t5-M8x"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0hW-8P-cDH">
-                                <rect key="frame" x="20" y="554.5" width="374" height="44"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0hW-8P-cDH">
+                                <rect key="frame" x="40" y="554.5" width="334" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3DN-Nu-fPz">
+                                        <rect key="frame" x="0.0" y="0.0" width="67" height="44"/>
+                                        <state key="normal" backgroundImage="star" catalog="system"/>
+                                        <connections>
+                                            <action selector="starButtonPressed:" destination="u1A-79-eeA" eventType="touchUpInside" id="VOH-rG-7Ac"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="waC-TI-oOG">
+                                        <rect key="frame" x="67" y="0.0" width="66.5" height="44"/>
+                                        <state key="normal" backgroundImage="star" catalog="system"/>
+                                        <connections>
+                                            <action selector="starButtonPressed:" destination="u1A-79-eeA" eventType="touchUpInside" id="HjZ-mJ-av4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJH-3T-hYO">
+                                        <rect key="frame" x="133.5" y="0.0" width="67" height="44"/>
+                                        <state key="normal" backgroundImage="star" catalog="system"/>
+                                        <connections>
+                                            <action selector="starButtonPressed:" destination="u1A-79-eeA" eventType="touchUpInside" id="oWK-vE-mv4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RNT-27-r7v">
+                                        <rect key="frame" x="200.5" y="0.0" width="66.5" height="44"/>
+                                        <state key="normal" backgroundImage="star" catalog="system"/>
+                                        <connections>
+                                            <action selector="starButtonPressed:" destination="u1A-79-eeA" eventType="touchUpInside" id="kMx-ae-v8F"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abK-k3-XPt">
+                                        <rect key="frame" x="267" y="0.0" width="67" height="44"/>
+                                        <state key="normal" backgroundImage="star" catalog="system"/>
+                                        <connections>
+                                            <action selector="starButtonPressed:" destination="u1A-79-eeA" eventType="touchUpInside" id="W2S-Sc-1wq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -275,10 +312,10 @@
                             <constraint firstItem="0hW-8P-cDH" firstAttribute="height" secondItem="tk5-aj-t9j" secondAttribute="height" multiplier="0.0491071" id="NWq-lx-NB8"/>
                             <constraint firstItem="7Hp-nV-OnS" firstAttribute="trailing" secondItem="V8n-Sn-SP0" secondAttribute="trailing" constant="20" id="VHN-Ks-Bai"/>
                             <constraint firstItem="EGw-mI-ZgF" firstAttribute="height" secondItem="tk5-aj-t9j" secondAttribute="height" multiplier="0.1" id="ZYj-oa-ICm"/>
-                            <constraint firstItem="0hW-8P-cDH" firstAttribute="leading" secondItem="7Hp-nV-OnS" secondAttribute="leading" constant="20" id="ZkI-2I-vTg"/>
+                            <constraint firstItem="0hW-8P-cDH" firstAttribute="leading" secondItem="7Hp-nV-OnS" secondAttribute="leading" constant="40" id="ZkI-2I-vTg"/>
                             <constraint firstItem="7Hp-nV-OnS" firstAttribute="bottom" secondItem="kqA-zK-P21" secondAttribute="bottom" constant="10" id="b0o-G2-46l"/>
                             <constraint firstItem="0hW-8P-cDH" firstAttribute="top" secondItem="EGw-mI-ZgF" secondAttribute="bottom" constant="8" id="cK2-Do-y3q"/>
-                            <constraint firstItem="7Hp-nV-OnS" firstAttribute="trailing" secondItem="0hW-8P-cDH" secondAttribute="trailing" constant="20" id="eNU-us-ypv"/>
+                            <constraint firstItem="7Hp-nV-OnS" firstAttribute="trailing" secondItem="0hW-8P-cDH" secondAttribute="trailing" constant="40" id="eNU-us-ypv"/>
                             <constraint firstItem="2T8-SQ-VOS" firstAttribute="top" secondItem="7Hp-nV-OnS" secondAttribute="top" id="enn-pT-IYm"/>
                             <constraint firstItem="7Hp-nV-OnS" firstAttribute="trailing" secondItem="vbs-PF-ja5" secondAttribute="trailing" constant="184" id="eo6-Bm-1Ni"/>
                             <constraint firstItem="vbs-PF-ja5" firstAttribute="top" secondItem="2T8-SQ-VOS" secondAttribute="bottom" constant="8" id="hFZ-g1-4ro"/>
@@ -297,9 +334,14 @@
                     <navigationItem key="navigationItem" id="cK4-Ne-gSb"/>
                     <connections>
                         <outlet property="descriptionTextView" destination="EGw-mI-ZgF" id="bWQ-z2-laB"/>
+                        <outlet property="fiveStar" destination="abK-k3-XPt" id="0NJ-nQ-SG2"/>
+                        <outlet property="fourStar" destination="RNT-27-r7v" id="9vt-ei-OJn"/>
+                        <outlet property="oneStar" destination="3DN-Nu-fPz" id="ub9-TV-kAZ"/>
                         <outlet property="repeatRepSegmented" destination="NYM-ZC-AVd" id="8jn-av-f2j"/>
                         <outlet property="taskImageView" destination="2T8-SQ-VOS" id="fQu-ZG-Wfg"/>
+                        <outlet property="threeStar" destination="gJH-3T-hYO" id="v0i-F4-1VH"/>
                         <outlet property="titleTextField" destination="V8n-Sn-SP0" id="sjx-RZ-kac"/>
+                        <outlet property="twoStar" destination="waC-TI-oOG" id="RGd-HO-KBy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NdP-Xl-vGr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -504,6 +546,7 @@
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="repeat" catalog="system" width="128" height="99"/>
+        <image name="star" catalog="system" width="128" height="116"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <image name="star.lefthalf.fill" catalog="system" width="128" height="116"/>
         <image name="vitality" width="625" height="575"/>
