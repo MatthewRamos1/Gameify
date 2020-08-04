@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseFirestore
 
 class ViewController: UIViewController {
 
@@ -41,10 +43,21 @@ class ViewController: UIViewController {
         }
     }
     
+    var statsListener: ListenerRegistration?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchUser()
        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        setupStatListener()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        statsListener?.remove()
     }
     
     public func fetchUser() {
@@ -79,12 +92,32 @@ class ViewController: UIViewController {
     
     private func updateProgressBars(stats: User) {
         strengthProgress.progress = (Float(stats.strengthExp)) / (Float(stats.strengthCap))
+        strengthProgress.editProgressColor(progress: strengthProgress.progress)
+        constitutionProgress.progress = (Float(stats.constitutionExp)) / (Float(stats.constitutionCap))
+        constitutionProgress.editProgressColor(progress: constitutionProgress.progress)
         dexAgiProgress.progress = (Float(stats.dexAgiExp)) / (Float(stats.dexAgiCap))
+        dexAgiProgress.editProgressColor(progress: dexAgiProgress.progress)
     }
     
     private func createExpProgressText(exp: Int, cap: Int) -> String {
         return "\(String(exp)) / \(String(cap))"
     }
+    
+    private func setupStatListener() {
+        guard let uid = Auth.auth().currentUser?.uid else {
+            return
+        }
+        statsListener = Firestore.firestore().collection(DatabaseServices.userCollection).document(uid).collection(DatabaseServices.statsCollection).addSnapshotListener( { (snapshot, error) in
+            if let error = error {
+                self.showAlert(title: "Error", message: error.localizedDescription)
+            } else if let snapshot = snapshot {
+                let stats =  snapshot.documents.map { User($0.data())}
+                self.userStats = stats.first!
+                
+            }
+        })
+    }
+    
 
 
 }
