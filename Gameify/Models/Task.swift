@@ -8,23 +8,23 @@
 
 import Foundation
 
+enum Repeatable: String{
+       case daily = "daily"
+       case oneshot = "oneshot"
+       case always = "always"
+   }
+
+enum Stat: String {
+    case strength = "strength"
+    case constitution = "constitution"
+    case intelligence = "intelligence"
+    case wisdom = "wisdom"
+    case dexAgi = "dexAgi"
+    case charisma = "charisma"
+}
+
 class Task {
-    
-    enum Stat: String {
-        case strength = "strength"
-        case constitution = "constitution"
-        case intelligence = "intelligence"
-        case wisdom = "wisdom"
-        case dexAgi = "dexAgi"
-        case charisma = "charisma"
-    }
-    
-    enum Repeatable: String{
-        case daily = "daily"
-        case oneshot = "oneshot"
-        case always = "always"
-    }
-    
+
     var title: String
     var description: String
     var rating: Int

@@ -21,6 +21,8 @@ class CreateTaskViewController: UIViewController {
     @IBOutlet weak var fiveStar: UIButton!
     
     var rating = 0
+    var repeatable = Repeatable.oneshot
+    var statUps = [Stat]()
     
     
     override func viewDidLoad() {
@@ -92,11 +94,96 @@ class CreateTaskViewController: UIViewController {
         }
     }
     
+    @IBAction func segmentChanged(_ sender: UISegmentedControl) {
+        switch repeatRepSegmented.selectedSegmentIndex {
+        case 0:
+            repeatable = .oneshot
+        case 1:
+            repeatable = .daily
+        default:
+            repeatable = .always
+            
+        }
+    }
+    
+    @IBAction func statUpButtonPressed(_ sender: UIButton) {
+        switch sender.tag {
+        case 0:
+            if statUps.contains(.strength) {
+                guard let index = statUps.firstIndex(of: .strength) else {
+                    return
+                }
+                statUps.remove(at: index)
+            } else if statUps.count <= 1 {
+                statUps.append(.strength)
+            } else {
+                showAlert(title: "Can't Assign Stat Up", message: "Max stat ups alread assigned, remove one first before proceeding!")
+            }
+        case 1:
+            if statUps.contains(.constitution) {
+                guard let index = statUps.firstIndex(of: .constitution) else {
+                    return
+                }
+                statUps.remove(at: index)
+            } else if statUps.count <= 1 {
+                statUps.append(.constitution)
+            } else {
+                showAlert(title: "Can't Assign Stat Up", message: "Max stat ups alread assigned, remove one first before proceeding!")
+            }
+        case 2:
+            if statUps.contains(.intelligence) {
+                guard let index = statUps.firstIndex(of: .intelligence
+                    ) else {
+                    return
+                }
+                statUps.remove(at: index)
+            } else if statUps.count <= 1 {
+                statUps.append(.intelligence)
+            } else {
+                showAlert(title: "Can't Assign Stat Up", message: "Max stat ups alread assigned, remove one first before proceeding!")
+            }
+        case 3:
+            if statUps.contains(.wisdom) {
+                guard let index = statUps.firstIndex(of: .wisdom) else {
+                    return
+                }
+                statUps.remove(at: index)
+            } else if statUps.count <= 1 {
+                statUps.append(.wisdom)
+            } else {
+                showAlert(title: "Can't Assign Stat Up", message: "Max stat ups alread assigned, remove one first before proceeding!")
+            }
+        case 4:
+            if statUps.contains(.dexAgi) {
+                guard let index = statUps.firstIndex(of: .dexAgi) else {
+                    return
+                }
+                statUps.remove(at: index)
+            } else if statUps.count <= 1 {
+                statUps.append(.dexAgi)
+            } else {
+                showAlert(title: "Can't Assign Stat Up", message: "Max stat ups alread assigned, remove one first before proceeding!")
+            }
+        default:
+            if statUps.contains(.charisma) {
+                guard let index = statUps.firstIndex(of: .charisma) else {
+                    return
+                }
+                statUps.remove(at: index)
+            } else if statUps.count <= 1 {
+                statUps.append(.charisma)
+            } else {
+                showAlert(title: "Can't Assign Stat Up", message: "Max stat ups alread assigned, remove one first before proceeding!")
+            }
+        }
+        sender.backgroundColor = .darkGray
+    }
+    
     @IBAction func createTaskPressed(_ sender: UIButton) {
         guard let title = titleTextField.text, let description = descriptionTextView.text, let uid = Auth.auth().currentUser?.uid else {
             return
         }
-        let task = Task(title: title, description: description, rating: rating, statUps: [.strength], repeatable: .always, id: UUID().uuidString)
+        let task = Task(title: title, description: description, rating: rating, statUps: statUps, repeatable: repeatable, id: UUID().uuidString)
         DatabaseServices.shared.createUserTask(uid: uid, task: task) { [weak self] (result) in
             switch result {
             case .failure(let error):

@@ -229,30 +229,16 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NYM-ZC-AVd">
-                                <rect key="frame" x="20" y="622" width="374" height="32"/>
+                                <rect key="frame" x="20" y="626.5" width="374" height="32"/>
                                 <segments>
                                     <segment title="Oneshot"/>
                                     <segment title="Daily"/>
                                     <segment title="Repeatable"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentChanged:" destination="u1A-79-eeA" eventType="valueChanged" id="yyz-jv-IiR"/>
+                                </connections>
                             </segmentedControl>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kqA-zK-P21">
-                                <rect key="frame" x="20" y="693" width="374" height="110"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LkM-6d-uLk">
-                                        <rect key="frame" x="0.0" y="0.0" width="124.5" height="110"/>
-                                        <state key="normal" backgroundImage="vitality"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tOG-we-HCs">
-                                        <rect key="frame" x="124.5" y="0.0" width="125" height="110"/>
-                                        <state key="normal" backgroundImage="dex"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ncc-Ln-oCw">
-                                        <rect key="frame" x="249.5" y="0.0" width="124.5" height="110"/>
-                                        <state key="normal" backgroundImage="dex"/>
-                                    </button>
-                                </subviews>
-                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbs-PF-ja5">
                                 <rect key="frame" x="184" y="383" width="46" height="30"/>
                                 <state key="normal" title="Create"/>
@@ -300,21 +286,78 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Gkv-vr-j6j">
+                                <rect key="frame" x="20" y="750.5" width="374" height="62.5"/>
+                                <subviews>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TjO-bm-NUA">
+                                        <rect key="frame" x="0.0" y="0.0" width="124.5" height="62.5"/>
+                                        <state key="normal" title="Wisdom"/>
+                                        <connections>
+                                            <action selector="statUpButtonPressed:" destination="u1A-79-eeA" eventType="touchUpInside" id="29z-Eh-hrg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAo-Bx-1pU">
+                                        <rect key="frame" x="124.5" y="0.0" width="125" height="62.5"/>
+                                        <state key="normal" title="Dex/Agi"/>
+                                        <connections>
+                                            <action selector="statUpButtonPressed:" destination="u1A-79-eeA" eventType="touchUpInside" id="y9r-wH-WD0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnh-pL-RbV">
+                                        <rect key="frame" x="249.5" y="0.0" width="124.5" height="62.5"/>
+                                        <state key="normal" title="Charisma"/>
+                                        <connections>
+                                            <action selector="statUpButtonPressed:" destination="u1A-79-eeA" eventType="touchUpInside" id="Y5v-MK-8gb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5mh-nc-xyc">
+                                <rect key="frame" x="20" y="687.5" width="374" height="63"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTF-yh-gmj">
+                                        <rect key="frame" x="0.0" y="0.0" width="124.5" height="63"/>
+                                        <state key="normal" title="Strength"/>
+                                        <connections>
+                                            <action selector="statUpButtonPressed:" destination="u1A-79-eeA" eventType="touchUpInside" id="Tiy-qX-z3Q"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hk-aT-Rbe">
+                                        <rect key="frame" x="124.5" y="0.0" width="125" height="63"/>
+                                        <state key="normal" title="Constitution"/>
+                                        <connections>
+                                            <action selector="statUpButtonPressed:" destination="u1A-79-eeA" eventType="touchUpInside" id="tuz-Wl-o1X"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nzl-wi-mpl">
+                                        <rect key="frame" x="249.5" y="0.0" width="124.5" height="63"/>
+                                        <state key="normal" title="Intelligence"/>
+                                        <connections>
+                                            <action selector="statUpButtonPressed:" destination="u1A-79-eeA" eventType="touchUpInside" id="Ku8-4d-3Su"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="vbs-PF-ja5" firstAttribute="leading" secondItem="7Hp-nV-OnS" secondAttribute="leading" constant="184" id="2cf-A3-avo"/>
+                            <constraint firstItem="Gkv-vr-j6j" firstAttribute="height" secondItem="tk5-aj-t9j" secondAttribute="height" multiplier="0.07" id="2xe-9W-8qZ"/>
                             <constraint firstItem="7Hp-nV-OnS" firstAttribute="trailing" secondItem="EGw-mI-ZgF" secondAttribute="trailing" constant="20" id="7Cs-OA-cHs"/>
-                            <constraint firstItem="kqA-zK-P21" firstAttribute="leading" secondItem="7Hp-nV-OnS" secondAttribute="leading" constant="20" id="CVw-eC-N0j"/>
+                            <constraint firstItem="5mh-nc-xyc" firstAttribute="height" secondItem="Gkv-vr-j6j" secondAttribute="height" id="CIn-4B-ox9"/>
+                            <constraint firstItem="Gkv-vr-j6j" firstAttribute="top" secondItem="5mh-nc-xyc" secondAttribute="bottom" id="DJZ-ZY-E0A"/>
                             <constraint firstItem="7Hp-nV-OnS" firstAttribute="trailing" secondItem="NYM-ZC-AVd" secondAttribute="trailing" constant="20" id="FI0-s7-HLZ"/>
-                            <constraint firstItem="kqA-zK-P21" firstAttribute="height" secondItem="tk5-aj-t9j" secondAttribute="height" multiplier="0.122768" id="JyI-kb-EWz"/>
+                            <constraint firstItem="Gkv-vr-j6j" firstAttribute="leading" secondItem="7Hp-nV-OnS" secondAttribute="leading" constant="20" id="FpL-3h-yoc"/>
+                            <constraint firstItem="5mh-nc-xyc" firstAttribute="leading" secondItem="7Hp-nV-OnS" secondAttribute="leading" constant="20" id="HDD-0R-4dG"/>
                             <constraint firstItem="7Hp-nV-OnS" firstAttribute="trailing" secondItem="2T8-SQ-VOS" secondAttribute="trailing" constant="20" id="Mub-F4-LvM"/>
                             <constraint firstItem="0hW-8P-cDH" firstAttribute="height" secondItem="tk5-aj-t9j" secondAttribute="height" multiplier="0.0491071" id="NWq-lx-NB8"/>
+                            <constraint firstItem="7Hp-nV-OnS" firstAttribute="trailing" secondItem="5mh-nc-xyc" secondAttribute="trailing" constant="20" id="Rm9-io-Fb4"/>
                             <constraint firstItem="7Hp-nV-OnS" firstAttribute="trailing" secondItem="V8n-Sn-SP0" secondAttribute="trailing" constant="20" id="VHN-Ks-Bai"/>
                             <constraint firstItem="EGw-mI-ZgF" firstAttribute="height" secondItem="tk5-aj-t9j" secondAttribute="height" multiplier="0.1" id="ZYj-oa-ICm"/>
                             <constraint firstItem="0hW-8P-cDH" firstAttribute="leading" secondItem="7Hp-nV-OnS" secondAttribute="leading" constant="40" id="ZkI-2I-vTg"/>
-                            <constraint firstItem="7Hp-nV-OnS" firstAttribute="bottom" secondItem="kqA-zK-P21" secondAttribute="bottom" constant="10" id="b0o-G2-46l"/>
+                            <constraint firstItem="7Hp-nV-OnS" firstAttribute="trailing" secondItem="Gkv-vr-j6j" secondAttribute="trailing" constant="20" id="aWb-9y-G68"/>
                             <constraint firstItem="0hW-8P-cDH" firstAttribute="top" secondItem="EGw-mI-ZgF" secondAttribute="bottom" constant="8" id="cK2-Do-y3q"/>
+                            <constraint firstItem="5mh-nc-xyc" firstAttribute="top" secondItem="NYM-ZC-AVd" secondAttribute="bottom" constant="30" id="d2X-t0-MJE"/>
                             <constraint firstItem="7Hp-nV-OnS" firstAttribute="trailing" secondItem="0hW-8P-cDH" secondAttribute="trailing" constant="40" id="eNU-us-ypv"/>
                             <constraint firstItem="2T8-SQ-VOS" firstAttribute="top" secondItem="7Hp-nV-OnS" secondAttribute="top" id="enn-pT-IYm"/>
                             <constraint firstItem="7Hp-nV-OnS" firstAttribute="trailing" secondItem="vbs-PF-ja5" secondAttribute="trailing" constant="184" id="eo6-Bm-1Ni"/>
@@ -322,12 +365,11 @@
                             <constraint firstItem="V8n-Sn-SP0" firstAttribute="leading" secondItem="7Hp-nV-OnS" secondAttribute="leading" constant="20" id="i8h-Ef-grx"/>
                             <constraint firstItem="NYM-ZC-AVd" firstAttribute="leading" secondItem="7Hp-nV-OnS" secondAttribute="leading" constant="20" id="ifl-yZ-OeM"/>
                             <constraint firstItem="2T8-SQ-VOS" firstAttribute="leading" secondItem="7Hp-nV-OnS" secondAttribute="leading" constant="20" id="izr-Kh-7V3"/>
-                            <constraint firstItem="kqA-zK-P21" firstAttribute="top" secondItem="NYM-ZC-AVd" secondAttribute="bottom" constant="40" id="jIJ-Az-Mub"/>
-                            <constraint firstItem="7Hp-nV-OnS" firstAttribute="trailing" secondItem="kqA-zK-P21" secondAttribute="trailing" constant="20" id="jf9-9G-aNA"/>
                             <constraint firstItem="EGw-mI-ZgF" firstAttribute="top" secondItem="V8n-Sn-SP0" secondAttribute="bottom" constant="8" id="jnL-AM-2Es"/>
                             <constraint firstItem="2T8-SQ-VOS" firstAttribute="height" secondItem="tk5-aj-t9j" secondAttribute="height" multiplier="0.320312" id="mzU-gr-f8x"/>
                             <constraint firstItem="EGw-mI-ZgF" firstAttribute="leading" secondItem="7Hp-nV-OnS" secondAttribute="leading" constant="20" id="s9f-bA-iie"/>
                             <constraint firstItem="V8n-Sn-SP0" firstAttribute="top" secondItem="2T8-SQ-VOS" secondAttribute="bottom" constant="40" id="xSp-R8-1KG"/>
+                            <constraint firstItem="Gkv-vr-j6j" firstAttribute="bottom" secondItem="7Hp-nV-OnS" secondAttribute="bottom" id="zcl-aM-XSI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7Hp-nV-OnS"/>
                     </view>
