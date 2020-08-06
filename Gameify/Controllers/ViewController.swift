@@ -86,7 +86,10 @@ class ViewController: UIViewController {
     private func updateExpProgress(stats: User) {
         strengthExp.text = createExpProgressText(exp: stats.strengthExp, cap: stats.strengthCap )
         constitutionExp.text = createExpProgressText(exp: stats.constitutionExp, cap: stats.constitutionCap )
+        intelligenceExp.text = createExpProgressText(exp: stats.intelligenceExp, cap: stats.intelligenceCap)
+        wisdomExp.text = createExpProgressText(exp: stats.wisdomExp, cap: stats.wisdomCap)
         dexAgiExp.text = createExpProgressText(exp: stats.dexAgiExp, cap: stats.dexAgiCap)
+        charismaExp.text = createExpProgressText(exp: stats.charismaExp, cap: stats.charismaCap)
         
     }
     
@@ -95,8 +98,15 @@ class ViewController: UIViewController {
         strengthProgress.editProgressColor(progress: strengthProgress.progress)
         constitutionProgress.progress = (Float(stats.constitutionExp)) / (Float(stats.constitutionCap))
         constitutionProgress.editProgressColor(progress: constitutionProgress.progress)
+        intelligenceProgress.progress = (Float(stats.intelligenceExp)) / (Float(stats.intelligenceCap))
+        intelligenceProgress.editProgressColor(progress: intelligenceProgress.progress)
+        wisdomProgress.progress = (Float(stats.wisdomExp)) / (Float(stats.wisdomCap))
+        wisdomProgress.editProgressColor(progress: wisdomProgress.progress)
         dexAgiProgress.progress = (Float(stats.dexAgiExp)) / (Float(stats.dexAgiCap))
         dexAgiProgress.editProgressColor(progress: dexAgiProgress.progress)
+        charismaProgress.progress = (Float(stats.charismaExp)) / (Float(stats.charismaCap))
+        charismaProgress.editProgressColor(progress:  charismaProgress.progress)
+        
     }
     
     private func createExpProgressText(exp: Int, cap: Int) -> String {
