@@ -27,6 +27,8 @@ class TaskCell: UITableViewCell {
             repeatableRep.image = UIImage(systemName: "repeat.1")
         case .oneshot:
             repeatableRep.image = nil
+        default:
+            repeatableRep.image = UIImage(systemName: "gear")
         }
     }
 }

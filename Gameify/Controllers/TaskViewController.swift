@@ -7,13 +7,20 @@
 //
 
 import UIKit
+import FirebaseFirestore
+import FirebaseAuth
 
 class TaskViewController: UIViewController {
     
     @IBOutlet weak var taskTV: UITableView!
     
-    var tasks = [Task(title: "Work on Passion Project", description: "Duration: 1 Hour", rating: 4, statUps: [.dexAgi], repeatable: .always, id: "0")]
+    var tasks = [Task]() {
+        didSet {
+            taskTV.reloadData()
+        }
+    }
     
+    var tasksListener: ListenerRegistration?
     var user: User!
     
     override func viewDidLoad() {
@@ -22,6 +29,16 @@ class TaskViewController: UIViewController {
         taskTV.dataSource = self
         taskTV.delegate = self
 
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        setupTasksListener()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        tasksListener?.remove()
     }
     
     public func fetchUser() {
@@ -71,6 +88,21 @@ class TaskViewController: UIViewController {
         return total
     }
     
+    private func setupTasksListener() {
+        guard let uid = Auth.auth().currentUser?.uid else {
+            return
+        }
+        tasksListener = Firestore.firestore().collection(DatabaseServices.userCollection).document(uid).collection(DatabaseServices.taskCollection).addSnapshotListener( { (snapshot, error) in
+            if let error = error {
+                self.showAlert(title: "Error", message: error.localizedDescription)
+            } else if let snapshot = snapshot {
+                let tempTasks =  snapshot.documents.map { Task($0.data())}
+                self.tasks = tempTasks
+                
+            }
+        })
+    }
+    
 
 }
 
@@ -104,7 +136,7 @@ extension TaskViewController: UITableViewDelegate {
             user.dexAgiExp = diff
             user.dexAgiCap = expCap(level: user.dexAgi)
             let totalLevel = user.strength + user.constitution + user.intelligence + user.wisdom + user.dexAgi + user.charisma
-            if totalLevel >= user.level / 6 {
+            if totalLevel >= user.level * 6 {
                 user.level += 1
             }
         }

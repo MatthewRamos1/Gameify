@@ -12,6 +12,7 @@ enum Repeatable: String{
        case daily = "daily"
        case oneshot = "oneshot"
        case always = "always"
+       case error = "error"
    }
 
 enum Stat: String {
@@ -40,5 +41,48 @@ class Task {
         self.repeatable = repeatable
         self.id = id
     }
-}
-
+    
+    init(_ dictionary: [String: Any]) {
+        self.title = dictionary["title"] as? String ?? "No Title"
+        self.description = dictionary["description"] as? String ?? "No Description"
+        self.rating = dictionary["rating"] as? Int ?? -1
+        self.statUps = [Stat]()
+        self.repeatable = Repeatable.always
+        self.id = dictionary["id"] as? String ?? ""
+    }
+    
+    private func statUpArrayToEnum(_ array: [String]) -> [Stat] {
+        var tempArray = [Stat]()
+        for stat in array {
+            switch stat {
+            case Stat.strength.rawValue:
+                tempArray.append(.strength)
+            case Stat.constitution.rawValue:
+                tempArray.append(.constitution)
+            case Stat.intelligence.rawValue:
+                tempArray.append(.intelligence)
+            case Stat.wisdom.rawValue:
+                tempArray.append(.wisdom)
+            case Stat.dexAgi.rawValue:
+                tempArray.append(.dexAgi)
+            default:
+                tempArray.append(.charisma)
+                
+            }
+        }
+        return tempArray
+    }
+    
+    private func repeatableStringToEnum(_ string: String) -> Repeatable {
+        switch string {
+        case Repeatable.daily.rawValue:
+            return .daily
+        case Repeatable.always.rawValue:
+            return .always
+        case Repeatable.oneshot.rawValue:
+            return .oneshot
+        default:
+            return .error
+            }
+        }
+    }
