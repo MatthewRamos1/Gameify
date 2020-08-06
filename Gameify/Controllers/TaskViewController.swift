@@ -28,7 +28,7 @@ class TaskViewController: UIViewController {
         fetchUser()
         taskTV.dataSource = self
         taskTV.delegate = self
-
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -103,7 +103,58 @@ class TaskViewController: UIViewController {
         })
     }
     
-
+    private func taskCompletion(_ task: Task) {
+        switch task.statUps.first {
+        case .strength:
+            user.strengthExp += 1
+            if user.strengthExp >= user.strengthCap {
+                let diff = user.strengthExp - user.strengthCap
+                user.strength += 1
+                user.strengthExp = diff
+                user.strengthCap = expCap(level: user.strength)
+            }
+        case .constitution:
+            user.constitutionExp += 1
+            if user.constitutionExp >= user.constitutionCap {
+                let diff = user.constitutionExp - user.constitutionCap
+                user.constitution += 1
+                user.constitutionExp = diff
+                user.constitutionCap = expCap(level: user.constitution)
+            }
+        case .intelligence:
+            user.intelligenceExp += 1
+            if user.intelligenceExp >= user.intelligenceCap {
+                let diff = user.intelligenceExp - user.intelligenceCap
+                user.intelligence += 1
+                user.intelligenceExp = diff
+                user.intelligenceCap = expCap(level: user.intelligence)
+            }
+        case .wisdom:
+            user.wisdomExp += 1
+            if user.wisdomExp >= user.wisdomCap {
+                let diff = user.wisdomExp - user.wisdomCap
+                user.wisdom += 1
+                user.wisdomExp = diff
+                user.wisdomCap = expCap(level: user.wisdom)
+            }
+        case .dexAgi:
+            user.dexAgiExp += 1
+            if user.dexAgiExp >= user.dexAgiCap {
+                let diff = user.dexAgiExp - user.dexAgiCap
+                user.dexAgi += 1
+                user.dexAgiExp = diff
+                user.dexAgiCap = expCap(level: user.dexAgi)
+            }
+        default:
+            user.charismaExp += 1
+            if user.charismaExp >= user.charismaCap {
+                let diff = user.charismaExp - user.charismaCap
+                user.charisma += 1
+                user.charismaExp = diff
+                user.charismaCap = expCap(level: user.charisma)
+            }
+        }
+    }
 }
 
 extension TaskViewController: UITableViewDataSource {
@@ -129,18 +180,8 @@ extension TaskViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        user.dexAgiExp += 1
-        if user.dexAgiExp >= user.dexAgiCap {
-            let diff = user.dexAgiExp - user.dexAgiCap
-            user.dexAgi += 1
-            user.dexAgiExp = diff
-            user.dexAgiCap = expCap(level: user.dexAgi)
-            let totalLevel = user.strength + user.constitution + user.intelligence + user.wisdom + user.dexAgi + user.charisma
-            if totalLevel >= user.level * 6 {
-                user.level += 1
-            }
-        }
-        
+        let task = tasks[indexPath.row]
+        taskCompletion(task)
         let statsDict = userToDict(user: user)
         updateUser(dict: statsDict)
     }
