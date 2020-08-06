@@ -47,7 +47,19 @@ class Task {
         self.description = dictionary["description"] as? String ?? "No Description"
         self.rating = dictionary["rating"] as? Int ?? -1
         self.statUps = [Stat]()
-        self.repeatable = Repeatable.always
+        let string = dictionary["repeatable"] as? String ?? "error"
+        var repeatable = Repeatable.error
+        switch string {
+        case Repeatable.daily.rawValue:
+            repeatable = .daily
+        case Repeatable.always.rawValue:
+            repeatable = .always
+        case Repeatable.oneshot.rawValue:
+            repeatable = .oneshot
+        default:
+            repeatable = .error
+            }
+        self.repeatable = repeatable
         self.id = dictionary["id"] as? String ?? ""
     }
     
