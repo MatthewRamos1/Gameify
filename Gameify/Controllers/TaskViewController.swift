@@ -104,9 +104,10 @@ class TaskViewController: UIViewController {
     }
     
     private func taskCompletion(_ task: Task) {
+        let experience = ratingExpConversion(rating: task.rating)
         switch task.statUps.first {
         case .strength:
-            user.strengthExp += 1
+            user.strengthExp += experience
             if user.strengthExp >= user.strengthCap {
                 let diff = user.strengthExp - user.strengthCap
                 user.strength += 1
@@ -114,7 +115,7 @@ class TaskViewController: UIViewController {
                 user.strengthCap = expCap(level: user.strength)
             }
         case .constitution:
-            user.constitutionExp += 1
+            user.constitutionExp += experience
             if user.constitutionExp >= user.constitutionCap {
                 let diff = user.constitutionExp - user.constitutionCap
                 user.constitution += 1
@@ -122,7 +123,7 @@ class TaskViewController: UIViewController {
                 user.constitutionCap = expCap(level: user.constitution)
             }
         case .intelligence:
-            user.intelligenceExp += 1
+            user.intelligenceExp += experience
             if user.intelligenceExp >= user.intelligenceCap {
                 let diff = user.intelligenceExp - user.intelligenceCap
                 user.intelligence += 1
@@ -130,7 +131,7 @@ class TaskViewController: UIViewController {
                 user.intelligenceCap = expCap(level: user.intelligence)
             }
         case .wisdom:
-            user.wisdomExp += 1
+            user.wisdomExp += experience
             if user.wisdomExp >= user.wisdomCap {
                 let diff = user.wisdomExp - user.wisdomCap
                 user.wisdom += 1
@@ -138,7 +139,7 @@ class TaskViewController: UIViewController {
                 user.wisdomCap = expCap(level: user.wisdom)
             }
         case .dexAgi:
-            user.dexAgiExp += 1
+            user.dexAgiExp += experience
             if user.dexAgiExp >= user.dexAgiCap {
                 let diff = user.dexAgiExp - user.dexAgiCap
                 user.dexAgi += 1
@@ -146,7 +147,7 @@ class TaskViewController: UIViewController {
                 user.dexAgiCap = expCap(level: user.dexAgi)
             }
         default:
-            user.charismaExp += 1
+            user.charismaExp += experience
             if user.charismaExp >= user.charismaCap {
                 let diff = user.charismaExp - user.charismaCap
                 user.charisma += 1
@@ -158,6 +159,33 @@ class TaskViewController: UIViewController {
         if (totalLevel / 6) >= user.level {
             user.level += 1
         }
+    }
+    
+    private func ratingExpConversion (rating: Int) -> Int {
+        switch rating {
+        case 1, 2:
+            return rating
+        case 3:
+            return 4
+        case 4:
+            return 5
+        case 5:
+            return 7
+        case 6:
+            return 10
+        case 7:
+            return 14
+        case 8:
+            return 20
+        case 9:
+            return 32
+        case 10:
+            return 50
+        default:
+            return 0
+        }
+        
+        
     }
 }
 

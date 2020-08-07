@@ -436,19 +436,19 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="wsZ-X7-Bxx">
                                                     <rect key="frame" x="194.5" y="143.5" width="141" height="25.5"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="G1V-k6-ad0">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="G1V-k6-ad0">
                                                             <rect key="frame" x="0.0" y="0.0" width="28" height="25.5"/>
                                                         </imageView>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="UoR-JR-AiE">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="UoR-JR-AiE">
                                                             <rect key="frame" x="28" y="0.0" width="28" height="25.5"/>
                                                         </imageView>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="N2K-FX-aGn">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="N2K-FX-aGn">
                                                             <rect key="frame" x="56" y="0.0" width="28.5" height="25.5"/>
                                                         </imageView>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kUf-Mo-xMj">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kUf-Mo-xMj">
                                                             <rect key="frame" x="84.5" y="0.0" width="28" height="25.5"/>
                                                         </imageView>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.lefthalf.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="qL9-Ad-akr">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="qL9-Ad-akr">
                                                             <rect key="frame" x="112.5" y="0.0" width="28.5" height="25.5"/>
                                                         </imageView>
                                                     </subviews>
@@ -490,11 +490,16 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="descriptionLabel" destination="x1B-Vl-PzM" id="ZyU-sB-1vd"/>
+                                            <outlet property="fiveStar" destination="qL9-Ad-akr" id="QSs-GI-MPI"/>
+                                            <outlet property="fourStar" destination="kUf-Mo-xMj" id="awU-bg-D9d"/>
+                                            <outlet property="oneStar" destination="G1V-k6-ad0" id="uSf-lD-pbT"/>
                                             <outlet property="repeatableRep" destination="Y6s-pX-Ljk" id="fs1-kv-h5L"/>
                                             <outlet property="statRep1" destination="eRG-tR-50t" id="g2X-Hd-G4G"/>
                                             <outlet property="statRep2" destination="WlA-Fi-Uf8" id="b6z-7o-c7t"/>
                                             <outlet property="taskIV" destination="PRo-M8-dQz" id="i6W-U7-RH5"/>
                                             <outlet property="taskName" destination="CiB-QY-RNf" id="JZq-t9-Oi5"/>
+                                            <outlet property="threeStar" destination="N2K-FX-aGn" id="T78-C0-Ubx"/>
+                                            <outlet property="twoStar" destination="UoR-JR-AiE" id="Dni-5U-GuQ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -589,8 +594,6 @@
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="repeat" catalog="system" width="128" height="99"/>
         <image name="star" catalog="system" width="128" height="116"/>
-        <image name="star.fill" catalog="system" width="128" height="116"/>
-        <image name="star.lefthalf.fill" catalog="system" width="128" height="116"/>
         <image name="vitality" width="625" height="575"/>
     </resources>
 </document>
