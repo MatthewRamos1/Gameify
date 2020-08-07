@@ -156,7 +156,7 @@ class TaskViewController: UIViewController {
             }
         }
         let totalLevel = user.strength + user.constitution + user.intelligence + user.wisdom + user.dexAgi + user.charisma
-        if (totalLevel / 6) >= user.level {
+        if (totalLevel / 6) > user.level {
             user.level += 1
         }
     }
