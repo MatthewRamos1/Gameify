@@ -199,7 +199,7 @@ class CreateTaskViewController: UIViewController {
 
 extension CreateTaskViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        resignFirstResponder()
+        textField.resignFirstResponder()
     }
 }
 
