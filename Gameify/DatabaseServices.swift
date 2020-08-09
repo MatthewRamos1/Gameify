@@ -68,6 +68,19 @@ class DatabaseServices {
         }
     }
     
+    public func deleteUserTask(task: Task, completion: @escaping (Result <Bool, Error>) -> ()) {
+        guard let currentUser = Auth.auth().currentUser else {
+            return
+        }
+        db.collection(DatabaseServices.userCollection).document(currentUser.uid).collection(DatabaseServices.taskCollection).document(task.id).delete { (error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(true))
+            }
+        }
+    }
+    
     public func getUser(completion: @escaping (Result <User, Error>) -> ())  {
         
         guard let currentUser = Auth.auth().currentUser else {

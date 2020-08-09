@@ -184,8 +184,19 @@ class TaskViewController: UIViewController {
         default:
             return 0
         }
-        
-        
+    }
+    
+    private func deleteTask(task: Task) {
+        DatabaseServices.shared.deleteUserTask(task: task) { [weak self] (result) in
+            switch result {
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self?.showAlert(title: "Error", message: error.localizedDescription)
+                }
+            case .success:
+                print("nice")
+            }
+        }
     }
 }
 
@@ -216,5 +227,8 @@ extension TaskViewController: UITableViewDelegate {
         taskCompletion(task)
         let statsDict = userToDict(user: user)
         updateUser(dict: statsDict)
+        if task.repeatable == .oneshot {
+            deleteTask(task: task)
+        }
     }
 }
