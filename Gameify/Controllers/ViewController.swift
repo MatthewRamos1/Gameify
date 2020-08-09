@@ -98,6 +98,9 @@ class ViewController: UIViewController {
     }
     
     private func updateProgressBars(stats: User) {
+        let totalLevel = Float(stats.strength + stats.constitution + stats.intelligence + stats.wisdom + stats.dexAgi + stats.charisma)
+        let experienceDiff = totalLevel - Float(stats.level * 6)
+        levelProgress.progress = experienceDiff / Float(6)
         levelProgress.editProgressColor(progress: levelProgress.progress)
         strengthProgress.progress = (Float(stats.strengthExp)) / (Float(stats.strengthCap))
         strengthProgress.editProgressColor(progress: strengthProgress.progress)
