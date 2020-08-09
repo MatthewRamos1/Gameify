@@ -16,6 +16,12 @@ class TaskViewController: UIViewController {
     
     var tasks = [Task]() {
         didSet {
+            sortedTasks = getSections()
+        }
+    }
+    
+    var sortedTasks = [[Task]]() {
+        didSet {
             taskTV.reloadData()
         }
     }
@@ -198,11 +204,45 @@ class TaskViewController: UIViewController {
             }
         }
     }
+    
+    private func getSections() -> [[Task]] {
+        let sortedTasks = tasks.sorted { $0.rating < $1.rating }
+        var sections = Array(repeating: [Task](), count: 5)
+        for task in sortedTasks {
+            switch task.rating {
+            case 1, 2:
+                sections[0].append(task)
+            case 3, 4:
+                sections[1].append(task)
+            case 5, 6:
+                sections[2].append(task)
+            case 7, 8:
+                sections[3].append(task)
+            case 9, 10:
+                sections[4].append(task)
+            default:
+                return [[Task]]()
+            }
+        }
+        var index = 0
+        for section in sections {
+            if section.isEmpty {
+                sections.remove(at: index)
+            } else {
+                index += 1
+            }
+        }
+        return sections
+    }
 }
 
 extension TaskViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        tasks.count
+        sortedTasks[section].count
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        sortedTasks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -212,6 +252,10 @@ extension TaskViewController: UITableViewDataSource {
         let task = tasks[indexPath.row]
         cell.configureCell(task)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        <#code#>
     }
     
     
