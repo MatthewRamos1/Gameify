@@ -206,19 +206,19 @@ class TaskViewController: UIViewController {
     }
     
     private func getSections() -> [[Task]] {
-        let sortedTasks = tasks.sorted { $0.rating < $1.rating }
+        let sortedTasks = tasks.sorted { $0.rating > $1.rating }
         var sections = Array(repeating: [Task](), count: 5)
         for task in sortedTasks {
             switch task.rating {
-            case 1, 2:
+            case 10, 9:
                 sections[0].append(task)
-            case 3, 4:
+            case 8, 7:
                 sections[1].append(task)
-            case 5, 6:
+            case 6, 5:
                 sections[2].append(task)
-            case 7, 8:
+            case 4, 3:
                 sections[3].append(task)
-            case 9, 10:
+            case 2, 1:
                 sections[4].append(task)
             default:
                 return [[Task]]()
