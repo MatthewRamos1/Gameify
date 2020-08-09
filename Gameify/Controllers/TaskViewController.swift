@@ -169,10 +169,8 @@ class TaskViewController: UIViewController {
     
     private func ratingExpConversion (rating: Int) -> Int {
         switch rating {
-        case 1, 2:
+        case 1, 2, 3:
             return rating
-        case 3:
-            return 4
         case 4:
             return 5
         case 5:
