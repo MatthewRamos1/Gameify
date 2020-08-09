@@ -27,6 +27,7 @@ class CreateTaskViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        titleTextField.delegate = self
         
     }
     @IBAction func starButtonPressed(_ sender: UIButton) {
@@ -195,3 +196,10 @@ class CreateTaskViewController: UIViewController {
     }
     
 }
+
+extension CreateTaskViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        resignFirstResponder()
+    }
+}
+

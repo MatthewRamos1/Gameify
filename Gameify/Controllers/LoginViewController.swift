@@ -17,6 +17,8 @@ class LoginViewController: UIViewController {
     let authSession = AuthenticationSession()
     
     override func viewDidLoad() {
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
         super.viewDidLoad()
         
     }
@@ -81,6 +83,10 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    
-    
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        resignFirstResponder()
+    }
 }
