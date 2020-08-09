@@ -53,6 +53,21 @@ class LoginViewController: UIViewController {
         present(vc!, animated: true)
     }
     
+    @IBAction func logInPressed(_ sender: UIButton) {
+        authSession.signExistingUser(email: emailTextField.text ?? "", password: passwordTextField.text ?? "") { [weak self] (result) in
+            switch result {
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self?.showAlert(title: "Error", message: error.localizedDescription)
+                }
+            case .success:
+                DispatchQueue.main.async {
+                    self?.navigateToTaskVC()
+                }
+            }
+        }
+    }
+    
     @IBAction func signUpPressed(_ sender: UIButton) {
         authSession.createNewUser(email: emailTextField.text ?? "", password: passwordTextField.text ?? "") { [weak self] (result) in
             switch result {
