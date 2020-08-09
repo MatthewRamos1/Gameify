@@ -249,13 +249,26 @@ extension TaskViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as? TaskCell else {
             return UITableViewCell()
         }
-        let task = tasks[indexPath.row]
+        let task = sortedTasks[indexPath.section][indexPath.row]
         cell.configureCell(task)
         return cell
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        <#code#>
+        switch sortedTasks[section].first?.rating {
+        case 10, 9:
+            return "5 Star"
+        case 8, 7:
+            return "4 Star"
+        case 6, 5:
+            return "3 Star"
+        case 4, 3:
+            return "2 Star"
+        case 2, 1:
+            return "1 Star"
+        default:
+            return "Error"
+        }
     }
     
     
