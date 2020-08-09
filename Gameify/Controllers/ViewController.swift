@@ -14,6 +14,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var playerImage: UIImageView!
     @IBOutlet weak var levelLabel: UILabel!
+    @IBOutlet weak var currentLvlLabel: UILabel!
+    @IBOutlet weak var nextLvlLabel: UILabel!
     @IBOutlet weak var strengthLabel: UILabel!
     @IBOutlet weak var constitutionLabel: UILabel!
     @IBOutlet weak var intelligenceLabel: UILabel!
@@ -26,6 +28,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var wisdomExp: UILabel!
     @IBOutlet weak var dexAgiExp: UILabel!
     @IBOutlet weak var charismaExp: UILabel!
+    @IBOutlet weak var levelProgress: UIProgressView!
     @IBOutlet weak var strengthProgress: UIProgressView!
     @IBOutlet weak var constitutionProgress: UIProgressView!
     @IBOutlet weak var intelligenceProgress: UIProgressView!
@@ -74,6 +77,8 @@ class ViewController: UIViewController {
     
     private func updateStats(stats: User) {
         levelLabel.text = "Level: \(stats.level)"
+        currentLvlLabel.text = "Lv. \(stats.level)"
+        nextLvlLabel.text = "Lv. \(stats.level + 1)"
         strengthLabel.text = "Strength: \(stats.strength)"
         constitutionLabel.text = "Constitution: \(stats.constitution)"
         intelligenceLabel.text = "Intelligence: \(stats.intelligence)"
@@ -93,6 +98,7 @@ class ViewController: UIViewController {
     }
     
     private func updateProgressBars(stats: User) {
+        levelProgress.editProgressColor(progress: levelProgress.progress)
         strengthProgress.progress = (Float(stats.strengthExp)) / (Float(stats.strengthCap))
         strengthProgress.editProgressColor(progress: strengthProgress.progress)
         constitutionProgress.progress = (Float(stats.constitutionExp)) / (Float(stats.constitutionCap))
