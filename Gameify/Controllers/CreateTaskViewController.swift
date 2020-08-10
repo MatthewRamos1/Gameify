@@ -12,7 +12,7 @@ class CreateTaskViewController: UIViewController {
     
     @IBOutlet weak var taskImageView: UIImageView!
     @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var repeatRepSegmented: UISegmentedControl!
     @IBOutlet weak var oneStar: UIButton!
     @IBOutlet weak var twoStar: UIButton!
@@ -33,6 +33,7 @@ class CreateTaskViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         titleTextField.delegate = self
+        descriptionTextField.delegate = self
         
     }
     @IBAction func starButtonPressed(_ sender: UIButton) {
@@ -186,7 +187,7 @@ class CreateTaskViewController: UIViewController {
     }
     
     @IBAction func createTaskPressed(_ sender: UIButton) {
-        guard let title = titleTextField.text, let description = descriptionTextView.text, let uid = Auth.auth().currentUser?.uid else {
+        guard let title = titleTextField.text, let description = descriptionTextField.text, let uid = Auth.auth().currentUser?.uid else {
             return
         }
         let task = Task(title: title, description: description, rating: rating, statUps: statUps, repeatable: repeatable, id: UUID().uuidString)
