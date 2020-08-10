@@ -121,8 +121,10 @@ class CreateTaskViewController: UIViewController {
                     return
                 }
                 statUps.remove(at: index)
+                sender.backgroundColor = nil
             } else if statUps.count <= 1 {
                 statUps.append(.strength)
+                sender.backgroundColor = .darkGray
             } else {
                 showAlert(title: "Can't Assign Stat Up", message: "Max stat ups alread assigned, remove one first before proceeding!")
             }
@@ -132,8 +134,10 @@ class CreateTaskViewController: UIViewController {
                     return
                 }
                 statUps.remove(at: index)
+                sender.backgroundColor = nil
             } else if statUps.count <= 1 {
                 statUps.append(.constitution)
+                sender.backgroundColor = .darkGray
             } else {
                 showAlert(title: "Can't Assign Stat Up", message: "Max stat ups alread assigned, remove one first before proceeding!")
             }
@@ -144,8 +148,10 @@ class CreateTaskViewController: UIViewController {
                     return
                 }
                 statUps.remove(at: index)
+                sender.backgroundColor = nil
             } else if statUps.count <= 1 {
                 statUps.append(.intelligence)
+                sender.backgroundColor = .darkGray
             } else {
                 showAlert(title: "Can't Assign Stat Up", message: "Max stat ups alread assigned, remove one first before proceeding!")
             }
@@ -155,8 +161,10 @@ class CreateTaskViewController: UIViewController {
                     return
                 }
                 statUps.remove(at: index)
+                sender.backgroundColor = nil
             } else if statUps.count <= 1 {
                 statUps.append(.wisdom)
+                sender.backgroundColor = .darkGray
             } else {
                 showAlert(title: "Can't Assign Stat Up", message: "Max stat ups alread assigned, remove one first before proceeding!")
             }
@@ -166,8 +174,10 @@ class CreateTaskViewController: UIViewController {
                     return
                 }
                 statUps.remove(at: index)
+                sender.backgroundColor = nil
             } else if statUps.count <= 1 {
                 statUps.append(.dexAgi)
+                sender.backgroundColor = .darkGray
             } else {
                 showAlert(title: "Can't Assign Stat Up", message: "Max stat ups alread assigned, remove one first before proceeding!")
             }
@@ -177,13 +187,14 @@ class CreateTaskViewController: UIViewController {
                     return
                 }
                 statUps.remove(at: index)
+                sender.backgroundColor = nil
             } else if statUps.count <= 1 {
                 statUps.append(.charisma)
+                sender.backgroundColor = .darkGray
             } else {
                 showAlert(title: "Can't Assign Stat Up", message: "Max stat ups alread assigned, remove one first before proceeding!")
             }
         }
-        sender.backgroundColor = .darkGray
     }
     
     @IBAction func createTaskPressed(_ sender: UIButton) {
