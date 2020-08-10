@@ -23,6 +23,11 @@ class CreateTaskViewController: UIViewController {
     var rating = 0
     var repeatable = Repeatable.oneshot
     var statUps = [Stat]()
+    var user: User? {
+        didSet {
+            title = "Edit Task"
+        }
+    }
     
     
     override func viewDidLoad() {
