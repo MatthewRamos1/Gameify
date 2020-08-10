@@ -544,6 +544,9 @@
                                                         <constraint firstAttribute="width" secondItem="XaJ-Pw-Ygd" secondAttribute="height" multiplier="1:1" id="jht-Zc-HXE"/>
                                                     </constraints>
                                                     <state key="normal" backgroundImage="square.and.pencil" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="editTaskPressed:" destination="4j9-S2-5ol" eventType="touchUpInside" id="46Y-Be-pAl"/>
+                                                    </connections>
                                                 </button>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="repeat" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Y6s-pX-Ljk">
                                                     <rect key="frame" x="356.5" y="3.5" width="21" height="17.5"/>

@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol editTaskButtonDelegate: AnyObject {
+       func buttonWasPressed(_ cell: TaskCell, _ task: Task)
+   }
+
 class TaskCell: UITableViewCell {
 
     @IBOutlet weak var taskName: UILabel!
@@ -21,6 +25,9 @@ class TaskCell: UITableViewCell {
     @IBOutlet weak var threeStar: UIImageView!
     @IBOutlet weak var fourStar: UIImageView!
     @IBOutlet weak var fiveStar: UIImageView!
+    var task: Task!
+    
+    weak var delegate: editTaskButtonDelegate?
     
     func configureCell(_ task: Task) {
         taskName.text = task.title
@@ -81,5 +88,10 @@ class TaskCell: UITableViewCell {
             
         }
     }
+    
+    @IBAction func editTaskPressed(_ sender: UIButton) {
+        delegate?.buttonWasPressed(self, task)
+    }
+    
     
 }
