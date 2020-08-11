@@ -405,7 +405,7 @@
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbs-PF-ja5">
-                                <rect key="frame" x="160" y="383" width="94" height="30"/>
+                                <rect key="frame" x="120" y="383" width="174" height="30"/>
                                 <state key="normal" title="Create"/>
                                 <connections>
                                     <action selector="createTaskPressed:" destination="u1A-79-eeA" eventType="touchUpInside" id="M9k-t5-M8x"/>
@@ -511,7 +511,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="vbs-PF-ja5" firstAttribute="leading" secondItem="7Hp-nV-OnS" secondAttribute="leading" constant="160" id="2cf-A3-avo"/>
+                            <constraint firstItem="vbs-PF-ja5" firstAttribute="leading" secondItem="7Hp-nV-OnS" secondAttribute="leading" constant="120" id="2cf-A3-avo"/>
                             <constraint firstItem="Gkv-vr-j6j" firstAttribute="height" secondItem="tk5-aj-t9j" secondAttribute="height" multiplier="0.07" id="2xe-9W-8qZ"/>
                             <constraint firstItem="5mh-nc-xyc" firstAttribute="height" secondItem="Gkv-vr-j6j" secondAttribute="height" id="CIn-4B-ox9"/>
                             <constraint firstItem="Gkv-vr-j6j" firstAttribute="top" secondItem="5mh-nc-xyc" secondAttribute="bottom" id="DJZ-ZY-E0A"/>
@@ -530,7 +530,7 @@
                             <constraint firstItem="nl1-bs-2oM" firstAttribute="height" secondItem="tk5-aj-t9j" secondAttribute="height" multiplier="0.1" id="d3C-OQ-Ewg"/>
                             <constraint firstItem="7Hp-nV-OnS" firstAttribute="trailing" secondItem="0hW-8P-cDH" secondAttribute="trailing" constant="40" id="eNU-us-ypv"/>
                             <constraint firstItem="2T8-SQ-VOS" firstAttribute="top" secondItem="7Hp-nV-OnS" secondAttribute="top" id="enn-pT-IYm"/>
-                            <constraint firstItem="7Hp-nV-OnS" firstAttribute="trailing" secondItem="vbs-PF-ja5" secondAttribute="trailing" constant="160" id="eo6-Bm-1Ni"/>
+                            <constraint firstItem="7Hp-nV-OnS" firstAttribute="trailing" secondItem="vbs-PF-ja5" secondAttribute="trailing" constant="120" id="eo6-Bm-1Ni"/>
                             <constraint firstItem="vbs-PF-ja5" firstAttribute="top" secondItem="2T8-SQ-VOS" secondAttribute="bottom" constant="8" id="hFZ-g1-4ro"/>
                             <constraint firstItem="nl1-bs-2oM" firstAttribute="leading" secondItem="7Hp-nV-OnS" secondAttribute="leading" constant="20" id="hmP-OE-ceG"/>
                             <constraint firstItem="V8n-Sn-SP0" firstAttribute="leading" secondItem="7Hp-nV-OnS" secondAttribute="leading" constant="20" id="i8h-Ef-grx"/>
