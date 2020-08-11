@@ -27,15 +27,22 @@ class CreateTaskViewController: UIViewController {
     @IBOutlet weak var dexAgiButton: UIButton!
     @IBOutlet weak var charismaButton: UIButton!
     
+    enum TaskState {
+        case create
+        case edit
+    }
+    
     var rating = 0
     var repeatable = Repeatable.oneshot
     var statUps = [Stat]()
+    var currentState = TaskState.create
     var task: Task? {
         didSet {
             title = "Edit Task"
             rating = task!.rating
             repeatable = task!.repeatable
             statUps = task!.statUps
+            currentState = .edit
         }
     }
     
@@ -52,6 +59,9 @@ class CreateTaskViewController: UIViewController {
         configureStarButtons(rating: tempTask.rating)
         configureRepeatRepSegment(repeatable: tempTask.repeatable)
         configureStatButtons(statUps: tempTask.statUps)
+        if currentState == .edit {
+            createTaskButton.setTitle("Save Edits", for: .normal)
+        }
         
     }
     
