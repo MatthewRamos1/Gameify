@@ -28,6 +28,7 @@ class CreateTaskViewController: UIViewController {
         didSet {
             title = "Edit Task"
             rating = task!.rating
+            repeatable = task!.repeatable
         }
     }
     
@@ -42,6 +43,7 @@ class CreateTaskViewController: UIViewController {
         titleTextField.text = tempTask.title
         descriptionTextField.text = tempTask.description
         configureStarButtons(rating: tempTask.rating)
+        configureRepeatRepSegment(repeatable: tempTask.repeatable)
         
     }
     
@@ -60,7 +62,19 @@ class CreateTaskViewController: UIViewController {
         default:
             return
         }
-        
+    }
+    
+    private func configureRepeatRepSegment(repeatable: Repeatable) {
+        switch repeatable {
+        case .oneshot:
+            repeatRepSegmented.selectedSegmentIndex = 0
+        case .daily:
+            repeatRepSegmented.selectedSegmentIndex = 1
+        case .always:
+            repeatRepSegmented.selectedSegmentIndex = 2
+        default:
+            return
+        }
     }
     
     @IBAction func starButtonPressed(_ sender: UIButton) {
