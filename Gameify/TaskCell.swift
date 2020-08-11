@@ -25,11 +25,12 @@ class TaskCell: UITableViewCell {
     @IBOutlet weak var threeStar: UIImageView!
     @IBOutlet weak var fourStar: UIImageView!
     @IBOutlet weak var fiveStar: UIImageView!
-    var task: Task!
+    var cellTask: Task!
     
     weak var delegate: editTaskButtonDelegate?
     
     func configureCell(_ task: Task) {
+        cellTask = task
         taskName.text = task.title
         descriptionLabel.text = task.description
         switch task.repeatable {
@@ -90,7 +91,7 @@ class TaskCell: UITableViewCell {
     }
     
     @IBAction func editTaskPressed(_ sender: UIButton) {
-        delegate?.buttonWasPressed(self, task)
+        delegate?.buttonWasPressed(self, cellTask)
     }
     
     

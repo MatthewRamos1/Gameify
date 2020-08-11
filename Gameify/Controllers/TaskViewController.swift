@@ -249,6 +249,7 @@ extension TaskViewController: UITableViewDataSource {
         }
         let task = sortedTasks[indexPath.section][indexPath.row]
         cell.configureCell(task)
+        cell.delegate = self
         return cell
     }
     
@@ -286,4 +287,15 @@ extension TaskViewController: UITableViewDelegate {
             deleteTask(task: task)
         }
     }
+}
+
+extension TaskViewController: editTaskButtonDelegate {
+    func buttonWasPressed(_ cell: TaskCell, _ task: Task) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let createTaskVC = storyboard.instantiateViewController(identifier: "CreateTaskViewController") as! CreateTaskViewController
+        createTaskVC.task = task
+        navigationController?.pushViewController(createTaskVC, animated: true)
+    }
+    
+    
 }

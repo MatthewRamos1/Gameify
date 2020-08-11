@@ -14,6 +14,7 @@ class CreateTaskViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var repeatRepSegmented: UISegmentedControl!
+    @IBOutlet weak var createTaskButton: UIButton!
     @IBOutlet weak var oneStar: UIButton!
     @IBOutlet weak var twoStar: UIButton!
     @IBOutlet weak var threeStar: UIButton!
@@ -23,9 +24,10 @@ class CreateTaskViewController: UIViewController {
     var rating = 0
     var repeatable = Repeatable.oneshot
     var statUps = [Stat]()
-    var user: User? {
+    var task: Task? {
         didSet {
             title = "Edit Task"
+            rating = task!.rating
         }
     }
     
@@ -34,6 +36,11 @@ class CreateTaskViewController: UIViewController {
         super.viewDidLoad()
         titleTextField.delegate = self
         descriptionTextField.delegate = self
+        guard let tempTask = task else {
+            return
+        }
+        titleTextField.text = tempTask.title
+        descriptionTextField.text = tempTask.description
         
     }
     @IBAction func starButtonPressed(_ sender: UIButton) {
@@ -201,14 +208,17 @@ class CreateTaskViewController: UIViewController {
         guard let title = titleTextField.text, let description = descriptionTextField.text, let uid = Auth.auth().currentUser?.uid else {
             return
         }
-        let task = Task(title: title, description: description, rating: rating, statUps: statUps, repeatable: repeatable, id: UUID().uuidString)
-        DatabaseServices.shared.createUserTask(uid: uid, task: task) { [weak self] (result) in
-            switch result {
-            case .failure(let error):
-                self?.showAlert(title: "Error", message: error.localizedDescription)
-            case .success:
-                self?.showAlert(title: "Success", message: "Task Created")
+        guard let task = task else {
+            let task = Task(title: title, description: description, rating: rating, statUps: statUps, repeatable: repeatable, id: UUID().uuidString)
+            DatabaseServices.shared.createUserTask(uid: uid, task: task) { [weak self] (result) in
+                switch result {
+                case .failure(let error):
+                    self?.showAlert(title: "Error", message: error.localizedDescription)
+                case .success:
+                    self?.showAlert(title: "Success", message: "Task Created")
+                }
             }
+            return
         }
     }
     
