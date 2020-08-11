@@ -41,8 +41,28 @@ class CreateTaskViewController: UIViewController {
         }
         titleTextField.text = tempTask.title
         descriptionTextField.text = tempTask.description
+        configureStarButtons(rating: tempTask.rating)
         
     }
+    
+    private func configureStarButtons(rating: Int) {
+        switch rating {
+        case 1:
+            oneStar.setBackgroundImage(UIImage(systemName: "star.lefthalf.fill"), for: .normal)
+        case 2:
+            oneStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+        case 3:
+            oneStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+            twoStar.setBackgroundImage(UIImage(systemName: "star.lefthalf.fill"), for: .normal)
+        case 4:
+            oneStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+            twoStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+        default:
+            return
+        }
+        
+    }
+    
     @IBAction func starButtonPressed(_ sender: UIButton) {
         switch sender.tag {
         case 0:
