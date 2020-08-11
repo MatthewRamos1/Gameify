@@ -545,16 +545,22 @@
                     </view>
                     <navigationItem key="navigationItem" title="Create Task" id="cK4-Ne-gSb"/>
                     <connections>
+                        <outlet property="charismaButton" destination="mnh-pL-RbV" id="aHC-qE-mAn"/>
+                        <outlet property="constitutionButton" destination="4hk-aT-Rbe" id="q8O-tC-8oY"/>
                         <outlet property="createTaskButton" destination="vbs-PF-ja5" id="dGc-LQ-8wG"/>
                         <outlet property="descriptionTextField" destination="nl1-bs-2oM" id="Uyq-ac-LML"/>
+                        <outlet property="dexAgiButton" destination="xAo-Bx-1pU" id="fPk-Yl-8U2"/>
                         <outlet property="fiveStar" destination="abK-k3-XPt" id="0NJ-nQ-SG2"/>
                         <outlet property="fourStar" destination="RNT-27-r7v" id="9vt-ei-OJn"/>
+                        <outlet property="intelligenceButton" destination="nzl-wi-mpl" id="ulS-PO-BDI"/>
                         <outlet property="oneStar" destination="3DN-Nu-fPz" id="ub9-TV-kAZ"/>
                         <outlet property="repeatRepSegmented" destination="NYM-ZC-AVd" id="8jn-av-f2j"/>
+                        <outlet property="strengthButton" destination="MTF-yh-gmj" id="aYo-GQ-ywg"/>
                         <outlet property="taskImageView" destination="2T8-SQ-VOS" id="fQu-ZG-Wfg"/>
                         <outlet property="threeStar" destination="gJH-3T-hYO" id="v0i-F4-1VH"/>
                         <outlet property="titleTextField" destination="V8n-Sn-SP0" id="sjx-RZ-kac"/>
                         <outlet property="twoStar" destination="waC-TI-oOG" id="RGd-HO-KBy"/>
+                        <outlet property="wisdomButton" destination="TjO-bm-NUA" id="xb1-Av-Hg1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NdP-Xl-vGr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

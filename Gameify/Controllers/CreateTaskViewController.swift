@@ -20,6 +20,12 @@ class CreateTaskViewController: UIViewController {
     @IBOutlet weak var threeStar: UIButton!
     @IBOutlet weak var fourStar: UIButton!
     @IBOutlet weak var fiveStar: UIButton!
+    @IBOutlet weak var strengthButton: UIButton!
+    @IBOutlet weak var constitutionButton: UIButton!
+    @IBOutlet weak var intelligenceButton: UIButton!
+    @IBOutlet weak var wisdomButton: UIButton!
+    @IBOutlet weak var dexAgiButton: UIButton!
+    @IBOutlet weak var charismaButton: UIButton!
     
     var rating = 0
     var repeatable = Repeatable.oneshot
@@ -29,6 +35,7 @@ class CreateTaskViewController: UIViewController {
             title = "Edit Task"
             rating = task!.rating
             repeatable = task!.repeatable
+            statUps = task!.statUps
         }
     }
     
@@ -44,6 +51,7 @@ class CreateTaskViewController: UIViewController {
         descriptionTextField.text = tempTask.description
         configureStarButtons(rating: tempTask.rating)
         configureRepeatRepSegment(repeatable: tempTask.repeatable)
+        configureStatButtons(statUps: tempTask.statUps)
         
     }
     
@@ -72,6 +80,25 @@ class CreateTaskViewController: UIViewController {
             repeatRepSegmented.selectedSegmentIndex = 1
         case .always:
             repeatRepSegmented.selectedSegmentIndex = 2
+        default:
+            return
+        }
+    }
+    
+    private func configureStatButtons(statUps: [Stat]) {
+        switch true {
+        case statUps.contains(.strength):
+            strengthButton.backgroundColor = .darkGray
+        case statUps.contains(.constitution):
+            constitutionButton.backgroundColor = .darkGray
+        case statUps.contains(.intelligence):
+            intelligenceButton.backgroundColor = .darkGray
+        case statUps.contains(.wisdom):
+            wisdomButton.backgroundColor = .darkGray
+        case statUps.contains(.dexAgi):
+            dexAgiButton.backgroundColor = .darkGray
+        case statUps.contains(.charisma):
+            charismaButton.backgroundColor = .darkGray
         default:
             return
         }
