@@ -292,11 +292,21 @@ class CreateTaskViewController: UIViewController {
     }
     
     @IBAction func createTaskPressed(_ sender: UIButton) {
-        guard let title = titleTextField.text, let description = descriptionTextField.text, let uid = Auth.auth().currentUser?.uid else {
+        guard let titleText = titleTextField.text, let description = descriptionTextField.text, let uid = Auth.auth().currentUser?.uid else {
             return
         }
+        switch true {
+        case rating == 0:
+            showAlert(title: "Missing Rating", message: "Please set a valid rating for this task.")
+        case titleText.isEmpty:
+            showAlert(title: "Missing Field", message: "Please set a valid title for this task.")
+        case statUps.isEmpty:
+            showAlert(title: "Missing Selections", message: "Please select at least one applicable stat associated with this task.")
+        default:
+            print("")
+            }
         guard let tempTask = task else {
-            let task = Task(title: title, description: description, rating: rating, statUps: statUps, repeatable: repeatable, id: UUID().uuidString)
+            let task = Task(title: titleText, description: description, rating: rating, statUps: statUps, repeatable: repeatable, id: UUID().uuidString)
             DatabaseServices.shared.createUserTask(uid: uid, task: task) { [weak self] (result) in
                 switch result {
                 case .failure(let error):
@@ -308,7 +318,7 @@ class CreateTaskViewController: UIViewController {
             return
         }
         tempTask.description = description
-        tempTask.title = title
+        tempTask.title = titleText
         tempTask.rating = rating
         tempTask.statUps = statUps
         tempTask.repeatable = repeatable
