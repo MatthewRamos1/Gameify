@@ -34,6 +34,12 @@ class TaskCell: UITableViewCell {
         taskName.text = task.title
         descriptionLabel.text = task.description
         statRep1.image = UIImage(named: task.statUps.first!.rawValue)
+        if let imageURL = task.imageURL {
+            
+        } else {
+            taskIV.image = UIImage(named: task.statUps.first!.rawValue)
+        }
+        
         switch task.repeatable {
         case .always:
             repeatableRep.image = UIImage(systemName: "repeat")
