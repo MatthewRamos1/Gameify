@@ -279,7 +279,7 @@ extension TaskViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let task = tasks[indexPath.row]
+        let task = sortedTasks[indexPath.section][indexPath.row]
         taskCompletion(task)
         let statsDict = userToDict(user: user)
         updateUser(dict: statsDict)
