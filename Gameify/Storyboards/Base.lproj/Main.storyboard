@@ -640,7 +640,7 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="repeat" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Y6s-pX-Ljk">
                                                     <rect key="frame" x="356.5" y="3.5" width="21" height="17.5"/>
                                                 </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vitality" translatesAutoresizingMaskIntoConstraints="NO" id="VRT-zg-XzE">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VRT-zg-XzE">
                                                     <rect key="frame" x="321.5" y="127" width="42.5" height="42"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="VRT-zg-XzE" secondAttribute="height" multiplier="1:1" id="qmd-N4-rBJ"/>

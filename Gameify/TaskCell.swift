@@ -43,7 +43,7 @@ class TaskCell: UITableViewCell {
         case .wisdom:
             statRep1.image = UIImage(named: "wisdom")
         case .dexAgi:
-            statRep1.image = UIImage(named: "dexAgi")
+            statRep1.image = UIImage(named: "dex")
         default:
             statRep1.image = UIImage(named: "charisma")
         }

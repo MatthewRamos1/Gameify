@@ -25,9 +25,10 @@ enum Stat: String {
 }
 
 class Task {
-
+    
     var title: String
     var description: String
+    var imageURL: String?
     var rating: Int
     var statUps: [Stat]
     var repeatable: Repeatable
