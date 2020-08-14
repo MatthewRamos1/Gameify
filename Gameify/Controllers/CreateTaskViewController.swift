@@ -307,13 +307,13 @@ class CreateTaskViewController: UIViewController {
             }
             return
         }
-        task!.description = description
-        task!.title = title
-        task!.rating = rating
-        task!.statUps = statUps
-        task!.repeatable = repeatable
-        let dict = taskToDict(task: task!)
-        updateTask(task: task!, dict: dict)
+        tempTask.description = description
+        tempTask.title = title
+        tempTask.rating = rating
+        tempTask.statUps = statUps
+        tempTask.repeatable = repeatable
+        let dict = taskToDict(task: tempTask)
+        updateTask(task: tempTask, dict: dict)
         
     }
     
