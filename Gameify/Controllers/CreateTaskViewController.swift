@@ -114,6 +114,22 @@ class CreateTaskViewController: UIViewController {
         }
     }
     
+    private func updateTask(task: Task, dict: [String:Any]) {
+        DatabaseServices.shared.updateUserTask(task: task, dict: dict) { [weak self] (result) in
+            switch result {
+            case .failure(let error):
+                self?.showAlert(title: "Error", message: error.localizedDescription)
+            case .success:
+                self?.showAlert(title: "Success", message: "Changes Saved")
+            }
+        }
+    }
+    
+    private func taskToDict(task: Task) -> [String:Any] {
+        let dict = ["title": task.title, "description": task.description, "rating": task.rating, "statUps": task.statUps.first!.rawValue, "repeatable": task.repeatable.rawValue, "id": task.id] as! [String:Any]
+        return dict
+    }
+    
     @IBAction func starButtonPressed(_ sender: UIButton) {
         switch sender.tag {
         case 0:
@@ -291,6 +307,9 @@ class CreateTaskViewController: UIViewController {
             }
             return
         }
+        let dict = taskToDict(task: task)
+        updateTask(task: task, dict: dict)
+        
     }
     
 }
