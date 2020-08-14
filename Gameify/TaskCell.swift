@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 protocol editTaskButtonDelegate: AnyObject {
        func buttonWasPressed(_ cell: TaskCell, _ task: Task)
@@ -19,7 +20,6 @@ class TaskCell: UITableViewCell {
     @IBOutlet weak var taskIV: UIImageView!
     @IBOutlet weak var repeatableRep: UIImageView!
     @IBOutlet weak var statRep1: UIImageView!
-    @IBOutlet weak var statRep2: UIImageView!
     @IBOutlet weak var oneStar: UIImageView!
     @IBOutlet weak var twoStar: UIImageView!
     @IBOutlet weak var threeStar: UIImageView!
@@ -35,7 +35,8 @@ class TaskCell: UITableViewCell {
         descriptionLabel.text = task.description
         statRep1.image = UIImage(named: task.statUps.first!.rawValue)
         if let imageURL = task.imageURL {
-            
+            let url = URL(string: imageURL)
+            taskIV.kf.setImage(with: url)
         } else {
             taskIV.image = UIImage(named: task.statUps.first!.rawValue)
         }
