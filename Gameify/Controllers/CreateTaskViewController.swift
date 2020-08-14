@@ -309,7 +309,7 @@ class CreateTaskViewController: UIViewController {
             print("")
             }
         guard let tempTask = task else {
-            let task = Task(title: titleText, description: description, rating: rating, statUps: statUps, repeatable: repeatable, id: UUID().uuidString)
+            let task = Task(title: titleText, description: description, imageURL: nil, rating: rating, statUps: statUps, repeatable: repeatable, id: UUID().uuidString)
             DatabaseServices.shared.createUserTask(uid: uid, task: task) { [weak self] (result) in
                 switch result {
                 case .failure(let error):

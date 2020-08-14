@@ -34,9 +34,10 @@ class Task {
     var repeatable: Repeatable
     var id: String
     
-    init(title: String, description: String, rating: Int, statUps: [Stat], repeatable: Repeatable, id: String) {
+    init(title: String, description: String, imageURL: String?, rating: Int, statUps: [Stat], repeatable: Repeatable, id: String) {
         self.title = title
         self.description = description
+        self.imageURL = imageURL
         self.rating = rating
         self.statUps = statUps
         self.repeatable = repeatable
@@ -46,6 +47,7 @@ class Task {
     init(_ dictionary: [String: Any]) {
         self.title = dictionary["title"] as? String ?? "No Title"
         self.description = dictionary["description"] as? String ?? "No Description"
+        self.imageURL = dictionary["imageURL"] as? String ?? nil
         self.rating = dictionary["rating"] as? Int ?? -1
         let rawValString = dictionary["statUps"] as! String
         let stat = Stat(rawValue: rawValString)
@@ -56,39 +58,4 @@ class Task {
         self.repeatable = Repeatable(rawValue: repeatableString)!
         self.id = dictionary["id"] as? String ?? ""
     }
-    
-    private func statUpArrayToEnum(_ array: [String]) -> [Stat] {
-        var tempArray = [Stat]()
-        for stat in array {
-            switch stat {
-            case Stat.strength.rawValue:
-                tempArray.append(.strength)
-            case Stat.constitution.rawValue:
-                tempArray.append(.constitution)
-            case Stat.intelligence.rawValue:
-                tempArray.append(.intelligence)
-            case Stat.wisdom.rawValue:
-                tempArray.append(.wisdom)
-            case Stat.dexAgi.rawValue:
-                tempArray.append(.dexAgi)
-            default:
-                tempArray.append(.charisma)
-                
-            }
-        }
-        return tempArray
-    }
-    
-    private func repeatableStringToEnum(_ string: String) -> Repeatable {
-        switch string {
-        case Repeatable.daily.rawValue:
-            return .daily
-        case Repeatable.always.rawValue:
-            return .always
-        case Repeatable.oneshot.rawValue:
-            return .oneshot
-        default:
-            return .error
-            }
-        }
     }
