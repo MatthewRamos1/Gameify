@@ -295,7 +295,7 @@ class CreateTaskViewController: UIViewController {
         guard let title = titleTextField.text, let description = descriptionTextField.text, let uid = Auth.auth().currentUser?.uid else {
             return
         }
-        guard let task = task else {
+        guard let tempTask = task else {
             let task = Task(title: title, description: description, rating: rating, statUps: statUps, repeatable: repeatable, id: UUID().uuidString)
             DatabaseServices.shared.createUserTask(uid: uid, task: task) { [weak self] (result) in
                 switch result {
@@ -307,8 +307,13 @@ class CreateTaskViewController: UIViewController {
             }
             return
         }
-        let dict = taskToDict(task: task)
-        updateTask(task: task, dict: dict)
+        task!.description = description
+        task!.title = title
+        task!.rating = rating
+        task!.statUps = statUps
+        task!.repeatable = repeatable
+        let dict = taskToDict(task: task!)
+        updateTask(task: task!, dict: dict)
         
     }
     
