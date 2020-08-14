@@ -298,10 +298,13 @@ class CreateTaskViewController: UIViewController {
         switch true {
         case rating == 0:
             showAlert(title: "Missing Rating", message: "Please set a valid rating for this task.")
+            return
         case titleText.isEmpty:
             showAlert(title: "Missing Field", message: "Please set a valid title for this task.")
+            return
         case statUps.isEmpty:
             showAlert(title: "Missing Selections", message: "Please select at least one applicable stat associated with this task.")
+            return
         default:
             print("")
             }

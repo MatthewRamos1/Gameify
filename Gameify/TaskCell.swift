@@ -33,6 +33,20 @@ class TaskCell: UITableViewCell {
         cellTask = task
         taskName.text = task.title
         descriptionLabel.text = task.description
+        switch task.statUps.first {
+        case .strength:
+            statRep1.image = UIImage(named: "strength")
+        case .constitution:
+            statRep1.image = UIImage(named: "constitution")
+        case .intelligence:
+            statRep1.image = UIImage(named: "intelligence")
+        case .wisdom:
+            statRep1.image = UIImage(named: "wisdom")
+        case .dexAgi:
+            statRep1.image = UIImage(named: "dexAgi")
+        default:
+            statRep1.image = UIImage(named: "charisma")
+        }
         switch task.repeatable {
         case .always:
             repeatableRep.image = UIImage(systemName: "repeat")
