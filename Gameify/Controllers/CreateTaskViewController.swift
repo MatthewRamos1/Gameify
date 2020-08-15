@@ -32,6 +32,9 @@ class CreateTaskViewController: UIViewController {
         case edit
     }
     
+    private var longPressGesture = UILongPressGestureRecognizer()
+    let imagePickerController = UIImagePickerController()
+    var selectedImage: UIImage?
     var rating = 0
     var repeatable = Repeatable.oneshot
     var statUps = [Stat]()
@@ -59,6 +62,8 @@ class CreateTaskViewController: UIViewController {
         configureStarButtons(rating: tempTask.rating)
         configureRepeatRepSegment(repeatable: tempTask.repeatable)
         configureStatButtons(statUps: tempTask.statUps)
+        longPressGesture.addTarget(self, action: #selector(longPressAction(gesture:)))
+        taskImageView.addGestureRecognizer(longPressGesture)
         if currentState == .edit {
             createTaskButton.setTitle("Save Edits", for: .normal)
         }
@@ -158,6 +163,22 @@ class CreateTaskViewController: UIViewController {
     private func taskToDict(task: Task) -> [String:Any] {
         let dict = ["title": task.title, "description": task.description, "rating": task.rating, "statUps": task.statUps.first!.rawValue, "repeatable": task.repeatable.rawValue, "id": task.id] as! [String:Any]
         return dict
+    }
+    
+    @objc
+    private func longPressAction(gesture: UILongPressGestureRecognizer) {
+        let actionController = UIAlertController(title: "Q", message: "Q", preferredStyle: .actionSheet)
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let camera = UIAlertAction(title: "Camera", style: .default)
+            actionController.addAction(camera)
+        }
+        let gallery = UIAlertAction(title: "Gallery", style: .default)
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        actionController.addAction(gallery)
+        actionController.addAction(cancel)
+        present(actionController, animated: true)
+    
+
     }
     
     @IBAction func starButtonPressed(_ sender: UIButton) {
@@ -365,6 +386,18 @@ class CreateTaskViewController: UIViewController {
 extension CreateTaskViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+    }
+}
+
+extension CreateTaskViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
+            showAlert(title: "Error", message: "Image was not found")
+            return
+        }
+        selectedImage = image
+        dismiss(animated: true)
     }
 }
 
