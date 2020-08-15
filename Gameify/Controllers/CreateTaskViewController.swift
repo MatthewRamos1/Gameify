@@ -77,6 +77,36 @@ class CreateTaskViewController: UIViewController {
         case 4:
             oneStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
             twoStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+        case 5:
+            oneStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+            twoStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+            threeStar.setBackgroundImage(UIImage(systemName: "star.lefthalf.fill"), for: .normal)
+        case 6:
+            oneStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+            twoStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+            threeStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+        case 7:
+            oneStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+            twoStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+            threeStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+            fourStar.setBackgroundImage(UIImage(systemName: "star.lefthalf.fill"), for: .normal)
+        case 8:
+            oneStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+            twoStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+            threeStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+            fourStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+        case 9:
+            oneStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+            twoStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+            threeStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+            fourStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+            fiveStar.setBackgroundImage(UIImage(systemName: "star.lefthalf.fill"), for: .normal)
+        case 10:
+            oneStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+            twoStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+            threeStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+            fourStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
+            fiveStar.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
         default:
             return
         }
