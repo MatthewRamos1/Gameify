@@ -15,6 +15,7 @@ class CreateTaskViewController: UIViewController {
     @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var repeatRepSegmented: UISegmentedControl!
     @IBOutlet weak var createTaskButton: UIButton!
+    @IBOutlet weak var deleteTaskButton: UIButton!
     @IBOutlet weak var oneStar: UIButton!
     @IBOutlet weak var twoStar: UIButton!
     @IBOutlet weak var threeStar: UIButton!
@@ -32,7 +33,7 @@ class CreateTaskViewController: UIViewController {
         case edit
     }
     
-    private var longPressGesture = UILongPressGestureRecognizer()
+    private var tapGesture = UITapGestureRecognizer()
     let imagePickerController = UIImagePickerController()
     var selectedImage: UIImage?
     var rating = 0
@@ -62,8 +63,8 @@ class CreateTaskViewController: UIViewController {
         configureStarButtons(rating: tempTask.rating)
         configureRepeatRepSegment(repeatable: tempTask.repeatable)
         configureStatButtons(statUps: tempTask.statUps)
-        longPressGesture.addTarget(self, action: #selector(longPressAction(gesture:)))
-        taskImageView.addGestureRecognizer(longPressGesture)
+        taskImageView.addGestureRecognizer(tapGesture)
+        tapGesture.addTarget(self, action: #selector(tapGestureAction(gesture:)))
         if currentState == .edit {
             createTaskButton.setTitle("Save Edits", for: .normal)
         }
@@ -166,7 +167,7 @@ class CreateTaskViewController: UIViewController {
     }
     
     @objc
-    private func longPressAction(gesture: UILongPressGestureRecognizer) {
+    private func tapGestureAction(gesture: UITapGestureRecognizer) {
         let actionController = UIAlertController(title: "Q", message: "Q", preferredStyle: .actionSheet)
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             let camera = UIAlertAction(title: "Camera", style: .default)

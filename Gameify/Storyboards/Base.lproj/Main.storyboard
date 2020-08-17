@@ -385,11 +385,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera.viewfinder" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="2T8-SQ-VOS">
-                                <rect key="frame" x="20" y="89" width="374" height="284.5"/>
+                            <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera.viewfinder" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="2T8-SQ-VOS">
+                                <rect key="frame" x="20" y="89" width="374" height="266.5"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter title for task..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V8n-Sn-SP0">
-                                <rect key="frame" x="20" y="415" width="374" height="34"/>
+                                <rect key="frame" x="20" y="435" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -405,14 +405,14 @@
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbs-PF-ja5">
-                                <rect key="frame" x="120" y="383" width="174" height="30"/>
+                                <rect key="frame" x="120" y="365" width="174" height="30"/>
                                 <state key="normal" title="Create"/>
                                 <connections>
                                     <action selector="createTaskPressed:" destination="u1A-79-eeA" eventType="touchUpInside" id="M9k-t5-M8x"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0hW-8P-cDH">
-                                <rect key="frame" x="40" y="554.5" width="334" height="44"/>
+                                <rect key="frame" x="40" y="574.5" width="334" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3DN-Nu-fPz">
                                         <rect key="frame" x="0.0" y="0.0" width="67" height="44"/>
@@ -504,10 +504,19 @@
                                 </subviews>
                             </stackView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter task description..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nl1-bs-2oM">
-                                <rect key="frame" x="20" y="457" width="374" height="89.5"/>
+                                <rect key="frame" x="20" y="477" width="374" height="89.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MR8-P0-bQw">
+                                <rect key="frame" x="120" y="399" width="174" height="30"/>
+                                <state key="normal" title="Delete">
+                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="createTaskPressed:" destination="u1A-79-eeA" eventType="touchUpInside" id="esk-rD-Aug"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -518,10 +527,12 @@
                             <constraint firstItem="7Hp-nV-OnS" firstAttribute="trailing" secondItem="NYM-ZC-AVd" secondAttribute="trailing" constant="20" id="FI0-s7-HLZ"/>
                             <constraint firstItem="Gkv-vr-j6j" firstAttribute="leading" secondItem="7Hp-nV-OnS" secondAttribute="leading" constant="20" id="FpL-3h-yoc"/>
                             <constraint firstItem="5mh-nc-xyc" firstAttribute="leading" secondItem="7Hp-nV-OnS" secondAttribute="leading" constant="20" id="HDD-0R-4dG"/>
+                            <constraint firstItem="NYM-ZC-AVd" firstAttribute="top" secondItem="0hW-8P-cDH" secondAttribute="bottom" constant="8" id="Hte-Mu-MA5"/>
                             <constraint firstItem="7Hp-nV-OnS" firstAttribute="trailing" secondItem="2T8-SQ-VOS" secondAttribute="trailing" constant="20" id="Mub-F4-LvM"/>
                             <constraint firstItem="0hW-8P-cDH" firstAttribute="height" secondItem="tk5-aj-t9j" secondAttribute="height" multiplier="0.0491071" id="NWq-lx-NB8"/>
                             <constraint firstItem="7Hp-nV-OnS" firstAttribute="trailing" secondItem="5mh-nc-xyc" secondAttribute="trailing" constant="20" id="Rm9-io-Fb4"/>
                             <constraint firstItem="7Hp-nV-OnS" firstAttribute="trailing" secondItem="V8n-Sn-SP0" secondAttribute="trailing" constant="20" id="VHN-Ks-Bai"/>
+                            <constraint firstItem="MR8-P0-bQw" firstAttribute="leading" secondItem="7Hp-nV-OnS" secondAttribute="leading" constant="120" id="W7c-tE-88S"/>
                             <constraint firstItem="0hW-8P-cDH" firstAttribute="leading" secondItem="7Hp-nV-OnS" secondAttribute="leading" constant="40" id="ZkI-2I-vTg"/>
                             <constraint firstItem="7Hp-nV-OnS" firstAttribute="trailing" secondItem="Gkv-vr-j6j" secondAttribute="trailing" constant="20" id="aWb-9y-G68"/>
                             <constraint firstItem="nl1-bs-2oM" firstAttribute="top" secondItem="V8n-Sn-SP0" secondAttribute="bottom" constant="8" id="bV4-6R-UYh"/>
@@ -531,14 +542,15 @@
                             <constraint firstItem="7Hp-nV-OnS" firstAttribute="trailing" secondItem="0hW-8P-cDH" secondAttribute="trailing" constant="40" id="eNU-us-ypv"/>
                             <constraint firstItem="2T8-SQ-VOS" firstAttribute="top" secondItem="7Hp-nV-OnS" secondAttribute="top" id="enn-pT-IYm"/>
                             <constraint firstItem="7Hp-nV-OnS" firstAttribute="trailing" secondItem="vbs-PF-ja5" secondAttribute="trailing" constant="120" id="eo6-Bm-1Ni"/>
+                            <constraint firstItem="7Hp-nV-OnS" firstAttribute="trailing" secondItem="MR8-P0-bQw" secondAttribute="trailing" constant="120" id="fse-G6-y8y"/>
+                            <constraint firstItem="0hW-8P-cDH" firstAttribute="top" secondItem="nl1-bs-2oM" secondAttribute="bottom" constant="8" id="geF-gB-wgK"/>
                             <constraint firstItem="vbs-PF-ja5" firstAttribute="top" secondItem="2T8-SQ-VOS" secondAttribute="bottom" constant="8" id="hFZ-g1-4ro"/>
                             <constraint firstItem="nl1-bs-2oM" firstAttribute="leading" secondItem="7Hp-nV-OnS" secondAttribute="leading" constant="20" id="hmP-OE-ceG"/>
                             <constraint firstItem="V8n-Sn-SP0" firstAttribute="leading" secondItem="7Hp-nV-OnS" secondAttribute="leading" constant="20" id="i8h-Ef-grx"/>
                             <constraint firstItem="NYM-ZC-AVd" firstAttribute="leading" secondItem="7Hp-nV-OnS" secondAttribute="leading" constant="20" id="ifl-yZ-OeM"/>
                             <constraint firstItem="2T8-SQ-VOS" firstAttribute="leading" secondItem="7Hp-nV-OnS" secondAttribute="leading" constant="20" id="izr-Kh-7V3"/>
-                            <constraint firstItem="0hW-8P-cDH" firstAttribute="top" secondItem="nl1-bs-2oM" secondAttribute="bottom" constant="8" id="kbl-9L-zRg"/>
-                            <constraint firstItem="2T8-SQ-VOS" firstAttribute="height" secondItem="tk5-aj-t9j" secondAttribute="height" multiplier="0.320312" id="mzU-gr-f8x"/>
-                            <constraint firstItem="V8n-Sn-SP0" firstAttribute="top" secondItem="2T8-SQ-VOS" secondAttribute="bottom" constant="40" id="xSp-R8-1KG"/>
+                            <constraint firstItem="2T8-SQ-VOS" firstAttribute="height" secondItem="tk5-aj-t9j" secondAttribute="height" multiplier="0.3" id="mzU-gr-f8x"/>
+                            <constraint firstItem="MR8-P0-bQw" firstAttribute="top" secondItem="vbs-PF-ja5" secondAttribute="bottom" constant="4" id="w8H-Y4-0Bh"/>
                             <constraint firstItem="Gkv-vr-j6j" firstAttribute="bottom" secondItem="7Hp-nV-OnS" secondAttribute="bottom" id="zcl-aM-XSI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7Hp-nV-OnS"/>
@@ -548,6 +560,7 @@
                         <outlet property="charismaButton" destination="mnh-pL-RbV" id="aHC-qE-mAn"/>
                         <outlet property="constitutionButton" destination="4hk-aT-Rbe" id="q8O-tC-8oY"/>
                         <outlet property="createTaskButton" destination="vbs-PF-ja5" id="dGc-LQ-8wG"/>
+                        <outlet property="deleteTaskButton" destination="MR8-P0-bQw" id="IUS-4j-OUW"/>
                         <outlet property="descriptionTextField" destination="nl1-bs-2oM" id="Uyq-ac-LML"/>
                         <outlet property="dexAgiButton" destination="xAo-Bx-1pU" id="fPk-Yl-8U2"/>
                         <outlet property="fiveStar" destination="abK-k3-XPt" id="0NJ-nQ-SG2"/>
