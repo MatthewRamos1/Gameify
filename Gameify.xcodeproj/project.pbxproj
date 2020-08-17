@@ -28,6 +28,9 @@
 		0C7721DC24EB2EFF0097059A /* EnemyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7721DB24EB2EFF0097059A /* EnemyData.swift */; };
 		0C7721DE24EB2FA60097059A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7721DD24EB2FA60097059A /* Item.swift */; };
 		0C7721E024EB46E80097059A /* DungeonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7721DF24EB46E70097059A /* DungeonData.swift */; };
+		0C7721E224EB499A0097059A /* DungeonListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7721E124EB499A0097059A /* DungeonListViewController.swift */; };
+		0C7721E424EB49B30097059A /* DungeonProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7721E324EB49B30097059A /* DungeonProgressViewController.swift */; };
+		0C7721E624EB49C60097059A /* CombatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7721E524EB49C60097059A /* CombatViewController.swift */; };
 		15324189A3D3436A5B8490DE /* Pods_Gameify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF8EDD8691BB4B645A649777 /* Pods_Gameify.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +58,9 @@
 		0C7721DB24EB2EFF0097059A /* EnemyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyData.swift; sourceTree = "<group>"; };
 		0C7721DD24EB2FA60097059A /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		0C7721DF24EB46E70097059A /* DungeonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonData.swift; sourceTree = "<group>"; };
+		0C7721E124EB499A0097059A /* DungeonListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonListViewController.swift; sourceTree = "<group>"; };
+		0C7721E324EB49B30097059A /* DungeonProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonProgressViewController.swift; sourceTree = "<group>"; };
+		0C7721E524EB49C60097059A /* CombatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatViewController.swift; sourceTree = "<group>"; };
 		462B6D58934BE1335ABDA065 /* Pods-Gameify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gameify.debug.xcconfig"; path = "Target Support Files/Pods-Gameify/Pods-Gameify.debug.xcconfig"; sourceTree = "<group>"; };
 		C6C402FB890FB4AF6E19A8E8 /* Pods-Gameify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gameify.release.xcconfig"; path = "Target Support Files/Pods-Gameify/Pods-Gameify.release.xcconfig"; sourceTree = "<group>"; };
 		EF8EDD8691BB4B645A649777 /* Pods_Gameify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gameify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +132,9 @@
 				0C4BC14224156A9D00F00300 /* ViewController.swift */,
 				0C5C53DC24CE35E7004867F6 /* TaskViewController.swift */,
 				0C5851D624D5271900008CE5 /* CreateTaskViewController.swift */,
+				0C7721E124EB499A0097059A /* DungeonListViewController.swift */,
+				0C7721E324EB49B30097059A /* DungeonProgressViewController.swift */,
+				0C7721E524EB49C60097059A /* CombatViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -285,6 +294,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C7721E224EB499A0097059A /* DungeonListViewController.swift in Sources */,
+				0C7721E624EB49C60097059A /* CombatViewController.swift in Sources */,
 				0C7721DC24EB2EFF0097059A /* EnemyData.swift in Sources */,
 				0C5C53E824D29466004867F6 /* LoginViewController.swift in Sources */,
 				0C4BC14324156A9D00F00300 /* ViewController.swift in Sources */,
@@ -298,6 +309,7 @@
 				0C4BC14124156A9D00F00300 /* SceneDelegate.swift in Sources */,
 				0C7721DE24EB2FA60097059A /* Item.swift in Sources */,
 				0C5C53E024CE3C56004867F6 /* Task.swift in Sources */,
+				0C7721E424EB49B30097059A /* DungeonProgressViewController.swift in Sources */,
 				0C5C53EA24D3C4A9004867F6 /* AuthenticationSession.swift in Sources */,
 				0C5C53DD24CE35E7004867F6 /* TaskViewController.swift in Sources */,
 				0C5851D724D5271900008CE5 /* CreateTaskViewController.swift in Sources */,
