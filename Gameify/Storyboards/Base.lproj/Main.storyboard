@@ -397,9 +397,15 @@
                                     <constraint firstAttribute="width" secondItem="YhM-Pr-Z8e" secondAttribute="height" multiplier="1:1" id="yWD-IU-KGG"/>
                                 </constraints>
                             </imageView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hMl-FJ-bTS">
+                                <rect key="frame" x="165.5" y="417.5" width="83" height="2"/>
+                                <color key="progressTintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="trackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="hMl-FJ-bTS" firstAttribute="width" secondItem="gmX-Dv-UPs" secondAttribute="width" multiplier="0.2" id="BiY-V4-iI2"/>
                             <constraint firstItem="gmX-Dv-UPs" firstAttribute="top" secondItem="zmj-G5-287" secondAttribute="top" id="F3O-pp-jZj"/>
                             <constraint firstItem="YhM-Pr-Z8e" firstAttribute="centerX" secondItem="gmX-Dv-UPs" secondAttribute="centerX" id="GKO-FE-yoi"/>
                             <constraint firstItem="SHX-nH-xNW" firstAttribute="height" secondItem="gmX-Dv-UPs" secondAttribute="height" multiplier="0.15" id="I16-BF-wKE"/>
@@ -409,7 +415,9 @@
                             <constraint firstItem="YhM-Pr-Z8e" firstAttribute="height" secondItem="gmX-Dv-UPs" secondAttribute="height" multiplier="0.3" id="Xnb-qg-3jZ"/>
                             <constraint firstItem="SHX-nH-xNW" firstAttribute="top" secondItem="YhM-Pr-Z8e" secondAttribute="bottom" constant="22" id="ayH-8O-gCb"/>
                             <constraint firstItem="gmX-Dv-UPs" firstAttribute="leading" secondItem="zmj-G5-287" secondAttribute="leading" id="czf-OF-5sq"/>
+                            <constraint firstItem="hMl-FJ-bTS" firstAttribute="centerX" secondItem="YhM-Pr-Z8e" secondAttribute="centerX" id="eT7-c1-l5d"/>
                             <constraint firstItem="gmX-Dv-UPs" firstAttribute="trailing" secondItem="zmj-G5-287" secondAttribute="trailing" id="mFq-yY-YN7"/>
+                            <constraint firstItem="YhM-Pr-Z8e" firstAttribute="top" secondItem="hMl-FJ-bTS" secondAttribute="bottom" constant="8" id="ph9-rN-Ij3"/>
                             <constraint firstItem="SHX-nH-xNW" firstAttribute="bottom" secondItem="zmj-G5-287" secondAttribute="bottom" id="ptr-Xs-7IN"/>
                             <constraint firstItem="SHX-nH-xNW" firstAttribute="leading" secondItem="zmj-G5-287" secondAttribute="leading" id="wSj-DT-zPA"/>
                         </constraints>

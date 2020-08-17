@@ -27,6 +27,7 @@
 		0C5C53EC24D3C691004867F6 /* UIViewController + Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5C53EB24D3C691004867F6 /* UIViewController + Alerts.swift */; };
 		0C7721DC24EB2EFF0097059A /* EnemyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7721DB24EB2EFF0097059A /* EnemyData.swift */; };
 		0C7721DE24EB2FA60097059A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7721DD24EB2FA60097059A /* Item.swift */; };
+		0C7721E024EB46E80097059A /* DungeonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7721DF24EB46E70097059A /* DungeonData.swift */; };
 		15324189A3D3436A5B8490DE /* Pods_Gameify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF8EDD8691BB4B645A649777 /* Pods_Gameify.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		0C5C53EB24D3C691004867F6 /* UIViewController + Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Alerts.swift"; sourceTree = "<group>"; };
 		0C7721DB24EB2EFF0097059A /* EnemyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyData.swift; sourceTree = "<group>"; };
 		0C7721DD24EB2FA60097059A /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		0C7721DF24EB46E70097059A /* DungeonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonData.swift; sourceTree = "<group>"; };
 		462B6D58934BE1335ABDA065 /* Pods-Gameify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gameify.debug.xcconfig"; path = "Target Support Files/Pods-Gameify/Pods-Gameify.debug.xcconfig"; sourceTree = "<group>"; };
 		C6C402FB890FB4AF6E19A8E8 /* Pods-Gameify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gameify.release.xcconfig"; path = "Target Support Files/Pods-Gameify/Pods-Gameify.release.xcconfig"; sourceTree = "<group>"; };
 		EF8EDD8691BB4B645A649777 /* Pods_Gameify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gameify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +137,7 @@
 				0C7721DD24EB2FA60097059A /* Item.swift */,
 				0C4BC1542415708500F00300 /* UserData.swift */,
 				0C7721DB24EB2EFF0097059A /* EnemyData.swift */,
+				0C7721DF24EB46E70097059A /* DungeonData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				0C4BC13F24156A9D00F00300 /* AppDelegate.swift in Sources */,
 				0C5851DE24D9FB5900008CE5 /* UIProgressView + Extensions.swift in Sources */,
 				0C5C53D924C579FE004867F6 /* DatabaseServices.swift in Sources */,
+				0C7721E024EB46E80097059A /* DungeonData.swift in Sources */,
 				0C5C53EC24D3C691004867F6 /* UIViewController + Alerts.swift in Sources */,
 				0C4BC1552415708500F00300 /* UserData.swift in Sources */,
 				0C5C53E324CE61AF004867F6 /* TaskCell.swift in Sources */,

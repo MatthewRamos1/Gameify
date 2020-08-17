@@ -9,6 +9,7 @@
 import Foundation
 
 struct Enemy {
+    var name: String
     var level: Int
     var strength: Int
     var constitution: Int
@@ -17,5 +18,5 @@ struct Enemy {
     var dexAgi: Int
     var charisma: Int
     var goldDrop: Int
-    var itemDrops: [Item]
+    var itemDrops: [Item]?
 }
