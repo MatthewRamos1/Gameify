@@ -25,6 +25,8 @@
 		0C5C53E824D29466004867F6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5C53E724D29466004867F6 /* LoginViewController.swift */; };
 		0C5C53EA24D3C4A9004867F6 /* AuthenticationSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5C53E924D3C4A9004867F6 /* AuthenticationSession.swift */; };
 		0C5C53EC24D3C691004867F6 /* UIViewController + Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5C53EB24D3C691004867F6 /* UIViewController + Alerts.swift */; };
+		0C7721DC24EB2EFF0097059A /* EnemyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7721DB24EB2EFF0097059A /* EnemyData.swift */; };
+		0C7721DE24EB2FA60097059A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7721DD24EB2FA60097059A /* Item.swift */; };
 		15324189A3D3436A5B8490DE /* Pods_Gameify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF8EDD8691BB4B645A649777 /* Pods_Gameify.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,8 @@
 		0C5C53E724D29466004867F6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0C5C53E924D3C4A9004867F6 /* AuthenticationSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationSession.swift; sourceTree = "<group>"; };
 		0C5C53EB24D3C691004867F6 /* UIViewController + Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Alerts.swift"; sourceTree = "<group>"; };
+		0C7721DB24EB2EFF0097059A /* EnemyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyData.swift; sourceTree = "<group>"; };
+		0C7721DD24EB2FA60097059A /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		462B6D58934BE1335ABDA065 /* Pods-Gameify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gameify.debug.xcconfig"; path = "Target Support Files/Pods-Gameify/Pods-Gameify.debug.xcconfig"; sourceTree = "<group>"; };
 		C6C402FB890FB4AF6E19A8E8 /* Pods-Gameify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gameify.release.xcconfig"; path = "Target Support Files/Pods-Gameify/Pods-Gameify.release.xcconfig"; sourceTree = "<group>"; };
 		EF8EDD8691BB4B645A649777 /* Pods_Gameify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gameify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,7 +132,9 @@
 			isa = PBXGroup;
 			children = (
 				0C5C53DF24CE3C56004867F6 /* Task.swift */,
+				0C7721DD24EB2FA60097059A /* Item.swift */,
 				0C4BC1542415708500F00300 /* UserData.swift */,
+				0C7721DB24EB2EFF0097059A /* EnemyData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -276,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C7721DC24EB2EFF0097059A /* EnemyData.swift in Sources */,
 				0C5C53E824D29466004867F6 /* LoginViewController.swift in Sources */,
 				0C4BC14324156A9D00F00300 /* ViewController.swift in Sources */,
 				0C4BC13F24156A9D00F00300 /* AppDelegate.swift in Sources */,
@@ -285,6 +292,7 @@
 				0C4BC1552415708500F00300 /* UserData.swift in Sources */,
 				0C5C53E324CE61AF004867F6 /* TaskCell.swift in Sources */,
 				0C4BC14124156A9D00F00300 /* SceneDelegate.swift in Sources */,
+				0C7721DE24EB2FA60097059A /* Item.swift in Sources */,
 				0C5C53E024CE3C56004867F6 /* Task.swift in Sources */,
 				0C5C53EA24D3C4A9004867F6 /* AuthenticationSession.swift in Sources */,
 				0C5C53DD24CE35E7004867F6 /* TaskViewController.swift in Sources */,
