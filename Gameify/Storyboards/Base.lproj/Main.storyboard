@@ -515,6 +515,7 @@
                                 </state>
                                 <connections>
                                     <action selector="createTaskPressed:" destination="u1A-79-eeA" eventType="touchUpInside" id="esk-rD-Aug"/>
+                                    <action selector="deleteTaskPressed:" destination="u1A-79-eeA" eventType="touchUpInside" id="Uby-IB-sPn"/>
                                 </connections>
                             </button>
                         </subviews>

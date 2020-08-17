@@ -58,6 +58,7 @@ class CreateTaskViewController: UIViewController {
         guard let tempTask = task else {
             return
         }
+        deleteTaskButton.isHidden = true
         titleTextField.text = tempTask.title
         descriptionTextField.text = tempTask.description
         configureStarButtons(rating: tempTask.rating)
@@ -67,6 +68,7 @@ class CreateTaskViewController: UIViewController {
         tapGesture.addTarget(self, action: #selector(tapGestureAction(gesture:)))
         if currentState == .edit {
             createTaskButton.setTitle("Save Edits", for: .normal)
+            deleteTaskButton.isHidden = false
         }
         
     }
@@ -380,6 +382,21 @@ class CreateTaskViewController: UIViewController {
         let dict = taskToDict(task: tempTask)
         updateTask(task: tempTask, dict: dict)
         
+    }
+    
+    @IBAction func deleteTaskPressed(_ sender: UIButton) {
+        DatabaseServices.shared.deleteUserTask(task: task!) { [weak self] (result) in
+            switch result {
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self?.showAlert(title: "Error", message: error.localizedDescription)
+                }
+            case .success:
+                DispatchQueue.main.async {
+                    self?.dismiss(animated: true)
+                }
+            }
+        }
     }
     
 }
