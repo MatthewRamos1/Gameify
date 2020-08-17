@@ -287,6 +287,24 @@ extension TaskViewController: UITableViewDelegate {
             deleteTask(task: task)
         }
     }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let task = sortedTasks[indexPath.section][indexPath.row]
+        if editingStyle == .delete {
+            DatabaseServices.shared.deleteUserTask(task: task) { [weak self] (result) in
+                switch result {
+                case .failure(let error):
+                    DispatchQueue.main.async {
+                        self?.showAlert(title: "Error", message: error.localizedDescription)
+                    }
+                case .success:
+                    DispatchQueue.main.async {
+                        self?.showAlert(title: "Success", message: "Task Deleted")
+                    }
+                }
+            }
+            
+        }
+    }
 }
 
 extension TaskViewController: editTaskButtonDelegate {
