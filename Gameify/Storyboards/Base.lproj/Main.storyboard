@@ -450,6 +450,10 @@
                         <subviews>
                             <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera.viewfinder" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="2T8-SQ-VOS">
                                 <rect key="frame" x="20" y="89" width="374" height="266.5"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="adK-UG-275" appends="YES" id="3Te-Hf-Yrl"/>
+                                </connections>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter title for task..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V8n-Sn-SP0">
                                 <rect key="frame" x="20" y="435" width="374" height="34"/>
@@ -640,6 +644,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NdP-Xl-vGr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="adK-UG-275">
+                    <connections>
+                        <action selector="longPressAction:" destination="u1A-79-eeA" id="eeQ-uZ-RDv"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3747.826086956522" y="-629.46428571428567"/>
         </scene>

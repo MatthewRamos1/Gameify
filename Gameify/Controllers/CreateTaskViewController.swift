@@ -33,7 +33,6 @@ class CreateTaskViewController: UIViewController {
         case edit
     }
     
-    private var tapGesture = UITapGestureRecognizer()
     let imagePickerController = UIImagePickerController()
     var selectedImage: UIImage?
     var rating = 0
@@ -64,8 +63,6 @@ class CreateTaskViewController: UIViewController {
         configureStarButtons(rating: tempTask.rating)
         configureRepeatRepSegment(repeatable: tempTask.repeatable)
         configureStatButtons(statUps: tempTask.statUps)
-        taskImageView.addGestureRecognizer(tapGesture)
-        tapGesture.addTarget(self, action: #selector(tapGestureAction(gesture:)))
         if currentState == .edit {
             createTaskButton.setTitle("Save Edits", for: .normal)
             deleteTaskButton.isHidden = false
@@ -168,9 +165,8 @@ class CreateTaskViewController: UIViewController {
         return dict
     }
     
-    @objc
-    private func tapGestureAction(gesture: UITapGestureRecognizer) {
-        let actionController = UIAlertController(title: "Q", message: "Q", preferredStyle: .actionSheet)
+    @IBAction func longPressAction(_ sender: UILongPressGestureRecognizer) {
+        let actionController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             let camera = UIAlertAction(title: "Camera", style: .default)
             actionController.addAction(camera)
@@ -180,10 +176,9 @@ class CreateTaskViewController: UIViewController {
         actionController.addAction(gallery)
         actionController.addAction(cancel)
         present(actionController, animated: true)
-    
-
+        
+        
     }
-    
     @IBAction func starButtonPressed(_ sender: UIButton) {
         switch sender.tag {
         case 0:
@@ -293,7 +288,7 @@ class CreateTaskViewController: UIViewController {
             if statUps.contains(.intelligence) {
                 guard let index = statUps.firstIndex(of: .intelligence
                     ) else {
-                    return
+                        return
                 }
                 statUps.remove(at: index)
                 sender.backgroundColor = nil
@@ -361,7 +356,7 @@ class CreateTaskViewController: UIViewController {
             return
         default:
             print("")
-            }
+        }
         guard let tempTask = task else {
             let task = Task(title: titleText, description: description, imageURL: nil, rating: rating, statUps: statUps, repeatable: repeatable, id: UUID().uuidString)
             DatabaseServices.shared.createUserTask(uid: uid, task: task) { [weak self] (result) in

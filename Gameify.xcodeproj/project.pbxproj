@@ -31,6 +31,7 @@
 		0C7721E224EB499A0097059A /* DungeonListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7721E124EB499A0097059A /* DungeonListViewController.swift */; };
 		0C7721E424EB49B30097059A /* DungeonProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7721E324EB49B30097059A /* DungeonProgressViewController.swift */; };
 		0C7721E624EB49C60097059A /* CombatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7721E524EB49C60097059A /* CombatViewController.swift */; };
+		0C7721E824EBB16A0097059A /* DungeonListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7721E724EBB16A0097059A /* DungeonListCell.swift */; };
 		15324189A3D3436A5B8490DE /* Pods_Gameify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF8EDD8691BB4B645A649777 /* Pods_Gameify.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		0C7721E124EB499A0097059A /* DungeonListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonListViewController.swift; sourceTree = "<group>"; };
 		0C7721E324EB49B30097059A /* DungeonProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonProgressViewController.swift; sourceTree = "<group>"; };
 		0C7721E524EB49C60097059A /* CombatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatViewController.swift; sourceTree = "<group>"; };
+		0C7721E724EBB16A0097059A /* DungeonListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonListCell.swift; sourceTree = "<group>"; };
 		462B6D58934BE1335ABDA065 /* Pods-Gameify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gameify.debug.xcconfig"; path = "Target Support Files/Pods-Gameify/Pods-Gameify.debug.xcconfig"; sourceTree = "<group>"; };
 		C6C402FB890FB4AF6E19A8E8 /* Pods-Gameify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gameify.release.xcconfig"; path = "Target Support Files/Pods-Gameify/Pods-Gameify.release.xcconfig"; sourceTree = "<group>"; };
 		EF8EDD8691BB4B645A649777 /* Pods_Gameify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gameify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +112,7 @@
 				0C4BC14924156AA100F00300 /* LaunchScreen.storyboard */,
 				0C4BC14C24156AA100F00300 /* Info.plist */,
 				0C5C53DA24C57B3D004867F6 /* GoogleService-Info.plist */,
+				0C7721E724EBB16A0097059A /* DungeonListCell.swift */,
 				0C5C53E224CE61AF004867F6 /* TaskCell.swift */,
 				0C5C53E924D3C4A9004867F6 /* AuthenticationSession.swift */,
 			);
@@ -294,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C7721E824EBB16A0097059A /* DungeonListCell.swift in Sources */,
 				0C7721E224EB499A0097059A /* DungeonListViewController.swift in Sources */,
 				0C7721E624EB49C60097059A /* CombatViewController.swift in Sources */,
 				0C7721DC24EB2EFF0097059A /* EnemyData.swift in Sources */,
