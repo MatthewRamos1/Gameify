@@ -22,18 +22,23 @@ class DungeonListViewController: UIViewController {
     }
 }
 
-extension DungeonListViewController: UITableViewDelegate {
-}
-
 extension DungeonListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         dungeonList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "dungeonListCell", for: indexPath) as? DungeonListCell else {
+            return UITableViewCell()
+        }
+        let dungeon = dungeonList[indexPath.row]
+        cell.configureCell(dungeon: dungeon)
         return cell
     }
-    
-    
+}
+
+extension DungeonListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        180
+    }
 }

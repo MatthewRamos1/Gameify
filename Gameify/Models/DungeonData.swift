@@ -29,6 +29,9 @@ class Dungeon {
 
 struct DungeonList {
     static let dungeon1 = Dungeon(name: "Dungeon 1", enemies: dungeon1Enemies, cellBackground: "", background: "", index: 0, remainingEnemies: 6)
+    static let dungeon2 = Dungeon(name: "Dungeon 2", enemies: dungeon2Enemies, cellBackground: "", background: "", index: 0, remainingEnemies: 8)
+    
     static let dungeon1Enemies = [Enemy(name: "Slime", level: 1, strength: 1, constitution: 1, intelligence: 1, wisdom: 1, dexAgi: 1, charisma: 1, goldDrop: 1, itemDrops: nil)]
-    static let dungeonList = [dungeon1]
+    static let dungeon2Enemies = [Enemy(name: "Slime", level: 1, strength: 1, constitution: 1, intelligence: 1, wisdom: 1, dexAgi: 1, charisma: 1, goldDrop: 1, itemDrops: nil)]
+    static let dungeonList = [dungeon1, dungeon2]
 }

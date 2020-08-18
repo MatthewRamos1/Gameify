@@ -14,4 +14,11 @@ class DungeonListCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var detailLabel: UILabel!
     
+    func configureCell(dungeon: Dungeon) {
+        dungeonImageView.image = UIImage(named: dungeon.cellBackground)
+        titleLabel.text = dungeon.name
+        detailLabel.text = ""
+        
+    }
+    
 }
