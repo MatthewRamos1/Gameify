@@ -23,7 +23,6 @@ class DungeonListViewController: UIViewController {
 }
 
 extension DungeonListViewController: UITableViewDelegate {
-    
 }
 
 extension DungeonListViewController: UITableViewDataSource {

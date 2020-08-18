@@ -10,5 +10,8 @@ import UIKit
 
 class DungeonListCell: UITableViewCell {
 
+    @IBOutlet weak var dungeonImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var detailLabel: UILabel!
     
 }
