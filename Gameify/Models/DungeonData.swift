@@ -24,9 +24,11 @@ class Dungeon {
         self.index = index
         self.remainingEnemies = remainingEnemies
     }
+    
 }
 
 struct DungeonList {
-    let dungeon1 = Dungeon(name: "Dungeon 1", enemies: dungeon1Enemies, cellBackground: "", background: "", index: 0, remainingEnemies: 6)
+    static let dungeon1 = Dungeon(name: "Dungeon 1", enemies: dungeon1Enemies, cellBackground: "", background: "", index: 0, remainingEnemies: 6)
     static let dungeon1Enemies = [Enemy(name: "Slime", level: 1, strength: 1, constitution: 1, intelligence: 1, wisdom: 1, dexAgi: 1, charisma: 1, goldDrop: 1, itemDrops: nil)]
+    static let dungeonList = [dungeon1]
 }

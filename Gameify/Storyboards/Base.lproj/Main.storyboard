@@ -309,10 +309,10 @@
             </objects>
             <point key="canvasLocation" x="1958" y="1685"/>
         </scene>
-        <!--View Controller-->
+        <!--Dungeon List View Controller-->
         <scene sceneID="OgJ-0B-itV">
             <objects>
-                <viewController id="IwL-jK-em7" sceneMemberID="viewController">
+                <viewController id="IwL-jK-em7" customClass="DungeonListViewController" customModule="Gameify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IIX-gr-xbT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -356,15 +356,18 @@
                         <viewLayoutGuide key="safeArea" id="gwN-vM-H38"/>
                     </view>
                     <navigationItem key="navigationItem" id="MKZ-uw-a8E"/>
+                    <connections>
+                        <outlet property="dungeonListTV" destination="wlU-cw-kX5" id="aMp-5e-hPW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="85b-fH-kUi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2866.666666666667" y="1684.8214285714284"/>
         </scene>
-        <!--View Controller-->
+        <!--Dungeon Progress View Controller-->
         <scene sceneID="rh7-c0-Jrz">
             <objects>
-                <viewController id="Dgv-TZ-RjV" sceneMemberID="viewController">
+                <viewController id="Dgv-TZ-RjV" customClass="DungeonProgressViewController" customModule="Gameify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GSs-Ag-k16">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -387,10 +390,10 @@
             </objects>
             <point key="canvasLocation" x="3748" y="1685"/>
         </scene>
-        <!--View Controller-->
+        <!--Combat View Controller-->
         <scene sceneID="xRh-uE-2w5">
             <objects>
-                <viewController id="HqK-Rb-Kgl" sceneMemberID="viewController">
+                <viewController id="HqK-Rb-Kgl" customClass="CombatViewController" customModule="Gameify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZyE-BX-97s">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
