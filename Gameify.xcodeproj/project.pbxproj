@@ -105,6 +105,7 @@
 			children = (
 				0C5C53E424D2934D004867F6 /* Storyboards */,
 				0C5C53E124CE3F33004867F6 /* Models */,
+				0C7721EB24EBB5510097059A /* Cells */,
 				0C5C53DE24CE35EE004867F6 /* Controllers */,
 				0C5851DF24D9FB5F00008CE5 /* Extensions */,
 				0C4BC13E24156A9D00F00300 /* AppDelegate.swift */,
@@ -115,8 +116,6 @@
 				0C4BC14924156AA100F00300 /* LaunchScreen.storyboard */,
 				0C4BC14C24156AA100F00300 /* Info.plist */,
 				0C5C53DA24C57B3D004867F6 /* GoogleService-Info.plist */,
-				0C7721E724EBB16A0097059A /* DungeonListCell.swift */,
-				0C5C53E224CE61AF004867F6 /* TaskCell.swift */,
 				0C5C53E924D3C4A9004867F6 /* AuthenticationSession.swift */,
 			);
 			path = Gameify;
@@ -164,6 +163,15 @@
 				0C5C53E524D29399004867F6 /* LoginView.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		0C7721EB24EBB5510097059A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0C5C53E224CE61AF004867F6 /* TaskCell.swift */,
+				0C7721E724EBB16A0097059A /* DungeonListCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		284D388229F0ECB2354ED044 /* Frameworks */ = {
