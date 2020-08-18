@@ -34,7 +34,11 @@ class CreateTaskViewController: UIViewController {
     }
     
     let imagePickerController = UIImagePickerController()
-    var selectedImage: UIImage?
+    var selectedImage: UIImage? {
+        didSet {
+            taskImageView.image = selectedImage
+        }
+    }
     var rating = 0
     var repeatable = Repeatable.oneshot
     var statUps = [Stat]()
@@ -54,6 +58,7 @@ class CreateTaskViewController: UIViewController {
         super.viewDidLoad()
         titleTextField.delegate = self
         descriptionTextField.delegate = self
+        imagePickerController.delegate = self
         guard let tempTask = task else {
             return
         }
@@ -171,7 +176,11 @@ class CreateTaskViewController: UIViewController {
             let camera = UIAlertAction(title: "Camera", style: .default)
             actionController.addAction(camera)
         }
-        let gallery = UIAlertAction(title: "Gallery", style: .default)
+        let gallery = UIAlertAction(title: "Gallery", style: .default) { actionAlert in
+            self.imagePickerController.sourceType = .photoLibrary
+            self.present(self.imagePickerController, animated: true)
+            
+        }
         let cancel = UIAlertAction(title: "Cancel", style: .cancel)
         actionController.addAction(gallery)
         actionController.addAction(cancel)
