@@ -111,8 +111,12 @@ class TaskViewController: UIViewController {
     
     private func taskCompletion(_ task: Task) -> String {
         let experience = ratingExpConversion(rating: task.rating)
-        var statGained: Stat?
-        var alertString = "\(experience) \(statGained?.rawValue ?? "") experience gained!"
+        var alertString = "\(experience) experience gained!"
+        var statGained: Stat? {
+            didSet {
+                alertString = "\(experience) \(statGained?.rawValue ?? "") experience gained!"
+            }
+        }
         var wasStatGained = false {
             didSet {
                 alertString += "\n \(statGained?.rawValue ?? "") up!"
