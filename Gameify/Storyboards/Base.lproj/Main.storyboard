@@ -292,11 +292,11 @@
             </objects>
             <point key="canvasLocation" x="2866.666666666667" y="891.96428571428567"/>
         </scene>
-        <!--Item-->
+        <!--Embark-->
         <scene sceneID="Uh9-Qj-voi">
             <objects>
                 <navigationController id="YX9-80-Kw3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="OnQ-dh-yHT"/>
+                    <tabBarItem key="tabBarItem" title="Embark" image="arrow.branch" catalog="system" id="OnQ-dh-yHT"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kiv-4m-ABC">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -884,6 +884,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.branch" catalog="system" width="128" height="108"/>
         <image name="camera.viewfinder" catalog="system" width="128" height="114"/>
         <image name="dungeon" width="512" height="384"/>
         <image name="enemy1" width="42" height="70"/>

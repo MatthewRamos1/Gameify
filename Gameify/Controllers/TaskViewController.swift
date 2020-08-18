@@ -60,7 +60,7 @@ class TaskViewController: UIViewController {
         }
     }
     
-    private func updateUser(dict: [String: Any]) {
+    private func updateUser(dict: [String: Any], alertString: String) {
         DatabaseServices.shared.updateUserStats(dict: dict) { [weak self] (result) in
             switch result {
             case .failure(let error):
@@ -69,7 +69,7 @@ class TaskViewController: UIViewController {
                 }
             case .success:
                 DispatchQueue.main.async {
-                    self?.showAlert(title: "Success", message: "Stat up!")
+                    self?.showAlert(title: "Success", message: alertString)
                 }
             }
         }
@@ -109,54 +109,73 @@ class TaskViewController: UIViewController {
         })
     }
     
-    private func taskCompletion(_ task: Task) {
+    private func taskCompletion(_ task: Task) -> String {
         let experience = ratingExpConversion(rating: task.rating)
+        var statGained: Stat?
+        var alertString = "\(experience) \(statGained?.rawValue ?? "") experience gained!"
+        var wasStatGained = false {
+            didSet {
+                alertString += "\n \(statGained?.rawValue ?? "") up!"
+            }
+        }
         switch task.statUps.first {
         case .strength:
+            statGained = .strength
             user.strengthExp += experience
             if user.strengthExp >= user.strengthCap {
                 let diff = user.strengthExp - user.strengthCap
                 user.strength += 1
+                wasStatGained.toggle()
                 user.strengthExp = diff
                 user.strengthCap = expCap(level: user.strength)
             }
         case .constitution:
+            statGained = .constitution
             user.constitutionExp += experience
             if user.constitutionExp >= user.constitutionCap {
                 let diff = user.constitutionExp - user.constitutionCap
                 user.constitution += 1
+                wasStatGained.toggle()
                 user.constitutionExp = diff
                 user.constitutionCap = expCap(level: user.constitution)
             }
         case .intelligence:
+            statGained = .intelligence
             user.intelligenceExp += experience
             if user.intelligenceExp >= user.intelligenceCap {
                 let diff = user.intelligenceExp - user.intelligenceCap
                 user.intelligence += 1
+                wasStatGained.toggle()
                 user.intelligenceExp = diff
                 user.intelligenceCap = expCap(level: user.intelligence)
             }
         case .wisdom:
+            statGained = .wisdom
             user.wisdomExp += experience
             if user.wisdomExp >= user.wisdomCap {
                 let diff = user.wisdomExp - user.wisdomCap
                 user.wisdom += 1
+                wasStatGained.toggle()
                 user.wisdomExp = diff
                 user.wisdomCap = expCap(level: user.wisdom)
             }
         case .dexAgi:
+            statGained = .dexAgi
             user.dexAgiExp += experience
             if user.dexAgiExp >= user.dexAgiCap {
                 let diff = user.dexAgiExp - user.dexAgiCap
                 user.dexAgi += 1
+                wasStatGained.toggle()
                 user.dexAgiExp = diff
                 user.dexAgiCap = expCap(level: user.dexAgi)
             }
         default:
+            statGained = .charisma
             user.charismaExp += experience
             if user.charismaExp >= user.charismaCap {
                 let diff = user.charismaExp - user.charismaCap
                 user.charisma += 1
+                wasStatGained.toggle()
                 user.charismaExp = diff
                 user.charismaCap = expCap(level: user.charisma)
             }
@@ -165,6 +184,7 @@ class TaskViewController: UIViewController {
         if (totalLevel / 6) > user.level {
             user.level += 1
         }
+        return alertString
     }
     
     private func ratingExpConversion (rating: Int) -> Int {
@@ -280,9 +300,9 @@ extension TaskViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let task = sortedTasks[indexPath.section][indexPath.row]
-        taskCompletion(task)
+        let alertString = taskCompletion(task)
         let statsDict = userToDict(user: user)
-        updateUser(dict: statsDict)
+        updateUser(dict: statsDict, alertString: alertString)
         if task.repeatable == .oneshot {
             deleteTask(task: task)
         }
