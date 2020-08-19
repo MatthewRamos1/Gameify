@@ -14,6 +14,8 @@ class CombatViewController: UIViewController {
     @IBOutlet weak var enemyIV: UIImageView!
     @IBOutlet weak var enemyHealthProgress: UIProgressView!
     
+    var dungeon: Dungeon?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

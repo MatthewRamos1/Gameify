@@ -16,4 +16,16 @@ class DungeonProgressViewController: UIViewController {
         super.viewDidLoad()
 
     }
+    
+    @IBAction func embarkButtonPressed(_ sender: UIButton) {
+        guard let tempDungeon = dungeon else {
+            return
+        }
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let combatVC = storyboard.instantiateViewController(withIdentifier: "CombatViewController") as? CombatViewController else {
+            return
+        }
+        combatVC.dungeon = tempDungeon
+        navigationController?.pushViewController(combatVC, animated: true)
+    }
 }

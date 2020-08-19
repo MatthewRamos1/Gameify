@@ -394,6 +394,9 @@
                                 <rect key="frame" x="181" y="650" width="52" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Embark"/>
+                                <connections>
+                                    <action selector="embarkButtonPressed:" destination="Dgv-TZ-RjV" eventType="touchUpInside" id="KmM-yU-tTc"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -408,7 +411,7 @@
         <!--Combat View Controller-->
         <scene sceneID="xRh-uE-2w5">
             <objects>
-                <viewController id="HqK-Rb-Kgl" customClass="CombatViewController" customModule="Gameify" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CombatViewController" id="HqK-Rb-Kgl" customClass="CombatViewController" customModule="Gameify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZyE-BX-97s">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
