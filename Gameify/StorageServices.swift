@@ -23,7 +23,7 @@ class StorageServices {
        
        var photoReference: StorageReference!
         
-         photoReference = storageRef.child("SuSharePhotos/\(taskId).jpg")
+         photoReference = storageRef.child("TaskPhotos/\(taskId).jpg")
        
        let metadata = StorageMetadata()
        metadata.contentType = "image/jpg"

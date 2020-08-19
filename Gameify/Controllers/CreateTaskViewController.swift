@@ -399,6 +399,9 @@ class CreateTaskViewController: UIViewController {
         tempTask.rating = rating
         tempTask.statUps = statUps
         tempTask.repeatable = repeatable
+        if let image = selectedImage {
+            tempTask.imageURL = uploadTaskPhoto(task: tempTask, image: image)
+        }
         let dict = taskToDict(task: tempTask)
         updateTask(task: tempTask, dict: dict)
         
