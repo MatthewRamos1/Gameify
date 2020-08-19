@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Enemy {
+class Enemy {
     var name: String
     var level: Int
     var strength: Int
@@ -19,4 +19,17 @@ struct Enemy {
     var charisma: Int
     var goldDrop: Int
     var itemDrops: [Item]?
+    
+    init(name: String, level: Int, strength: Int, constitution: Int, intelligence: Int, wisdom: Int, dexAgi: Int, charisma: Int, goldDrop: Int, itemDrops: [Item]?) {
+        self.name = name
+        self.level = level
+        self.strength = strength
+        self.constitution = constitution
+        self.intelligence = intelligence
+        self.wisdom = wisdom
+        self.dexAgi = dexAgi
+        self.charisma = charisma
+        self.goldDrop = goldDrop
+        self.itemDrops = itemDrops
+    }
 }
