@@ -165,8 +165,20 @@ class CreateTaskViewController: UIViewController {
         }
     }
     
-    private func uploadTaskPhoto() {
-        
+    private func uploadTaskPhoto(task: Task, image: UIImage) -> String {
+        var urlString = ""
+        StorageServices.shared.uploadPhoto(taskId: task.id, image: image) { [weak self] (result) in
+            switch result {
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self?.showAlert(title: "Error", message: error.localizedDescription)
+                }
+            case .success(let url):
+                urlString = url.absoluteString
+                
+            }
+        }
+        return urlString
     }
     
     private func taskToDict(task: Task) -> [String:Any] {
