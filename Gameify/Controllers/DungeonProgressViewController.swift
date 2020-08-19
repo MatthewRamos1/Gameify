@@ -9,7 +9,9 @@
 import UIKit
 
 class DungeonProgressViewController: UIViewController {
-
+    
+    var dungeon: Dungeon?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -41,4 +41,14 @@ extension DungeonListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         180
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let dungeon = dungeonList[indexPath.row]
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let dungeonProgVC = storyboard.instantiateViewController(withIdentifier: "DungeonProgressViewController") as? DungeonProgressViewController else {
+            return
+        }
+        dungeonProgVC.dungeon = dungeon
+        navigationController?.pushViewController(dungeonProgVC, animated: true)
+    }
 }
