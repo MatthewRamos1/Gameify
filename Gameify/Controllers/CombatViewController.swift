@@ -10,6 +10,10 @@ import UIKit
 
 class CombatViewController: UIViewController {
 
+    @IBOutlet weak var backgroundIV: UIImageView!
+    @IBOutlet weak var enemyIV: UIImageView!
+    @IBOutlet weak var enemyHealthProgress: UIProgressView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

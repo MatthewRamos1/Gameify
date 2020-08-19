@@ -69,7 +69,7 @@ class TaskViewController: UIViewController {
                 }
             case .success:
                 DispatchQueue.main.async {
-                    self?.showAlert(title: "Success", message: alertString)
+                    self?.showAlert(title: "Task Cleared!", message: alertString)
                 }
             }
         }
