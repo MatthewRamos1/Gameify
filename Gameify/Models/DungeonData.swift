@@ -34,4 +34,8 @@ struct DungeonList {
     static let dungeon1Enemies = [Enemy(name: "Slime", level: 1, strength: 1, constitution: 1, intelligence: 1, wisdom: 1, dexAgi: 1, charisma: 1, goldDrop: 1, itemDrops: nil)]
     static let dungeon2Enemies = [Enemy(name: "Slime", level: 1, strength: 1, constitution: 1, intelligence: 1, wisdom: 1, dexAgi: 1, charisma: 1, goldDrop: 1, itemDrops: nil)]
     static let dungeonList = [dungeon1, dungeon2]
+    
+    static public func getEnemy(dungeon: Dungeon) -> Enemy {
+        dungeon.enemies.first!
+    }
 }
