@@ -165,6 +165,10 @@ class CreateTaskViewController: UIViewController {
         }
     }
     
+    private func uploadTaskPhoto() {
+        
+    }
+    
     private func taskToDict(task: Task) -> [String:Any] {
         let dict = ["title": task.title, "description": task.description, "rating": task.rating, "statUps": task.statUps.first!.rawValue, "repeatable": task.repeatable.rawValue, "id": task.id] as! [String:Any]
         return dict
