@@ -62,19 +62,6 @@ class ViewController: UIViewController {
         statsListener?.remove()
     }
     
-    public func fetchUser() {
-        DatabaseServices.shared.getUser { [weak self] (result) in
-            switch result {
-            case .failure(let error):
-                DispatchQueue.main.async {
-                    self?.showAlert(title: "Error", message: error.localizedDescription)
-                }
-            case .success(let user):
-                self?.userStats = user
-            }
-        }
-    }
-    
     private func updateStats(stats: User) {
         levelLabel.text = "Level: \(stats.level)"
         currentLvlLabel.text = "Lv. \(stats.level)"

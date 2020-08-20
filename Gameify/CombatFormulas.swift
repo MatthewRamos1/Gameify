@@ -36,4 +36,8 @@ struct CombatFormulas {
     static func charmCalculation() {
         
     }
+    
+    private func critCalculation() {
+        
+    }
 }
