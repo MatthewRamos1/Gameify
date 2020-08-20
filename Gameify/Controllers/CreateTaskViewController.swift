@@ -383,30 +383,34 @@ class CreateTaskViewController: UIViewController {
             showAlert(title: "Missing Selections", message: "Please select at least one applicable stat associated with this task.")
             return
         default:
-            print("")
-        }
-        guard let tempTask = task else {
-            let task = Task(title: titleText, description: description, imageURL: nil, rating: rating, statUps: statUps, repeatable: repeatable, id: UUID().uuidString)
-            DatabaseServices.shared.createUserTask(uid: uid, task: task) { [weak self] (result) in
-                switch result {
-                case .failure(let error):
-                    self?.showAlert(title: "Error", message: error.localizedDescription)
-                case .success:
-                    self?.showAlert(title: "Success", message: "Task Created")
+            guard let tempTask = task else {
+                
+                let task = Task(title: titleText, description: description, imageURL: nil, rating: rating, statUps: statUps, repeatable: repeatable, id: UUID().uuidString)
+                if let image = selectedImage {
+                    task.imageURL = uploadTaskPhoto(task: task, image: image)
                 }
+                DatabaseServices.shared.createUserTask(uid: uid, task: task) { [weak self] (result) in
+                    switch result {
+                    case .failure(let error):
+                        self?.showAlert(title: "Error", message: error.localizedDescription)
+                    case .success:
+                        self?.showAlert(title: "Success", message: "Task Created")
+                    }
+                }
+                return
             }
-            return
+            tempTask.description = description
+            tempTask.title = titleText
+            tempTask.rating = rating
+            tempTask.statUps = statUps
+            tempTask.repeatable = repeatable
+            if let image = selectedImage {
+                tempTask.imageURL = uploadTaskPhoto(task: tempTask, image: image)
+            }
+            let dict = taskToDict(task: tempTask)
+            updateTask(task: tempTask, dict: dict)
         }
-        tempTask.description = description
-        tempTask.title = titleText
-        tempTask.rating = rating
-        tempTask.statUps = statUps
-        tempTask.repeatable = repeatable
-        if let image = selectedImage {
-            tempTask.imageURL = uploadTaskPhoto(task: tempTask, image: image)
-        }
-        let dict = taskToDict(task: tempTask)
-        updateTask(task: tempTask, dict: dict)
+        
         
     }
     

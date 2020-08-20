@@ -755,7 +755,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vitality" translatesAutoresizingMaskIntoConstraints="NO" id="eRG-tR-50t">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eRG-tR-50t">
                                                     <rect key="frame" x="364" y="127" width="42" height="42"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="eRG-tR-50t" secondAttribute="height" multiplier="1:1" id="GnK-9k-ORt"/>
@@ -952,6 +952,5 @@
         <image name="repeat" catalog="system" width="128" height="99"/>
         <image name="square.and.pencil" catalog="system" width="128" height="118"/>
         <image name="star" catalog="system" width="128" height="116"/>
-        <image name="vitality" width="625" height="575"/>
     </resources>
 </document>
