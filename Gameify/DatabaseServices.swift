@@ -15,7 +15,7 @@ class DatabaseServices {
     static let userCollection = "users"
     static let statsCollection = "stats"
     static let taskCollection = "tasks"
-    
+    static let friendCollection = "friends"
     private let db = Firestore.firestore()
     
     static let shared = DatabaseServices()
@@ -86,6 +86,19 @@ class DatabaseServices {
             return
         }
         db.collection(DatabaseServices.userCollection).document(currentUser.uid).collection(DatabaseServices.taskCollection).document(task.id).delete { (error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(true))
+            }
+        }
+    }
+    
+    public func addUserFriend(id: String, completion: @escaping (Result<Bool, Error>) -> ()) {
+        guard let currentUser = Auth.auth().currentUser else {
+            return
+        }
+        db.collection(DatabaseServices.userCollection).document(currentUser.uid).collection(DatabaseServices.taskCollection).document(id).setData(["id": id]) { (error) in
             if let error = error {
                 completion(.failure(error))
             } else {
