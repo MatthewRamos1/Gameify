@@ -11,6 +11,7 @@ import Foundation
 class Enemy {
     var name: String
     var level: Int
+    var health: Int
     var strength: Int
     var constitution: Int
     var intelligence: Int
@@ -20,9 +21,10 @@ class Enemy {
     var goldDrop: Int
     var itemDrops: [Item]?
     
-    init(name: String, level: Int, strength: Int, constitution: Int, intelligence: Int, wisdom: Int, dexAgi: Int, charisma: Int, goldDrop: Int, itemDrops: [Item]?) {
+    init(name: String, level: Int, health: Int, strength: Int, constitution: Int, intelligence: Int, wisdom: Int, dexAgi: Int, charisma: Int, goldDrop: Int, itemDrops: [Item]?) {
         self.name = name
         self.level = level
+        self.health = health
         self.strength = strength
         self.constitution = constitution
         self.intelligence = intelligence

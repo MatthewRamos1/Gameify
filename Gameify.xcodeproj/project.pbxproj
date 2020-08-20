@@ -14,6 +14,7 @@
 		0C4BC14824156AA000F00300 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C4BC14724156AA000F00300 /* Assets.xcassets */; };
 		0C4BC14B24156AA100F00300 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C4BC14924156AA100F00300 /* LaunchScreen.storyboard */; };
 		0C4BC1552415708500F00300 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BC1542415708500F00300 /* UserData.swift */; };
+		0C57FAB024EE277F00C80222 /* CombatFormulas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C57FAAF24EE277F00C80222 /* CombatFormulas.swift */; };
 		0C5851D724D5271900008CE5 /* CreateTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5851D624D5271900008CE5 /* CreateTaskViewController.swift */; };
 		0C5851DE24D9FB5900008CE5 /* UIProgressView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5851DD24D9FB5900008CE5 /* UIProgressView + Extensions.swift */; };
 		0C5C53D924C579FE004867F6 /* DatabaseServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5C53D824C579FE004867F6 /* DatabaseServices.swift */; };
@@ -46,6 +47,7 @@
 		0C4BC14A24156AA100F00300 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C4BC14C24156AA100F00300 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C4BC1542415708500F00300 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		0C57FAAF24EE277F00C80222 /* CombatFormulas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatFormulas.swift; sourceTree = "<group>"; };
 		0C5851D624D5271900008CE5 /* CreateTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskViewController.swift; sourceTree = "<group>"; };
 		0C5851DD24D9FB5900008CE5 /* UIProgressView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIProgressView + Extensions.swift"; sourceTree = "<group>"; };
 		0C5C53D824C579FE004867F6 /* DatabaseServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseServices.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				0C4BC14024156A9D00F00300 /* SceneDelegate.swift */,
 				0C5C53D824C579FE004867F6 /* DatabaseServices.swift */,
 				0C7721E924EBB4A10097059A /* StorageServices.swift */,
+				0C57FAAF24EE277F00C80222 /* CombatFormulas.swift */,
 				0C4BC14724156AA000F00300 /* Assets.xcassets */,
 				0C4BC14924156AA100F00300 /* LaunchScreen.storyboard */,
 				0C4BC14C24156AA100F00300 /* Info.plist */,
@@ -326,6 +329,7 @@
 				0C7721DE24EB2FA60097059A /* Item.swift in Sources */,
 				0C5C53E024CE3C56004867F6 /* Task.swift in Sources */,
 				0C7721E424EB49B30097059A /* DungeonProgressViewController.swift in Sources */,
+				0C57FAB024EE277F00C80222 /* CombatFormulas.swift in Sources */,
 				0C5C53EA24D3C4A9004867F6 /* AuthenticationSession.swift in Sources */,
 				0C5C53DD24CE35E7004867F6 /* TaskViewController.swift in Sources */,
 				0C5851D724D5271900008CE5 /* CreateTaskViewController.swift in Sources */,

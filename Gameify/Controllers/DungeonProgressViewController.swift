@@ -26,6 +26,7 @@ class DungeonProgressViewController: UIViewController {
             return
         }
         combatVC.dungeon = tempDungeon
+        combatVC.enemy = DungeonList.getEnemy(dungeon: tempDungeon)
         navigationController?.pushViewController(combatVC, animated: true)
     }
 }
