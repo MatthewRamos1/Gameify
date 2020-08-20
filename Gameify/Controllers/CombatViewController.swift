@@ -43,14 +43,15 @@ class CombatViewController: UIViewController {
         }
         let damage = CombatFormulas.damageCalculation(strength: playerStats.strength, constitution: enemy.constitution, weaponAttack: nil, armorDefense: nil)
         enemy.currentHealth = enemy.currentHealth - damage
-        enemyHealthProgress.progress = (Float(enemy.currentHealth)) / (Float(enemy.maxHealth))
+        let healthFloat = (Float(enemy.currentHealth)) / (Float(enemy.maxHealth))
         print(damage)
-        if enemy.currentHealth <= 0 {
-            UIView.animate(withDuration: 0.8, delay: 0.2, options: [.transitionCrossDissolve], animations: {
-                self.enemyIV.alpha = 0
-                self.enemyHealthProgress.alpha = 0
+            UIView.animate(withDuration: 0.8, delay: 0.2, animations: {
+                self.enemyHealthProgress.setProgress(healthFloat, animated: true)
+                if self.enemy.currentHealth <= 0 {
+                    self.enemyIV.alpha = 0
+                    self.enemyHealthProgress.alpha = 0
+                }
             }, completion: nil)
-        }
     }
     
 }
