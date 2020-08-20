@@ -21,6 +21,7 @@ class CombatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchUser()
+        enemyHealthProgress.progress = 1.0
     }
     
     private func fetchUser() {
@@ -44,10 +45,12 @@ class CombatViewController: UIViewController {
         enemy.currentHealth = enemy.currentHealth - damage
         enemyHealthProgress.progress = (Float(enemy.currentHealth)) / (Float(enemy.maxHealth))
         print(damage)
-        
-//        UIView.animate(withDuration: 0.6, delay: 0.0, options: [.transitionCrossDissolve], animations: {
-//            self.enemyIV.alpha = 0
-//        }, completion: nil)
+        if enemy.currentHealth <= 0 {
+            UIView.animate(withDuration: 0.8, delay: 0.2, options: [.transitionCrossDissolve], animations: {
+                self.enemyIV.alpha = 0
+                self.enemyHealthProgress.alpha = 0
+            }, completion: nil)
+        }
     }
     
 }
