@@ -189,7 +189,10 @@ class CreateTaskViewController: UIViewController {
     @IBAction func longPressAction(_ sender: UILongPressGestureRecognizer) {
         let actionController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            let camera = UIAlertAction(title: "Camera", style: .default)
+            let camera = UIAlertAction(title: "Camera", style: .default) { actionAlert in
+                self.imagePickerController.sourceType = .camera
+                self.present(self.imagePickerController, animated: true)
+            }
             actionController.addAction(camera)
         }
         let gallery = UIAlertAction(title: "Gallery", style: .default) { actionAlert in
