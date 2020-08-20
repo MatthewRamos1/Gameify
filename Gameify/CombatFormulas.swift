@@ -10,9 +10,9 @@ import Foundation
 
 struct CombatFormulas {
     
-    static func damageCalculation (strength: Int, enemyConstitution: Int, weaponAttack: Int?, armorDefense: Int?) -> Int {
+    static func damageCalculation (strength: Int, constitution: Int, weaponAttack: Int?, armorDefense: Int?) -> Int {
         let attackPower = strength + (weaponAttack ?? 0)
-        let defensePower = enemyConstitution + (armorDefense ?? 0)
+        let defensePower = constitution + (armorDefense ?? 0)
         let baseDamage = attackPower - (defensePower/2)
         let range = (baseDamage / 16) + 1
         let dmgMin = baseDamage - range
@@ -23,8 +23,14 @@ struct CombatFormulas {
         
     }
     
-    static func evasionCalculation() {
-        
+    static func evasionCalculation(dexAgi: Int, defenderDexAgi: Int) -> Bool {
+        let dodgeChance = 5 + (dexAgi / 2) - (defenderDexAgi / 3)
+        let dodgeResult = Int.random(in: 0...100)
+        if dodgeResult <= dodgeChance {
+            return true
+        } else {
+            return false
+        }
     }
     
     static func charmCalculation() {
