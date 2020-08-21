@@ -125,7 +125,7 @@ class DatabaseServices {
         guard let currentUser = Auth.auth().currentUser else {
             return
         }
-        db.collection(DatabaseServices.userCollection).document(currentUser.uid).collection(DatabaseServices.taskCollection).document(id).setData(["id": id]) { (error) in
+        db.collection(DatabaseServices.userCollection).document(currentUser.uid).collection(DatabaseServices.friendCollection).document(id).setData(["id": id]) { (error) in
             if let error = error {
                 completion(.failure(error))
             } else {
@@ -146,7 +146,21 @@ class DatabaseServices {
                 let user = snapshot.documents.map { User($0.data())}
                 completion(.success(user.first!))
             }
-            
+        }
+    }
+    
+    public func getFriendsList(completion: @escaping (Result <[Friend], Error>) -> ())  {
+        
+        guard let currentUser = Auth.auth().currentUser else {
+            return
+        }
+        db.collection(DatabaseServices.userCollection).document(currentUser.uid).collection(DatabaseServices.friendCollection).getDocuments { (snapshot, error) in
+            if let error = error {
+                completion(.failure(error))
+            } else if let snapshot = snapshot {
+                let friends = snapshot.documents.map { Friend($0.data())}
+                completion(.success(friends))
+            }
         }
     }
 }

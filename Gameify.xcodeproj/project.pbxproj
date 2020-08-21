@@ -16,6 +16,7 @@
 		0C4BC1552415708500F00300 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BC1542415708500F00300 /* UserData.swift */; };
 		0C57FAB024EE277F00C80222 /* CombatFormulas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C57FAAF24EE277F00C80222 /* CombatFormulas.swift */; };
 		0C57FAB424F0756200C80222 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C57FAB324F0756200C80222 /* AddFriendViewController.swift */; };
+		0C57FAB624F0821100C80222 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C57FAB524F0821000C80222 /* Friend.swift */; };
 		0C5851D724D5271900008CE5 /* CreateTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5851D624D5271900008CE5 /* CreateTaskViewController.swift */; };
 		0C5851DE24D9FB5900008CE5 /* UIProgressView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5851DD24D9FB5900008CE5 /* UIProgressView + Extensions.swift */; };
 		0C5C53D924C579FE004867F6 /* DatabaseServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5C53D824C579FE004867F6 /* DatabaseServices.swift */; };
@@ -50,6 +51,7 @@
 		0C4BC1542415708500F00300 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		0C57FAAF24EE277F00C80222 /* CombatFormulas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatFormulas.swift; sourceTree = "<group>"; };
 		0C57FAB324F0756200C80222 /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
+		0C57FAB524F0821000C80222 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		0C5851D624D5271900008CE5 /* CreateTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskViewController.swift; sourceTree = "<group>"; };
 		0C5851DD24D9FB5900008CE5 /* UIProgressView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIProgressView + Extensions.swift"; sourceTree = "<group>"; };
 		0C5C53D824C579FE004867F6 /* DatabaseServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseServices.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				0C4BC1542415708500F00300 /* UserData.swift */,
 				0C7721DB24EB2EFF0097059A /* EnemyData.swift */,
 				0C7721DF24EB46E70097059A /* DungeonData.swift */,
+				0C57FAB524F0821000C80222 /* Friend.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				0C4BC1552415708500F00300 /* UserData.swift in Sources */,
 				0C7721EA24EBB4A10097059A /* StorageServices.swift in Sources */,
 				0C5C53E324CE61AF004867F6 /* TaskCell.swift in Sources */,
+				0C57FAB624F0821100C80222 /* Friend.swift in Sources */,
 				0C4BC14124156A9D00F00300 /* SceneDelegate.swift in Sources */,
 				0C7721DE24EB2FA60097059A /* Item.swift in Sources */,
 				0C5C53E024CE3C56004867F6 /* Task.swift in Sources */,
