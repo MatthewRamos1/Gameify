@@ -309,6 +309,14 @@ extension TaskViewController: UITableViewDelegate {
         updateUser(dict: statsDict, alertString: alertString)
         if task.repeatable == .oneshot {
             deleteTask(task: task)
+            DatabaseServices.shared.createRecentlyCompletedTask(task: task) { [weak self] (result) in
+                switch result {
+                case .failure(let error):
+                    self?.showAlert(title: "Error", message: error.localizedDescription)
+                case .success:
+                    print("nice")
+                }
+            }
         }
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
