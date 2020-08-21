@@ -28,6 +28,7 @@ class User {
     var wisdomCap: Int
     var dexAgiCap: Int
     var charismaCap: Int
+    var gold: Int
     
     init(_ dictionary: [String: Any]) {
         self.level = dictionary["level"] as? Int ?? 0
@@ -49,5 +50,6 @@ class User {
         self.wisdomCap = dictionary["wisdomCap"] as? Int ?? 0
         self.dexAgiCap = dictionary["dexAgiCap"] as? Int ?? 0
         self.charismaCap = dictionary["charismaCap"] as? Int ?? 0
+        self.gold = dictionary["gold"] as? Int ?? 0
     }
 }
