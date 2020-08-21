@@ -15,6 +15,7 @@
 		0C4BC14B24156AA100F00300 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C4BC14924156AA100F00300 /* LaunchScreen.storyboard */; };
 		0C4BC1552415708500F00300 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BC1542415708500F00300 /* UserData.swift */; };
 		0C57FAB024EE277F00C80222 /* CombatFormulas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C57FAAF24EE277F00C80222 /* CombatFormulas.swift */; };
+		0C57FAB424F0756200C80222 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C57FAB324F0756200C80222 /* AddFriendViewController.swift */; };
 		0C5851D724D5271900008CE5 /* CreateTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5851D624D5271900008CE5 /* CreateTaskViewController.swift */; };
 		0C5851DE24D9FB5900008CE5 /* UIProgressView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5851DD24D9FB5900008CE5 /* UIProgressView + Extensions.swift */; };
 		0C5C53D924C579FE004867F6 /* DatabaseServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5C53D824C579FE004867F6 /* DatabaseServices.swift */; };
@@ -48,6 +49,7 @@
 		0C4BC14C24156AA100F00300 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C4BC1542415708500F00300 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		0C57FAAF24EE277F00C80222 /* CombatFormulas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatFormulas.swift; sourceTree = "<group>"; };
+		0C57FAB324F0756200C80222 /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 		0C5851D624D5271900008CE5 /* CreateTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskViewController.swift; sourceTree = "<group>"; };
 		0C5851DD24D9FB5900008CE5 /* UIProgressView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIProgressView + Extensions.swift"; sourceTree = "<group>"; };
 		0C5C53D824C579FE004867F6 /* DatabaseServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseServices.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				0C7721E124EB499A0097059A /* DungeonListViewController.swift */,
 				0C7721E324EB49B30097059A /* DungeonProgressViewController.swift */,
 				0C7721E524EB49C60097059A /* CombatViewController.swift */,
+				0C57FAB324F0756200C80222 /* AddFriendViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				0C4BC14324156A9D00F00300 /* ViewController.swift in Sources */,
 				0C4BC13F24156A9D00F00300 /* AppDelegate.swift in Sources */,
 				0C5851DE24D9FB5900008CE5 /* UIProgressView + Extensions.swift in Sources */,
+				0C57FAB424F0756200C80222 /* AddFriendViewController.swift in Sources */,
 				0C5C53D924C579FE004867F6 /* DatabaseServices.swift in Sources */,
 				0C7721E024EB46E80097059A /* DungeonData.swift in Sources */,
 				0C5C53EC24D3C691004867F6 /* UIViewController + Alerts.swift in Sources */,

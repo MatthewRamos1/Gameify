@@ -15,6 +15,7 @@ class DatabaseServices {
     static let userCollection = "users"
     static let statsCollection = "stats"
     static let taskCollection = "tasks"
+    static let recentlyCompletedCollection = "recentlyCompleted"
     static let friendCollection = "friends"
     private let db = Firestore.firestore()
     
@@ -68,6 +69,19 @@ class DatabaseServices {
         }
     }
     
+    public func createRecentlyCompletedTask(task: Task, completion: @escaping (Result<Bool, Error>) -> ()) {
+        guard let uid = Auth.auth().currentUser?.uid else {
+            return
+        }
+        db.collection(DatabaseServices.userCollection).document(uid).collection(DatabaseServices.recentlyCompletedCollection).document(task.id).setData(["title": task.title, "description": task.description, "imageURL": task.imageURL ?? nil , "rating": task.rating, "statUps": task.statUps.first!.rawValue, "id": task.id, "completionDate": Date()]) { (error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(true))
+            }
+        }
+    }
+    
     public func updateUserTask(task: Task, dict: [String:Any], completion: @escaping (Result <Bool, Error>) -> ()) {
         guard let uid = Auth.auth().currentUser?.uid else {
             return
@@ -86,6 +100,19 @@ class DatabaseServices {
             return
         }
         db.collection(DatabaseServices.userCollection).document(currentUser.uid).collection(DatabaseServices.taskCollection).document(task.id).delete { (error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(true))
+            }
+        }
+    }
+    
+    public func deleteRecentlyCompletedTask(task: Task, completion: @escaping (Result <Bool, Error>) -> ()) {
+        guard let currentUser = Auth.auth().currentUser else {
+            return
+        }
+        db.collection(DatabaseServices.userCollection).document(currentUser.uid).collection(DatabaseServices.recentlyCompletedCollection).document(task.id).delete { (error) in
             if let error = error {
                 completion(.failure(error))
             } else {

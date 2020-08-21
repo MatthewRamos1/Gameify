@@ -287,12 +287,48 @@
                         <viewLayoutGuide key="safeArea" id="xV8-Wa-LQx"/>
                     </view>
                     <navigationItem key="navigationItem" id="wao-lE-hVG">
-                        <barButtonItem key="rightBarButtonItem" title="Add Friend" id="jnI-1J-cdF"/>
+                        <barButtonItem key="rightBarButtonItem" title="Add Friend" id="jnI-1J-cdF">
+                            <connections>
+                                <segue destination="3ON-DH-4oZ" kind="show" id="5tB-dZ-u86"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KlJ-eA-LFq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2866.666666666667" y="891.96428571428567"/>
+        </scene>
+        <!--Add Friend View Controller-->
+        <scene sceneID="pc5-Wx-scE">
+            <objects>
+                <viewController id="3ON-DH-4oZ" customClass="AddFriendViewController" customModule="Gameify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zBT-K3-KSO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter FriendCode..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c7k-aN-RW2">
+                                <rect key="frame" x="20" y="431" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="c7k-aN-RW2" firstAttribute="centerY" secondItem="zBT-K3-KSO" secondAttribute="centerY" id="33Z-DS-2cw"/>
+                            <constraint firstItem="c7k-aN-RW2" firstAttribute="leading" secondItem="UYP-Kb-rjV" secondAttribute="leading" constant="20" id="H5h-tc-AQM"/>
+                            <constraint firstItem="c7k-aN-RW2" firstAttribute="centerX" secondItem="zBT-K3-KSO" secondAttribute="centerX" id="hFa-EY-Que"/>
+                            <constraint firstItem="UYP-Kb-rjV" firstAttribute="trailing" secondItem="c7k-aN-RW2" secondAttribute="trailing" constant="20" id="iU9-mw-0p3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UYP-Kb-rjV"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="EOG-RX-kwJ"/>
+                    <connections>
+                        <outlet property="addFriendTextField" destination="c7k-aN-RW2" id="55a-OT-ArE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UGS-Dm-2Xm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3748" y="892"/>
         </scene>
         <!--Embark-->
         <scene sceneID="Uh9-Qj-voi">
