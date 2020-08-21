@@ -17,6 +17,7 @@
 		0C57FAB024EE277F00C80222 /* CombatFormulas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C57FAAF24EE277F00C80222 /* CombatFormulas.swift */; };
 		0C57FAB424F0756200C80222 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C57FAB324F0756200C80222 /* AddFriendViewController.swift */; };
 		0C57FAB624F0821100C80222 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C57FAB524F0821000C80222 /* Friend.swift */; };
+		0C57FAB824F0844900C80222 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C57FAB724F0844900C80222 /* FeedViewController.swift */; };
 		0C5851D724D5271900008CE5 /* CreateTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5851D624D5271900008CE5 /* CreateTaskViewController.swift */; };
 		0C5851DE24D9FB5900008CE5 /* UIProgressView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5851DD24D9FB5900008CE5 /* UIProgressView + Extensions.swift */; };
 		0C5C53D924C579FE004867F6 /* DatabaseServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5C53D824C579FE004867F6 /* DatabaseServices.swift */; };
@@ -52,6 +53,7 @@
 		0C57FAAF24EE277F00C80222 /* CombatFormulas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatFormulas.swift; sourceTree = "<group>"; };
 		0C57FAB324F0756200C80222 /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 		0C57FAB524F0821000C80222 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		0C57FAB724F0844900C80222 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		0C5851D624D5271900008CE5 /* CreateTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskViewController.swift; sourceTree = "<group>"; };
 		0C5851DD24D9FB5900008CE5 /* UIProgressView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIProgressView + Extensions.swift"; sourceTree = "<group>"; };
 		0C5C53D824C579FE004867F6 /* DatabaseServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseServices.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				0C7721E324EB49B30097059A /* DungeonProgressViewController.swift */,
 				0C7721E524EB49C60097059A /* CombatViewController.swift */,
 				0C57FAB324F0756200C80222 /* AddFriendViewController.swift */,
+				0C57FAB724F0844900C80222 /* FeedViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				0C7721E424EB49B30097059A /* DungeonProgressViewController.swift in Sources */,
 				0C57FAB024EE277F00C80222 /* CombatFormulas.swift in Sources */,
 				0C5C53EA24D3C4A9004867F6 /* AuthenticationSession.swift in Sources */,
+				0C57FAB824F0844900C80222 /* FeedViewController.swift in Sources */,
 				0C5C53DD24CE35E7004867F6 /* TaskViewController.swift in Sources */,
 				0C5851D724D5271900008CE5 /* CreateTaskViewController.swift in Sources */,
 			);

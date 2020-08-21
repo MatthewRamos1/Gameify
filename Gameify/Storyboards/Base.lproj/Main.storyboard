@@ -200,7 +200,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Profile" id="sfZ-Q3-6v7"/>
+                    <navigationItem key="navigationItem" title="Profile" id="sfZ-Q3-6v7">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="5co-LD-m8v"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="charismaExp" destination="QZ3-oh-geY" id="Q0J-PO-RjD"/>
                         <outlet property="charismaLabel" destination="2YF-dC-y0m" id="msX-bk-D01"/>
@@ -248,10 +250,10 @@
             </objects>
             <point key="canvasLocation" x="1958" y="892"/>
         </scene>
-        <!--View Controller-->
+        <!--Feed View Controller-->
         <scene sceneID="cHH-2g-WpB">
             <objects>
-                <viewController id="xDH-1v-HFh" sceneMemberID="viewController">
+                <viewController id="xDH-1v-HFh" customClass="FeedViewController" customModule="Gameify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LFR-HY-ztN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -293,6 +295,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="feedCollectionView" destination="w5x-Bh-0ID" id="Fzo-13-dWT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KlJ-eA-LFq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
