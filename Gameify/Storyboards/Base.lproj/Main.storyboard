@@ -286,7 +286,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xV8-Wa-LQx"/>
                     </view>
-                    <navigationItem key="navigationItem" id="wao-lE-hVG"/>
+                    <navigationItem key="navigationItem" id="wao-lE-hVG">
+                        <barButtonItem key="rightBarButtonItem" title="Add Friend" id="jnI-1J-cdF"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KlJ-eA-LFq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -426,7 +428,7 @@
                                 </constraints>
                             </imageView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hMl-FJ-bTS">
-                                <rect key="frame" x="165.5" y="373.5" width="83" height="82"/>
+                                <rect key="frame" x="165.5" y="453.5" width="83" height="2"/>
                                 <color key="progressTintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="trackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </progressView>
@@ -475,10 +477,22 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E39-QM-H9V">
+                                <rect key="frame" x="201" y="419.5" width="12.5" height="26"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="0">
+                                        <attributes>
+                                            <font key="NSFont" size="22" name="ProFontForPowerline-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="hMl-FJ-bTS" firstAttribute="top" secondItem="zmj-G5-287" secondAttribute="top" constant="329.5" id="1Oi-9d-dOZ"/>
+                            <constraint firstItem="hMl-FJ-bTS" firstAttribute="top" secondItem="E39-QM-H9V" secondAttribute="bottom" constant="8" id="1ZW-SW-fx8"/>
                             <constraint firstItem="zmj-G5-287" firstAttribute="bottom" secondItem="0ah-rS-b2h" secondAttribute="bottom" id="2OC-7r-NFg"/>
                             <constraint firstItem="0ah-rS-b2h" firstAttribute="trailing" secondItem="zmj-G5-287" secondAttribute="trailing" id="8oc-rf-fqA"/>
                             <constraint firstItem="bGi-dR-WeG" firstAttribute="trailing" secondItem="zmj-G5-287" secondAttribute="trailing" id="8qK-iz-O3h"/>
@@ -500,6 +514,7 @@
                             <constraint firstItem="gmX-Dv-UPs" firstAttribute="trailing" secondItem="zmj-G5-287" secondAttribute="trailing" id="mFq-yY-YN7"/>
                             <constraint firstItem="YhM-Pr-Z8e" firstAttribute="top" secondItem="hMl-FJ-bTS" secondAttribute="bottom" constant="8" id="ph9-rN-Ij3"/>
                             <constraint firstItem="bGi-dR-WeG" firstAttribute="top" secondItem="YhM-Pr-Z8e" secondAttribute="bottom" constant="8.5" id="skO-DP-0bd"/>
+                            <constraint firstItem="E39-QM-H9V" firstAttribute="centerX" secondItem="YhM-Pr-Z8e" secondAttribute="centerX" id="svi-Dt-aN4"/>
                             <constraint firstItem="bGi-dR-WeG" firstAttribute="height" secondItem="ZyE-BX-97s" secondAttribute="height" multiplier="0.15" id="wAM-o0-GNu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zmj-G5-287"/>
@@ -507,6 +522,7 @@
                     <navigationItem key="navigationItem" id="ZZB-Ee-ASA"/>
                     <connections>
                         <outlet property="backgroundIV" destination="gmX-Dv-UPs" id="hgi-gi-Lfc"/>
+                        <outlet property="damageLabel" destination="E39-QM-H9V" id="Cur-dB-0o8"/>
                         <outlet property="enemyHealthProgress" destination="hMl-FJ-bTS" id="Id3-ma-SFg"/>
                         <outlet property="enemyIV" destination="YhM-Pr-Z8e" id="hix-sH-UnQ"/>
                     </connections>
