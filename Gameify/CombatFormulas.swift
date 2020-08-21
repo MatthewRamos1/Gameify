@@ -33,6 +33,18 @@ struct CombatFormulas {
         }
     }
     
+    static func goldCalculation(gold: Int) -> Int {
+        let min = gold - (gold / 4)
+        let max = gold + (gold / 3)
+        let goldDrop = Int.random(in: min...max)
+        return goldDrop
+        
+    }
+    
+    static func lootCalculation() {
+        
+    }
+    
     static func charmCalculation() {
         
     }
