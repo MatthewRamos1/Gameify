@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseFirestore
 
-class ViewController: UIViewController {
+class ProfileViewController: UIViewController {
 
     @IBOutlet weak var playerImage: UIImageView!
     @IBOutlet weak var levelLabel: UILabel!
@@ -123,7 +123,10 @@ class ViewController: UIViewController {
         })
     }
     
-
+    @IBAction func logOutPressed(_ sender: UIBarButtonItem) {
+        
+    }
+    
 
 }
 

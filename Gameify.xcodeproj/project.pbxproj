@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0C4BC13F24156A9D00F00300 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BC13E24156A9D00F00300 /* AppDelegate.swift */; };
 		0C4BC14124156A9D00F00300 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BC14024156A9D00F00300 /* SceneDelegate.swift */; };
-		0C4BC14324156A9D00F00300 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BC14224156A9D00F00300 /* ViewController.swift */; };
+		0C4BC14324156A9D00F00300 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BC14224156A9D00F00300 /* ProfileViewController.swift */; };
 		0C4BC14624156A9D00F00300 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C4BC14424156A9D00F00300 /* Main.storyboard */; };
 		0C4BC14824156AA000F00300 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C4BC14724156AA000F00300 /* Assets.xcassets */; };
 		0C4BC14B24156AA100F00300 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C4BC14924156AA100F00300 /* LaunchScreen.storyboard */; };
@@ -44,7 +44,7 @@
 		0C4BC13B24156A9D00F00300 /* Gameify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gameify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C4BC13E24156A9D00F00300 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C4BC14024156A9D00F00300 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0C4BC14224156A9D00F00300 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0C4BC14224156A9D00F00300 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0C4BC14524156A9D00F00300 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0C4BC14724156AA000F00300 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C4BC14A24156AA100F00300 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -143,7 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				0C5C53E724D29466004867F6 /* LoginViewController.swift */,
-				0C4BC14224156A9D00F00300 /* ViewController.swift */,
+				0C4BC14224156A9D00F00300 /* ProfileViewController.swift */,
 				0C5C53DC24CE35E7004867F6 /* TaskViewController.swift */,
 				0C5851D624D5271900008CE5 /* CreateTaskViewController.swift */,
 				0C7721E124EB499A0097059A /* DungeonListViewController.swift */,
@@ -325,7 +325,7 @@
 				0C7721E624EB49C60097059A /* CombatViewController.swift in Sources */,
 				0C7721DC24EB2EFF0097059A /* EnemyData.swift in Sources */,
 				0C5C53E824D29466004867F6 /* LoginViewController.swift in Sources */,
-				0C4BC14324156A9D00F00300 /* ViewController.swift in Sources */,
+				0C4BC14324156A9D00F00300 /* ProfileViewController.swift in Sources */,
 				0C4BC13F24156A9D00F00300 /* AppDelegate.swift in Sources */,
 				0C5851DE24D9FB5900008CE5 /* UIProgressView + Extensions.swift in Sources */,
 				0C57FAB424F0756200C80222 /* AddFriendViewController.swift in Sources */,

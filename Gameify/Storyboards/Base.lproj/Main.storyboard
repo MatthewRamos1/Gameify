@@ -11,7 +11,7 @@
         <!--Profile-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Gameify" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ProfileViewController" customModule="Gameify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -201,7 +201,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="sfZ-Q3-6v7">
-                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="5co-LD-m8v"/>
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="5co-LD-m8v">
+                            <connections>
+                                <action selector="logOutPressed:" destination="BYZ-38-t0r" id="ZoQ-xO-5nn"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="charismaExp" destination="QZ3-oh-geY" id="Q0J-PO-RjD"/>
