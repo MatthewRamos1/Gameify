@@ -385,7 +385,7 @@ class CreateTaskViewController: UIViewController {
         default:
             guard let tempTask = task else {
                 
-                let task = Task(title: titleText, description: description, imageURL: nil, rating: rating, statUps: statUps, repeatable: repeatable, id: UUID().uuidString, creationDate: Date())
+                let task = Task(title: titleText, description: description, imageURL: nil, rating: rating, statUps: statUps, repeatable: repeatable, id: UUID().uuidString, dayStreak: 0, creationDate: Date())
                 if let image = selectedImage {
                     task.imageURL = uploadTaskPhoto(task: task, image: image)
                 }

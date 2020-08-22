@@ -60,7 +60,7 @@ class DatabaseServices {
     }
     
     public func createUserTask(uid: String, task: Task, completion: @escaping (Result<Bool, Error>) -> ()) {
-        db.collection(DatabaseServices.userCollection).document(uid).collection(DatabaseServices.taskCollection).document(task.id).setData(["title": task.title, "description": task.description, "imageURL": task.imageURL ?? nil , "rating": task.rating, "statUps": task.statUps.first!.rawValue, "repeatable": task.repeatable.rawValue, "id": task.id]) { (error) in
+        db.collection(DatabaseServices.userCollection).document(uid).collection(DatabaseServices.taskCollection).document(task.id).setData(["title": task.title, "description": task.description, "imageURL": task.imageURL ?? nil , "rating": task.rating, "statUps": task.statUps.first!.rawValue, "repeatable": task.repeatable.rawValue, "id": task.id, "dayStreak": 0, "creationDate": task.creationDate]) { (error) in
             if let error = error {
                 completion(.failure(error))
             } else {

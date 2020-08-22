@@ -33,9 +33,10 @@ class Task {
     var statUps: [Stat]
     var repeatable: Repeatable
     var id: String
+    var dayStreak: Int
     var creationDate: Date?
     
-    init(title: String, description: String, imageURL: String?, rating: Int, statUps: [Stat], repeatable: Repeatable, id: String, creationDate: Date? ) {
+    init(title: String, description: String, imageURL: String?, rating: Int, statUps: [Stat], repeatable: Repeatable, id: String, dayStreak: Int, creationDate: Date? ) {
         self.title = title
         self.description = description
         self.imageURL = imageURL
@@ -43,6 +44,7 @@ class Task {
         self.statUps = statUps
         self.repeatable = repeatable
         self.id = id
+        self.dayStreak = dayStreak
         self.creationDate = creationDate
     }
     
@@ -59,6 +61,7 @@ class Task {
         let repeatableString = dictionary["repeatable"] as? String ?? "error"
         self.repeatable = Repeatable(rawValue: repeatableString)!
         self.id = dictionary["id"] as? String ?? ""
-        self.creationDate = dictionary["date"] as? Date ?? nil
+        self.dayStreak = dictionary["dayStreak"] as? Int ?? 0
+        self.creationDate = dictionary["date"] as? Date? ?? nil
     }
     }

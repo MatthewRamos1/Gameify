@@ -214,6 +214,18 @@ class TaskViewController: UIViewController {
         }
     }
     
+    private func dailyStreakCalculation (completionDate: Date) -> Bool {
+        let calendar = NSCalendar.current
+        let tempCreationDate = calendar.startOfDay(for: completionDate)
+        let currentDate = calendar.startOfDay(for: Date())
+        
+        let components = calendar.dateComponents([.day], from: tempCreationDate, to: currentDate)
+        if components.day! == 1 {
+            return true
+        }
+        return false
+    }
+    
     private func deleteTask(task: Task) {
         DatabaseServices.shared.deleteUserTask(task: task) { [weak self] (result) in
             switch result {
