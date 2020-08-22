@@ -25,6 +25,8 @@ class CombatViewController: UIViewController {
         enemyHealthProgress.progress = 1.0
         damageLabel.alpha = 0.0
         damageLabel.textColor = .red
+        enemyIV.image = UIImage(named: enemy.name)
+        print(enemy.name)
     }
     
     private func fetchUser() {

@@ -41,10 +41,8 @@ struct DungeonList {
         for enemy in enemies {
             if enemy.encounterRange.contains(randomVal) {
                 return enemy
-            } else {
-                return enemies.first!
-            }
     }
+}
         return enemies.first!
 }
 }
