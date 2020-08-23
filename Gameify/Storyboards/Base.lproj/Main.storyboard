@@ -466,7 +466,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dungeon" translatesAutoresizingMaskIntoConstraints="NO" id="gmX-Dv-UPs">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="enemy1" translatesAutoresizingMaskIntoConstraints="NO" id="YhM-Pr-Z8e">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YhM-Pr-Z8e">
                                 <rect key="frame" x="79" y="463.5" width="256" height="255.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="YhM-Pr-Z8e" secondAttribute="height" multiplier="1:1" id="yWD-IU-KGG"/>
@@ -534,24 +534,45 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="g3n-8T-Dnw">
+                                <rect key="frame" x="8" y="717.5" width="248.5" height="2"/>
+                                <color key="progressTintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="trackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aR8-sV-4QR">
+                                <rect key="frame" x="122.5" y="669.5" width="19" height="40"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="0">
+                                        <attributes>
+                                            <font key="NSFont" size="34" name="ProFontForPowerline-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="g3n-8T-Dnw" firstAttribute="leading" secondItem="ZyE-BX-97s" secondAttribute="leading" constant="8" id="016-wL-ZBR"/>
                             <constraint firstItem="hMl-FJ-bTS" firstAttribute="top" secondItem="E39-QM-H9V" secondAttribute="bottom" constant="8" id="1ZW-SW-fx8"/>
                             <constraint firstItem="zmj-G5-287" firstAttribute="bottom" secondItem="0ah-rS-b2h" secondAttribute="bottom" id="2OC-7r-NFg"/>
                             <constraint firstItem="0ah-rS-b2h" firstAttribute="trailing" secondItem="zmj-G5-287" secondAttribute="trailing" id="8oc-rf-fqA"/>
                             <constraint firstItem="bGi-dR-WeG" firstAttribute="trailing" secondItem="zmj-G5-287" secondAttribute="trailing" id="8qK-iz-O3h"/>
+                            <constraint firstItem="bGi-dR-WeG" firstAttribute="top" secondItem="g3n-8T-Dnw" secondAttribute="bottom" constant="8" id="9Zc-xQ-uiB"/>
                             <constraint firstItem="hMl-FJ-bTS" firstAttribute="width" secondItem="gmX-Dv-UPs" secondAttribute="width" multiplier="0.2" id="BiY-V4-iI2"/>
                             <constraint firstItem="gmX-Dv-UPs" firstAttribute="top" secondItem="zmj-G5-287" secondAttribute="top" id="F3O-pp-jZj"/>
                             <constraint firstItem="YhM-Pr-Z8e" firstAttribute="centerX" secondItem="gmX-Dv-UPs" secondAttribute="centerX" id="GKO-FE-yoi"/>
                             <constraint firstItem="bGi-dR-WeG" firstAttribute="bottom" secondItem="zmj-G5-287" secondAttribute="bottom" id="IMC-06-VbN"/>
                             <constraint firstItem="zmj-G5-287" firstAttribute="trailing" secondItem="fYs-Xp-j6l" secondAttribute="trailing" id="K8v-hT-zEH"/>
+                            <constraint firstItem="g3n-8T-Dnw" firstAttribute="width" secondItem="gmX-Dv-UPs" secondAttribute="width" multiplier="0.6" id="KgK-rK-GWd"/>
                             <constraint firstItem="bGi-dR-WeG" firstAttribute="leading" secondItem="zmj-G5-287" secondAttribute="leading" id="MS1-go-Zv9"/>
                             <constraint firstItem="fYs-Xp-j6l" firstAttribute="leading" secondItem="zmj-G5-287" secondAttribute="leading" id="OaE-XC-fBU"/>
                             <constraint firstAttribute="bottom" secondItem="gmX-Dv-UPs" secondAttribute="bottom" id="UDe-XV-mUY"/>
                             <constraint firstItem="fYs-Xp-j6l" firstAttribute="height" secondItem="0ah-rS-b2h" secondAttribute="height" id="Wlo-AA-VLO"/>
                             <constraint firstItem="0ah-rS-b2h" firstAttribute="leading" secondItem="zmj-G5-287" secondAttribute="leading" id="X1a-ic-e4i"/>
                             <constraint firstItem="YhM-Pr-Z8e" firstAttribute="height" secondItem="gmX-Dv-UPs" secondAttribute="height" multiplier="0.3" id="Xnb-qg-3jZ"/>
+                            <constraint firstItem="aR8-sV-4QR" firstAttribute="centerX" secondItem="g3n-8T-Dnw" secondAttribute="centerX" id="ZP6-m6-Dpy"/>
                             <constraint firstItem="gmX-Dv-UPs" firstAttribute="leading" secondItem="zmj-G5-287" secondAttribute="leading" id="czf-OF-5sq"/>
                             <constraint firstItem="0ah-rS-b2h" firstAttribute="height" secondItem="ZyE-BX-97s" secondAttribute="height" multiplier="0.075" id="e2J-gq-2jl"/>
                             <constraint firstItem="hMl-FJ-bTS" firstAttribute="centerX" secondItem="YhM-Pr-Z8e" secondAttribute="centerX" id="eT7-c1-l5d"/>
@@ -560,6 +581,7 @@
                             <constraint firstItem="YhM-Pr-Z8e" firstAttribute="top" secondItem="hMl-FJ-bTS" secondAttribute="bottom" constant="8" id="ph9-rN-Ij3"/>
                             <constraint firstItem="bGi-dR-WeG" firstAttribute="top" secondItem="YhM-Pr-Z8e" secondAttribute="bottom" constant="8.5" id="skO-DP-0bd"/>
                             <constraint firstItem="E39-QM-H9V" firstAttribute="centerX" secondItem="YhM-Pr-Z8e" secondAttribute="centerX" id="svi-Dt-aN4"/>
+                            <constraint firstItem="g3n-8T-Dnw" firstAttribute="top" secondItem="aR8-sV-4QR" secondAttribute="bottom" constant="8" id="uEJ-Qs-Be5"/>
                             <constraint firstItem="bGi-dR-WeG" firstAttribute="height" secondItem="ZyE-BX-97s" secondAttribute="height" multiplier="0.15" id="wAM-o0-GNu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zmj-G5-287"/>
@@ -1004,7 +1026,6 @@
         <image name="arrow.branch" catalog="system" width="128" height="108"/>
         <image name="camera.viewfinder" catalog="system" width="128" height="114"/>
         <image name="dungeon" width="512" height="384"/>
-        <image name="enemy1" width="42" height="70"/>
         <image name="pencil.slash" catalog="system" width="128" height="113"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
