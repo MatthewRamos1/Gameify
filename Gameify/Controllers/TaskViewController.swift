@@ -268,6 +268,11 @@ class TaskViewController: UIViewController {
         }
         return sections
     }
+    
+    private func taskToDict(task: Task) -> [String:Any] {
+        let dict = ["title": task.title, "description": task.description, "rating": task.rating, "statUps": task.statUps.first!.rawValue, "repeatable": task.repeatable.rawValue, "dayStreak": task.dayStreak, "creationDate": task.creationDate, "id": task.id] as! [String:Any]
+        return dict
+    }
 }
 
 extension TaskViewController: UITableViewDataSource {
@@ -319,6 +324,10 @@ extension TaskViewController: UITableViewDelegate {
         let alertString = taskCompletion(task)
         let statsDict = userToDict(user: user)
         updateUser(dict: statsDict, alertString: alertString)
+        if task.repeatable == .daily && dailyStreakCalculation(completionDate: task.creationDate!) {
+            task.dayStreak += 1
+            DatabaseServices.shared.updateUserTask(task: <#T##Task#>, dict: <#T##[String : Any]#>, completion: <#T##(Result<Bool, Error>) -> ()#>)
+        }
         if task.repeatable == .oneshot {
             deleteTask(task: task)
             DatabaseServices.shared.createRecentlyCompletedTask(task: task) { [weak self] (result) in
