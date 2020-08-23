@@ -40,61 +40,70 @@ class TaskCell: UITableViewCell {
         } else {
             taskIV.image = UIImage(named: task.statUps.first!.rawValue)
         }
-        
+        setIdentifiers(task: task)
+        setStreakLabel(task: task)
+    }
+    
+    private func setIdentifiers(task: Task) {
         switch task.repeatable {
-        case .always:
-            repeatableRep.image = UIImage(systemName: "repeat")
-        case .daily:
-            repeatableRep.image = UIImage(systemName: "repeat.1")
-        case .oneshot:
-            repeatableRep.image = nil
-        default:
-            repeatableRep.image = UIImage(systemName: "gear")
-        }
-        
-        switch task.rating {
-        case 1:
-            oneStar.image = UIImage(systemName: "star.lefthalf.fill")
-        case 2:
-            oneStar.image = UIImage(systemName: "star.fill")
-        case 3:
-            oneStar.image = UIImage(systemName: "star.fill")
-            twoStar.image = UIImage(systemName: "star.lefthalf.fill")
-        case 4:
-            oneStar.image = UIImage(systemName: "star.fill")
-            twoStar.image = UIImage(systemName: "star.fill")
-        case 5:
-            oneStar.image = UIImage(systemName: "star.fill")
-            twoStar.image = UIImage(systemName: "star.fill")
-            threeStar.image = UIImage(systemName: "star.lefthalf.fill")
-        case 6:
-            oneStar.image = UIImage(systemName: "star.fill")
-            twoStar.image = UIImage(systemName: "star.fill")
-            threeStar.image = UIImage(systemName: "star.fill")
-        case 7:
-            oneStar.image = UIImage(systemName: "star.fill")
-            twoStar.image = UIImage(systemName: "star.fill")
-            threeStar.image = UIImage(systemName: "star.fill")
-            fourStar.image = UIImage(systemName: "star.lefthalf.fill")
-        case 8:
-            oneStar.image = UIImage(systemName: "star.fill")
-            twoStar.image = UIImage(systemName: "star.fill")
-            threeStar.image = UIImage(systemName: "star.fill")
-            fourStar.image = UIImage(systemName: "star.fill")
-            
-        case 9:
-            oneStar.image = UIImage(systemName: "star.fill")
-            twoStar.image = UIImage(systemName: "star.fill")
-            threeStar.image = UIImage(systemName: "star.fill")
-            fourStar.image = UIImage(systemName: "star.fill")
-            fiveStar.image = UIImage(systemName: "star.lefthalf.fill")
-        default:
-            oneStar.image = UIImage(systemName: "star.fill")
-            twoStar.image = UIImage(systemName: "star.fill")
-            threeStar.image = UIImage(systemName: "star.fill")
-            fourStar.image = UIImage(systemName: "star.fill")
-            fiveStar.image = UIImage(systemName: "star.fill")
-            
+               case .always:
+                   repeatableRep.image = UIImage(systemName: "repeat")
+               case .daily:
+                   repeatableRep.image = UIImage(systemName: "repeat.1")
+               case .oneshot:
+                   repeatableRep.image = nil
+               default:
+                   repeatableRep.image = UIImage(systemName: "gear")
+               }
+               
+               switch task.rating {
+               case 1:
+                   oneStar.image = UIImage(systemName: "star.lefthalf.fill")
+               case 2:
+                   oneStar.image = UIImage(systemName: "star.fill")
+               case 3:
+                   oneStar.image = UIImage(systemName: "star.fill")
+                   twoStar.image = UIImage(systemName: "star.lefthalf.fill")
+               case 4:
+                   oneStar.image = UIImage(systemName: "star.fill")
+                   twoStar.image = UIImage(systemName: "star.fill")
+               case 5:
+                   oneStar.image = UIImage(systemName: "star.fill")
+                   twoStar.image = UIImage(systemName: "star.fill")
+                   threeStar.image = UIImage(systemName: "star.lefthalf.fill")
+               case 6:
+                   oneStar.image = UIImage(systemName: "star.fill")
+                   twoStar.image = UIImage(systemName: "star.fill")
+                   threeStar.image = UIImage(systemName: "star.fill")
+               case 7:
+                   oneStar.image = UIImage(systemName: "star.fill")
+                   twoStar.image = UIImage(systemName: "star.fill")
+                   threeStar.image = UIImage(systemName: "star.fill")
+                   fourStar.image = UIImage(systemName: "star.lefthalf.fill")
+               case 8:
+                   oneStar.image = UIImage(systemName: "star.fill")
+                   twoStar.image = UIImage(systemName: "star.fill")
+                   threeStar.image = UIImage(systemName: "star.fill")
+                   fourStar.image = UIImage(systemName: "star.fill")
+                   
+               case 9:
+                   oneStar.image = UIImage(systemName: "star.fill")
+                   twoStar.image = UIImage(systemName: "star.fill")
+                   threeStar.image = UIImage(systemName: "star.fill")
+                   fourStar.image = UIImage(systemName: "star.fill")
+                   fiveStar.image = UIImage(systemName: "star.lefthalf.fill")
+               default:
+                   oneStar.image = UIImage(systemName: "star.fill")
+                   twoStar.image = UIImage(systemName: "star.fill")
+                   threeStar.image = UIImage(systemName: "star.fill")
+                   fourStar.image = UIImage(systemName: "star.fill")
+                   fiveStar.image = UIImage(systemName: "star.fill")
+               }
+    }
+    
+    private func setStreakLabel(task: Task) {
+        if task.dayStreak >= 3 {
+            descriptionLabel.text! += "\n \(task.dayStreak) Day Streak!"
         }
     }
     
