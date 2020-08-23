@@ -326,7 +326,15 @@ extension TaskViewController: UITableViewDelegate {
         updateUser(dict: statsDict, alertString: alertString)
         if task.repeatable == .daily && dailyStreakCalculation(completionDate: task.creationDate!) {
             task.dayStreak += 1
-            DatabaseServices.shared.updateUserTask(task: <#T##Task#>, dict: <#T##[String : Any]#>, completion: <#T##(Result<Bool, Error>) -> ()#>)
+            let dict = taskToDict(task: task)
+            DatabaseServices.shared.updateUserTask(task: task, dict: dict) { [weak self] (result) in
+                switch result {
+                case .failure(let error):
+                    self?.showAlert(title: "Error", message: error.localizedDescription)
+                case .success:
+                    print("added streak counter")
+                }
+            }
         }
         if task.repeatable == .oneshot {
             deleteTask(task: task)
