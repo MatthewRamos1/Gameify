@@ -124,7 +124,12 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func logOutPressed(_ sender: UIBarButtonItem) {
-        
+//        do {
+//            try Auth.auth().signOut()
+//            
+//        } catch let signOutError as NSError {
+//            print ("Error signing out: \(signOutError.localizedDescription)")
+//        }
     }
     
 

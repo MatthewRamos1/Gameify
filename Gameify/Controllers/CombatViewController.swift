@@ -61,7 +61,7 @@ class CombatViewController: UIViewController {
         UIView.animate(withDuration: 0.4, delay: 0.2 , animations: {
             self.damageLabel.alpha = 1
         }) { completion in
-            UIView.animate(withDuration: 0.4, delay: 0.2 , animations: {
+            UIView.animate(withDuration: 0.3, delay: 0.2 , animations: {
                 self.damageLabel.alpha = 0
             })
         }
