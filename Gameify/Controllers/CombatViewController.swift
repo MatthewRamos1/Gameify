@@ -42,30 +42,38 @@ class CombatViewController: UIViewController {
         }
     }
     
+    private func damageCalculation(attackerStrength: Int, defenderConstitution: Int, playerWeaponAttack: Int?, playerArmorDefense: Int?, playerAttacking: Bool) {
+        let damage = CombatFormulas.damageCalculation(strength: attackerStrength, constitution: defenderConstitution, weaponAttack: nil, armorDefense: nil)
+        switch playerAttacking {
+        case true:
+            damageLabel.text = String(damage)
+            enemy.currentHealth = enemy.currentHealth - damage
+            let healthFloat = (Float(enemy.currentHealth)) / (Float(enemy.maxHealth))
+                UIView.animate(withDuration: 0.8, delay: 0.2, animations: {
+                    self.enemyHealthProgress.setProgress(healthFloat, animated: true)
+                    if self.enemy.currentHealth <= 0 {
+                        self.enemyIV.alpha = 0
+                        self.enemyHealthProgress.alpha = 0
+                    }
+                }, completion: nil)
+            UIView.animate(withDuration: 0.4, delay: 0.2 , animations: {
+                self.damageLabel.alpha = 1
+            }) { completion in
+                UIView.animate(withDuration: 0.3, delay: 0.2 , animations: {
+                    self.damageLabel.alpha = 0
+                })
+            }
+        case false:
+            print("enemy attack")
+        }
+    }
+    
     @IBAction func attackButtonPressed(_ sender: UIButton) {
         guard let playerStats = userStats else {
             return
         }
-        let damage = CombatFormulas.damageCalculation(strength: playerStats.strength, constitution: enemy.constitution, weaponAttack: nil, armorDefense: nil)
-        damageLabel.text = String(damage)
-        enemy.currentHealth = enemy.currentHealth - damage
-        let healthFloat = (Float(enemy.currentHealth)) / (Float(enemy.maxHealth))
-        print(damage)
-            UIView.animate(withDuration: 0.8, delay: 0.2, animations: {
-                self.enemyHealthProgress.setProgress(healthFloat, animated: true)
-                if self.enemy.currentHealth <= 0 {
-                    self.enemyIV.alpha = 0
-                    self.enemyHealthProgress.alpha = 0
-                }
-            }, completion: nil)
-        UIView.animate(withDuration: 0.4, delay: 0.2 , animations: {
-            self.damageLabel.alpha = 1
-        }) { completion in
-            UIView.animate(withDuration: 0.3, delay: 0.2 , animations: {
-                self.damageLabel.alpha = 0
-            })
-        }
-        
-    }
+        damageCalculation(attackerStrength: playerStats.strength, defenderConstitution: enemy.constitution, playerWeaponAttack: nil, playerArmorDefense: nil, playerAttacking: true)
     
+}
+
 }
