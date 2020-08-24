@@ -10,6 +10,8 @@ import Foundation
 
 class User {
     var level: Int
+    var currentHealth: Int
+    var maxHealth: Int
     var strength: Int
     var constitution: Int
     var intelligence: Int
@@ -33,6 +35,8 @@ class User {
     init(_ dictionary: [String: Any]) {
         self.level = dictionary["level"] as? Int ?? 0
         self.strength = dictionary["strength"] as? Int ?? 0
+        self.currentHealth = dictionary["currentHealth"] as? Int ?? 0
+        self.maxHealth = dictionary["maxHealth"] as? Int ?? 0
         self.constitution = dictionary["constitution"] as? Int ?? 0
         self.intelligence = dictionary["intelligence"] as? Int ?? 0
         self.wisdom = dictionary["wisdom"] as? Int ?? 0

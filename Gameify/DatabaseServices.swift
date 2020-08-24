@@ -37,7 +37,7 @@ class DatabaseServices {
     }
     
     public func createUserStats(uid: String, completion: @escaping (Result<Bool, Error>) -> ()) {
-        db.collection(DatabaseServices.userCollection).document(uid).collection(DatabaseServices.statsCollection).document(uid).setData(["level": 0, "strength": 0, "constitution": 0, "intelligence": 0, "wisdom": 0, "dexAgi": 0, "charisma": 0, "strengthExp": 0, "constitutionExp": 0, "intelligenceExp": 0, "wisdomExp": 0, "dexAgiExp": 0, "charismaExp": 0, "strengthCap": 1, "constitutionCap": 1, "intelligenceCap": 1, "wisdomCap": 1, "dexAgiCap": 1, "charismaCap": 1, "gold": 0]) { (error) in
+        db.collection(DatabaseServices.userCollection).document(uid).collection(DatabaseServices.statsCollection).document(uid).setData(["level": 0, "currentHealth": 10, "maxHealth": 10, "strength": 0, "constitution": 0, "intelligence": 0, "wisdom": 0, "dexAgi": 0, "charisma": 0, "strengthExp": 0, "constitutionExp": 0, "intelligenceExp": 0, "wisdomExp": 0, "dexAgiExp": 0, "charismaExp": 0, "strengthCap": 1, "constitutionCap": 1, "intelligenceCap": 1, "wisdomCap": 1, "dexAgiCap": 1, "charismaCap": 1, "gold": 0]) { (error) in
             if let error = error {
                 completion(.failure(error))
             } else {
