@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>120327891713-dt0ht3v1s364jm1d7ii27ii8vq2jgldv.apps.googleusercontent.com</string>
+	<string>120327891713-b64khghvatuios4uj425cfk115j0au0p.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.120327891713-dt0ht3v1s364jm1d7ii27ii8vq2jgldv</string>
+	<string>com.googleusercontent.apps.120327891713-b64khghvatuios4uj425cfk115j0au0p</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAYNCkvAgLQrDLdWM0BabVyH6blHPimTj0</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.matthewramos.Gameify</string>
+	<string>com.matthewramos.tasktoquest</string>
 	<key>PROJECT_ID</key>
 	<string>gameify-5abf8</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:120327891713:ios:3946c95a61f97eb008c900</string>
+	<string>1:120327891713:ios:0d1b544c8a8ee51008c900</string>
 	<key>DATABASE_URL</key>
 	<string>https://gameify-5abf8.firebaseio.com</string>
 </dict>

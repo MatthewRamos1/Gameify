@@ -21,8 +21,8 @@
 		0C5851D724D5271900008CE5 /* CreateTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5851D624D5271900008CE5 /* CreateTaskViewController.swift */; };
 		0C5851DE24D9FB5900008CE5 /* UIProgressView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5851DD24D9FB5900008CE5 /* UIProgressView + Extensions.swift */; };
 		0C5C3BE324F5735500E8C814 /* UIViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5C3BE224F5735500E8C814 /* UIViewController + Extensions.swift */; };
+		0C5C3BE524F5791D00E8C814 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C5C3BE424F5791D00E8C814 /* GoogleService-Info.plist */; };
 		0C5C53D924C579FE004867F6 /* DatabaseServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5C53D824C579FE004867F6 /* DatabaseServices.swift */; };
-		0C5C53DB24C57B3D004867F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C5C53DA24C57B3D004867F6 /* GoogleService-Info.plist */; };
 		0C5C53DD24CE35E7004867F6 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5C53DC24CE35E7004867F6 /* TaskViewController.swift */; };
 		0C5C53E024CE3C56004867F6 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5C53DF24CE3C56004867F6 /* Task.swift */; };
 		0C5C53E324CE61AF004867F6 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5C53E224CE61AF004867F6 /* TaskCell.swift */; };
@@ -58,8 +58,8 @@
 		0C5851D624D5271900008CE5 /* CreateTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskViewController.swift; sourceTree = "<group>"; };
 		0C5851DD24D9FB5900008CE5 /* UIProgressView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIProgressView + Extensions.swift"; sourceTree = "<group>"; };
 		0C5C3BE224F5735500E8C814 /* UIViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extensions.swift"; sourceTree = "<group>"; };
+		0C5C3BE424F5791D00E8C814 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0C5C53D824C579FE004867F6 /* DatabaseServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseServices.swift; sourceTree = "<group>"; };
-		0C5C53DA24C57B3D004867F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0C5C53DC24CE35E7004867F6 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		0C5C53DF24CE3C56004867F6 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		0C5C53E224CE61AF004867F6 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
@@ -125,8 +125,8 @@
 				0C57FAAF24EE277F00C80222 /* CombatFormulas.swift */,
 				0C4BC14724156AA000F00300 /* Assets.xcassets */,
 				0C4BC14924156AA100F00300 /* LaunchScreen.storyboard */,
+				0C5C3BE424F5791D00E8C814 /* GoogleService-Info.plist */,
 				0C4BC14C24156AA100F00300 /* Info.plist */,
-				0C5C53DA24C57B3D004867F6 /* GoogleService-Info.plist */,
 				0C5C53E924D3C4A9004867F6 /* AuthenticationSession.swift */,
 			);
 			path = Gameify;
@@ -267,8 +267,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C4BC14B24156AA100F00300 /* LaunchScreen.storyboard in Resources */,
-				0C5C53DB24C57B3D004867F6 /* GoogleService-Info.plist in Resources */,
 				0C4BC14824156AA000F00300 /* Assets.xcassets in Resources */,
+				0C5C3BE524F5791D00E8C814 /* GoogleService-Info.plist in Resources */,
 				0C4BC14624156A9D00F00300 /* Main.storyboard in Resources */,
 				0C5C53E624D29399004867F6 /* LoginView.storyboard in Resources */,
 			);
@@ -500,7 +500,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.matthewramos.Gameify;
+				PRODUCT_BUNDLE_IDENTIFIER = com.matthewramos.tasktoquest;
 				PRODUCT_NAME = Gameify;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -519,7 +519,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.matthewramos.Gameify;
+				PRODUCT_BUNDLE_IDENTIFIER = com.matthewramos.tasktoquest;
 				PRODUCT_NAME = Gameify;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
