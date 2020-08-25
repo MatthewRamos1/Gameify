@@ -52,6 +52,7 @@ class LoginViewController: UIViewController {
     private func navigateToTaskVC() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateInitialViewController()
+        vc?.modalPresentationStyle = .fullScreen
         present(vc!, animated: true)
     }
     
