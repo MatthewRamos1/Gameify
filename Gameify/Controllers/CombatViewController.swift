@@ -19,7 +19,7 @@ class CombatViewController: UIViewController {
     
     var dungeon: Dungeon?
     var enemy: Enemy!
-    var userStats: User?
+    var userStats: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +68,7 @@ class CombatViewController: UIViewController {
                 })
             }
         case false:
-            print("enemy attack")
+            userDamageLabel.text = String(damage)
         }
     }
     
@@ -77,6 +77,7 @@ class CombatViewController: UIViewController {
             return
         }
         damageCalculation(attackerStrength: playerStats.strength, defenderConstitution: enemy.constitution, playerWeaponAttack: nil, playerArmorDefense: nil, playerAttacking: true)
+        damageCalculation(attackerStrength: enemy.strength, defenderConstitution: playerStats.constitution, playerWeaponAttack: nil, playerArmorDefense: nil, playerAttacking: false)
     
 }
 

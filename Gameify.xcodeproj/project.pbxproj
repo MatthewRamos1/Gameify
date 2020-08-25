@@ -20,6 +20,7 @@
 		0C57FAB824F0844900C80222 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C57FAB724F0844900C80222 /* FeedViewController.swift */; };
 		0C5851D724D5271900008CE5 /* CreateTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5851D624D5271900008CE5 /* CreateTaskViewController.swift */; };
 		0C5851DE24D9FB5900008CE5 /* UIProgressView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5851DD24D9FB5900008CE5 /* UIProgressView + Extensions.swift */; };
+		0C5C3BE324F5735500E8C814 /* UIViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5C3BE224F5735500E8C814 /* UIViewController + Extensions.swift */; };
 		0C5C53D924C579FE004867F6 /* DatabaseServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5C53D824C579FE004867F6 /* DatabaseServices.swift */; };
 		0C5C53DB24C57B3D004867F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C5C53DA24C57B3D004867F6 /* GoogleService-Info.plist */; };
 		0C5C53DD24CE35E7004867F6 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5C53DC24CE35E7004867F6 /* TaskViewController.swift */; };
@@ -56,6 +57,7 @@
 		0C57FAB724F0844900C80222 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		0C5851D624D5271900008CE5 /* CreateTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskViewController.swift; sourceTree = "<group>"; };
 		0C5851DD24D9FB5900008CE5 /* UIProgressView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIProgressView + Extensions.swift"; sourceTree = "<group>"; };
+		0C5C3BE224F5735500E8C814 /* UIViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extensions.swift"; sourceTree = "<group>"; };
 		0C5C53D824C579FE004867F6 /* DatabaseServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseServices.swift; sourceTree = "<group>"; };
 		0C5C53DA24C57B3D004867F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0C5C53DC24CE35E7004867F6 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 		0C5851DF24D9FB5F00008CE5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0C5C3BE224F5735500E8C814 /* UIViewController + Extensions.swift */,
 				0C5C53EB24D3C691004867F6 /* UIViewController + Alerts.swift */,
 				0C5851DD24D9FB5900008CE5 /* UIProgressView + Extensions.swift */,
 			);
@@ -326,6 +329,7 @@
 				0C7721DC24EB2EFF0097059A /* EnemyData.swift in Sources */,
 				0C5C53E824D29466004867F6 /* LoginViewController.swift in Sources */,
 				0C4BC14324156A9D00F00300 /* ProfileViewController.swift in Sources */,
+				0C5C3BE324F5735500E8C814 /* UIViewController + Extensions.swift in Sources */,
 				0C4BC13F24156A9D00F00300 /* AppDelegate.swift in Sources */,
 				0C5851DE24D9FB5900008CE5 /* UIProgressView + Extensions.swift in Sources */,
 				0C57FAB424F0756200C80222 /* AddFriendViewController.swift in Sources */,
