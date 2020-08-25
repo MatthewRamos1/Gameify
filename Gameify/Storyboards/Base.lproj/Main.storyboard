@@ -589,9 +589,11 @@
                     <navigationItem key="navigationItem" id="ZZB-Ee-ASA"/>
                     <connections>
                         <outlet property="backgroundIV" destination="gmX-Dv-UPs" id="hgi-gi-Lfc"/>
-                        <outlet property="damageLabel" destination="E39-QM-H9V" id="Cur-dB-0o8"/>
+                        <outlet property="enemyDamageLabel" destination="E39-QM-H9V" id="Cur-dB-0o8"/>
                         <outlet property="enemyHealthProgress" destination="hMl-FJ-bTS" id="Id3-ma-SFg"/>
                         <outlet property="enemyIV" destination="YhM-Pr-Z8e" id="hix-sH-UnQ"/>
+                        <outlet property="userDamageLabel" destination="aR8-sV-4QR" id="hCU-6s-DWT"/>
+                        <outlet property="userHealthProgress" destination="g3n-8T-Dnw" id="3GQ-SN-GfA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rca-cw-UNI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

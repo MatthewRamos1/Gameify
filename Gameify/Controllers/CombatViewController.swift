@@ -13,7 +13,9 @@ class CombatViewController: UIViewController {
     @IBOutlet weak var backgroundIV: UIImageView!
     @IBOutlet weak var enemyIV: UIImageView!
     @IBOutlet weak var enemyHealthProgress: UIProgressView!
-    @IBOutlet weak var damageLabel: UILabel!
+    @IBOutlet weak var enemyDamageLabel: UILabel!
+    @IBOutlet weak var userHealthProgress: UIProgressView!
+    @IBOutlet weak var userDamageLabel: UILabel!
     
     var dungeon: Dungeon?
     var enemy: Enemy!
@@ -23,10 +25,12 @@ class CombatViewController: UIViewController {
         super.viewDidLoad()
         fetchUser()
         enemyHealthProgress.progress = 1.0
-        damageLabel.alpha = 0.0
-        damageLabel.textColor = .red
+        userHealthProgress.progress = 1.0
+        enemyDamageLabel.alpha = 0.0
+        enemyDamageLabel.textColor = .systemRed
+        userDamageLabel.alpha = 0.0
+        userDamageLabel.textColor = .systemRed
         enemyIV.image = UIImage(named: enemy.name)
-        print(enemy.name)
     }
     
     private func fetchUser() {
@@ -46,7 +50,7 @@ class CombatViewController: UIViewController {
         let damage = CombatFormulas.damageCalculation(strength: attackerStrength, constitution: defenderConstitution, weaponAttack: nil, armorDefense: nil)
         switch playerAttacking {
         case true:
-            damageLabel.text = String(damage)
+            enemyDamageLabel.text = String(damage)
             enemy.currentHealth = enemy.currentHealth - damage
             let healthFloat = (Float(enemy.currentHealth)) / (Float(enemy.maxHealth))
                 UIView.animate(withDuration: 0.8, delay: 0.2, animations: {
@@ -57,10 +61,10 @@ class CombatViewController: UIViewController {
                     }
                 }, completion: nil)
             UIView.animate(withDuration: 0.4, delay: 0.2 , animations: {
-                self.damageLabel.alpha = 1
+                self.enemyDamageLabel.alpha = 1
             }) { completion in
                 UIView.animate(withDuration: 0.3, delay: 0.2 , animations: {
-                    self.damageLabel.alpha = 0
+                    self.enemyDamageLabel.alpha = 0
                 })
             }
         case false:

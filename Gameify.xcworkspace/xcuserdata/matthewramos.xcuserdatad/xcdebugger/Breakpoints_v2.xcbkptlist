@@ -48,7 +48,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "38"
                   endingLineNumber = "38"
-                  offsetFromSymbolStart = "424">
+                  offsetFromSymbolStart = "358">
                </Location>
                <Location
                   uuid = "C01D9E00-A157-4802-A252-0526D46A329D - ec36ae58f2dac8de"
@@ -63,25 +63,9 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "38"
                   endingLineNumber = "38"
-                  offsetFromSymbolStart = "560">
+                  offsetFromSymbolStart = "522">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8475635A-52ED-4D88-86C9-EC5403E1F82E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Gameify/Models/DungeonData.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "getEnemy(dungeon:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -182,7 +182,7 @@ class CreateTaskViewController: UIViewController {
     }
     
     private func taskToDict(task: Task) -> [String:Any] {
-        let dict = ["title": task.title, "description": task.description, "rating": task.rating, "statUps": task.statUps.first!.rawValue, "repeatable": task.repeatable.rawValue, "id": task.id, "createdDate": task.creationDate] as! [String:Any]
+        let dict = ["title": task.title, "description": task.description, "rating": task.rating, "statUps": task.statUps.first!.rawValue, "repeatable": task.repeatable.rawValue, "id": task.id, "creationDate": task.creationDate] as! [String:Any]
         return dict
     }
     

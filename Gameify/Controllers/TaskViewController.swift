@@ -76,7 +76,7 @@ class TaskViewController: UIViewController {
     }
     
     private func userToDict(user: User) -> [String:Any] {
-        let dict = ["level": user.level, "strength": user.strength, "constitution": user.constitution, "intelligence": user.intelligence, "wisdom": user.wisdom, "dexAgi": user.dexAgi, "charisma": user.charisma, "strengthExp": user.strengthExp, "constitutionExp": user.constitutionExp, "intelligenceExp": user.intelligenceExp, "wisdomExp": user.wisdomExp, "dexAgiExp": user.dexAgiExp, "charismaExp": user.charismaExp, "strengthCap": user.strengthCap, "constitutionCap": user.constitutionCap, "intelligenceCap": user.intelligenceCap, "wisdomCap": user.wisdomCap, "dexAgiCap": user.dexAgiCap, "charismaCap": user.charismaCap, "gold": user.gold]
+        let dict = ["level": user.level, "strength": user.strength, "currentHealth": user.currentHealth, "maxHealth": user.currentHealth, "constitution": user.constitution, "intelligence": user.intelligence, "wisdom": user.wisdom, "dexAgi": user.dexAgi, "charisma": user.charisma, "strengthExp": user.strengthExp, "constitutionExp": user.constitutionExp, "intelligenceExp": user.intelligenceExp, "wisdomExp": user.wisdomExp, "dexAgiExp": user.dexAgiExp, "charismaExp": user.charismaExp, "strengthCap": user.strengthCap, "constitutionCap": user.constitutionCap, "intelligenceCap": user.intelligenceCap, "wisdomCap": user.wisdomCap, "dexAgiCap": user.dexAgiCap, "charismaCap": user.charismaCap, "gold": user.gold]
         return dict
     }
     
@@ -324,12 +324,12 @@ extension TaskViewController: UITableViewDelegate {
         let alertString = taskCompletion(task)
         let statsDict = userToDict(user: user)
         updateUser(dict: statsDict, alertString: alertString)
-//        if task.repeatable == .daily && dailyStreakCalculation(completionDate: task.creationDate!) {
-//            task.dayStreak += 1
-//        }
-//        if task.repeatable == .daily && dailyStreakCalculation(completionDate: task.creationDate!) {
-//            task.dayStreak = 1
-//        }
+        if task.repeatable == .daily && dailyStreakCalculation(completionDate: task.creationDate!) {
+            task.dayStreak += 1
+        }
+        if task.repeatable == .daily && dailyStreakCalculation(completionDate: task.creationDate!) {
+            task.dayStreak = 1
+        }
         let dict = taskToDict(task: task)
         DatabaseServices.shared.updateUserTask(task: task, dict: dict) { [weak self] (result) in
             switch result {
