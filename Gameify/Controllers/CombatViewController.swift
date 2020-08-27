@@ -77,7 +77,10 @@ class CombatViewController: UIViewController {
             return
         }
         damageCalculation(attackerStrength: playerStats.strength, defenderConstitution: enemy.constitution, playerWeaponAttack: nil, playerArmorDefense: nil, playerAttacking: true)
-        damageCalculation(attackerStrength: enemy.strength, defenderConstitution: playerStats.constitution, playerWeaponAttack: nil, playerArmorDefense: nil, playerAttacking: false)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.damageCalculation(attackerStrength: playerStats.strength, defenderConstitution: self.enemy.constitution, playerWeaponAttack: nil, playerArmorDefense: nil, playerAttacking: true)
+        }
+//        damageCalculation(attackerStrength: enemy.strength, defenderConstitution: playerStats.constitution, playerWeaponAttack: nil, playerArmorDefense: nil, playerAttacking: false)
     
 }
 
