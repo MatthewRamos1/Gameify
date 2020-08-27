@@ -103,8 +103,10 @@ class CombatViewController: UIViewController {
             return
         }
         damageCalculation(attackerStrength: playerStats.strength, defenderConstitution: enemy.constitution, playerWeaponAttack: nil, playerArmorDefense: nil, playerAttacking: true)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.damageCalculation(attackerStrength: self.enemy.strength, defenderConstitution: self.userStats.constitution, playerWeaponAttack: nil, playerArmorDefense: nil, playerAttacking: false)
+        if enemy.currentHealth > 0 {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.damageCalculation(attackerStrength: self.enemy.strength, defenderConstitution: self.userStats.constitution, playerWeaponAttack: nil, playerArmorDefense: nil, playerAttacking: false)
+            }
         }
 }
 
