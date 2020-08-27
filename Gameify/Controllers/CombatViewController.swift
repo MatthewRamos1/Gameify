@@ -69,6 +69,18 @@ class CombatViewController: UIViewController {
             }
         case false:
             userDamageLabel.text = String(damage)
+            userStats.currentHealth = userStats.currentHealth - damage
+            let healthFloat = (Float(userStats.currentHealth)) / (Float(userStats.maxHealth))
+            UIView.animate(withDuration: 0.8, delay: 0.2, animations: {
+                self.userHealthProgress.setProgress(healthFloat, animated: true)
+            }, completion: nil)
+            UIView.animate(withDuration: 0.4, delay: 0.2 , animations: {
+                self.userDamageLabel.alpha = 1
+            }) { completion in
+                UIView.animate(withDuration: 0.3, delay: 0.2 , animations: {
+                    self.userDamageLabel.alpha = 0
+                })
+            }
         }
     }
     
@@ -78,10 +90,8 @@ class CombatViewController: UIViewController {
         }
         damageCalculation(attackerStrength: playerStats.strength, defenderConstitution: enemy.constitution, playerWeaponAttack: nil, playerArmorDefense: nil, playerAttacking: true)
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.damageCalculation(attackerStrength: playerStats.strength, defenderConstitution: self.enemy.constitution, playerWeaponAttack: nil, playerArmorDefense: nil, playerAttacking: true)
+            self.damageCalculation(attackerStrength: self.enemy.strength, defenderConstitution: self.userStats.constitution, playerWeaponAttack: nil, playerArmorDefense: nil, playerAttacking: false)
         }
-//        damageCalculation(attackerStrength: enemy.strength, defenderConstitution: playerStats.constitution, playerWeaponAttack: nil, playerArmorDefense: nil, playerAttacking: false)
-    
 }
 
 }
