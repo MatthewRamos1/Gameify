@@ -17,7 +17,10 @@ struct CombatFormulas {
         let range = (baseDamage / 16) + 1
         let dmgMin = baseDamage - range
         let dmgMax = baseDamage + range
-        let damage = Int.random(in: dmgMin...dmgMax)
+        var damage = Int.random(in: dmgMin...dmgMax)
+        if damage <= 0 {
+            damage = 1
+        }
         return damage
         
         
