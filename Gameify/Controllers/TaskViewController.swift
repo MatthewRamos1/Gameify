@@ -324,12 +324,12 @@ extension TaskViewController: UITableViewDelegate {
         let alertString = taskCompletion(task)
         let statsDict = userToDict(user: user)
         updateUser(dict: statsDict, alertString: alertString)
-        if task.repeatable == .daily && dailyStreakCalculation(completionDate: task.creationDate!) {
-            task.dayStreak += 1
-        }
-        if task.repeatable == .daily && dailyStreakCalculation(completionDate: task.creationDate!) {
-            task.dayStreak = 1
-        }
+//        if task.repeatable == .daily && dailyStreakCalculation(completionDate: task.creationDate!) {
+//            task.dayStreak += 1
+//        }
+//        if task.repeatable == .daily && dailyStreakCalculation(completionDate: task.creationDate!) {
+//            task.dayStreak = 1
+//        }
         let dict = taskToDict(task: task)
         DatabaseServices.shared.updateUserTask(task: task, dict: dict) { [weak self] (result) in
             switch result {
