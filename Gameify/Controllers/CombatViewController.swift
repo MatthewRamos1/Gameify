@@ -16,6 +16,10 @@ class CombatViewController: UIViewController {
     @IBOutlet weak var enemyDamageLabel: UILabel!
     @IBOutlet weak var userHealthProgress: UIProgressView!
     @IBOutlet weak var userDamageLabel: UILabel!
+    @IBOutlet weak var attackCombatUIButton: UIButton!
+    @IBOutlet weak var talkCombatUIButton: UIButton!
+    @IBOutlet weak var itemCombatUIButton: UIButton!
+    @IBOutlet weak var escapeCombatUIButton: UIButton!
     
     var dungeon: Dungeon?
     var enemy: Enemy!
@@ -50,6 +54,7 @@ class CombatViewController: UIViewController {
         let damage = CombatFormulas.damageCalculation(strength: attackerStrength, constitution: defenderConstitution, weaponAttack: nil, armorDefense: nil)
         switch playerAttacking {
         case true:
+            toggleCombatUIButtons()
             enemyDamageLabel.text = String(damage)
             enemy.currentHealth = enemy.currentHealth - damage
             let healthFloat = (Float(enemy.currentHealth)) / (Float(enemy.maxHealth))
@@ -79,9 +84,18 @@ class CombatViewController: UIViewController {
             }) { completion in
                 UIView.animate(withDuration: 0.3, delay: 0.2 , animations: {
                     self.userDamageLabel.alpha = 0
-                })
+                }) { completion in
+                    self.toggleCombatUIButtons()
+                }
             }
         }
+    }
+    
+    private func toggleCombatUIButtons() {
+        attackCombatUIButton.isEnabled.toggle()
+        talkCombatUIButton.isEnabled.toggle()
+        itemCombatUIButton.isEnabled.toggle()
+        escapeCombatUIButton.isEnabled.toggle()
     }
     
     @IBAction func attackButtonPressed(_ sender: UIButton) {
