@@ -20,6 +20,7 @@ class CombatViewController: UIViewController {
     @IBOutlet weak var talkCombatUIButton: UIButton!
     @IBOutlet weak var itemCombatUIButton: UIButton!
     @IBOutlet weak var escapeCombatUIButton: UIButton!
+    @IBOutlet weak var combatUILabel: UILabel!
     
     var dungeon: Dungeon?
     var enemy: Enemy!
@@ -56,6 +57,7 @@ class CombatViewController: UIViewController {
         case true:
             toggleCombatUIButtons()
             enemyDamageLabel.text = String(damage)
+            combatUILabel.text = "You hit \(enemy.name) for \(damage) damage!"
             enemy.currentHealth = enemy.currentHealth - damage
             let healthFloat = (Float(enemy.currentHealth)) / (Float(enemy.maxHealth))
                 UIView.animate(withDuration: 0.6, delay: 0.2, animations: {
@@ -81,6 +83,7 @@ class CombatViewController: UIViewController {
             }
         case false:
             userDamageLabel.text = String(damage)
+            combatUILabel.text! += "\n \(enemy.name) hit you for \(damage) damage!"
             userStats.currentHealth = userStats.currentHealth - damage
             let healthFloat = (Float(userStats.currentHealth)) / (Float(userStats.maxHealth))
             UIView.animate(withDuration: 0.8, delay: 0.2, animations: {
@@ -99,10 +102,14 @@ class CombatViewController: UIViewController {
     }
     
     private func toggleCombatUIButtons() {
-        attackCombatUIButton.isEnabled.toggle()
-        talkCombatUIButton.isEnabled.toggle()
-        itemCombatUIButton.isEnabled.toggle()
-        escapeCombatUIButton.isEnabled.toggle()
+        attackCombatUIButton.isHidden.toggle()
+        talkCombatUIButton.isHidden.toggle()
+        itemCombatUIButton.isHidden.toggle()
+        escapeCombatUIButton.isHidden.toggle()
+        combatUILabel.isHidden.toggle()
+        if combatUILabel.isHidden == true {
+            combatUILabel.text = nil
+        }
     }
     
     @IBAction func attackButtonPressed(_ sender: UIButton) {

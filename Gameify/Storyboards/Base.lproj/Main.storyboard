@@ -540,25 +540,6 @@
                                 <rect key="frame" x="0.0" y="727.5" width="414" height="134.5"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0ah-rS-b2h">
-                                <rect key="frame" x="0.0" y="795" width="414" height="67"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1d-xB-DXH">
-                                        <rect key="frame" x="0.0" y="0.0" width="207" height="67"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
-                                        <state key="normal" title="Item">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lqd-7C-EKr">
-                                        <rect key="frame" x="207" y="0.0" width="207" height="67"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                                        <state key="normal" title="Escape">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="fYs-Xp-j6l">
                                 <rect key="frame" x="0.0" y="727.5" width="414" height="67.5"/>
                                 <subviews>
@@ -576,6 +557,25 @@
                                         <rect key="frame" x="207" y="0.0" width="207" height="67.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
                                         <state key="normal" title="Talk">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0ah-rS-b2h">
+                                <rect key="frame" x="0.0" y="795" width="414" height="67"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1d-xB-DXH">
+                                        <rect key="frame" x="0.0" y="0.0" width="207" height="67"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
+                                        <state key="normal" title="Item">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lqd-7C-EKr">
+                                        <rect key="frame" x="207" y="0.0" width="207" height="67"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                        <state key="normal" title="Escape">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
@@ -610,6 +610,12 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ta3-Qr-Wgu">
+                                <rect key="frame" x="0.0" y="719.5" width="414" height="75.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -622,6 +628,7 @@
                             <constraint firstItem="hMl-FJ-bTS" firstAttribute="width" secondItem="gmX-Dv-UPs" secondAttribute="width" multiplier="0.2" id="BiY-V4-iI2"/>
                             <constraint firstItem="gmX-Dv-UPs" firstAttribute="top" secondItem="zmj-G5-287" secondAttribute="top" id="F3O-pp-jZj"/>
                             <constraint firstItem="YhM-Pr-Z8e" firstAttribute="centerX" secondItem="gmX-Dv-UPs" secondAttribute="centerX" id="GKO-FE-yoi"/>
+                            <constraint firstItem="ta3-Qr-Wgu" firstAttribute="leading" secondItem="zmj-G5-287" secondAttribute="leading" id="HNU-E7-14B"/>
                             <constraint firstItem="bGi-dR-WeG" firstAttribute="bottom" secondItem="zmj-G5-287" secondAttribute="bottom" id="IMC-06-VbN"/>
                             <constraint firstItem="zmj-G5-287" firstAttribute="trailing" secondItem="fYs-Xp-j6l" secondAttribute="trailing" id="K8v-hT-zEH"/>
                             <constraint firstItem="g3n-8T-Dnw" firstAttribute="width" secondItem="gmX-Dv-UPs" secondAttribute="width" multiplier="0.6" id="KgK-rK-GWd"/>
@@ -636,10 +643,13 @@
                             <constraint firstItem="0ah-rS-b2h" firstAttribute="height" secondItem="ZyE-BX-97s" secondAttribute="height" multiplier="0.075" id="e2J-gq-2jl"/>
                             <constraint firstItem="hMl-FJ-bTS" firstAttribute="centerX" secondItem="YhM-Pr-Z8e" secondAttribute="centerX" id="eT7-c1-l5d"/>
                             <constraint firstItem="0ah-rS-b2h" firstAttribute="top" secondItem="fYs-Xp-j6l" secondAttribute="bottom" id="fMY-cS-6ld"/>
+                            <constraint firstItem="ta3-Qr-Wgu" firstAttribute="top" secondItem="g3n-8T-Dnw" secondAttribute="bottom" id="lPB-2z-GqG"/>
                             <constraint firstItem="gmX-Dv-UPs" firstAttribute="trailing" secondItem="zmj-G5-287" secondAttribute="trailing" id="mFq-yY-YN7"/>
                             <constraint firstItem="YhM-Pr-Z8e" firstAttribute="top" secondItem="hMl-FJ-bTS" secondAttribute="bottom" constant="8" id="ph9-rN-Ij3"/>
+                            <constraint firstItem="zmj-G5-287" firstAttribute="trailing" secondItem="ta3-Qr-Wgu" secondAttribute="trailing" id="rA8-8a-dcD"/>
                             <constraint firstItem="bGi-dR-WeG" firstAttribute="top" secondItem="YhM-Pr-Z8e" secondAttribute="bottom" constant="8.5" id="skO-DP-0bd"/>
                             <constraint firstItem="E39-QM-H9V" firstAttribute="centerX" secondItem="YhM-Pr-Z8e" secondAttribute="centerX" id="svi-Dt-aN4"/>
+                            <constraint firstItem="0ah-rS-b2h" firstAttribute="top" secondItem="ta3-Qr-Wgu" secondAttribute="bottom" id="tej-WO-daT"/>
                             <constraint firstItem="g3n-8T-Dnw" firstAttribute="top" secondItem="aR8-sV-4QR" secondAttribute="bottom" constant="8" id="uEJ-Qs-Be5"/>
                             <constraint firstItem="bGi-dR-WeG" firstAttribute="height" secondItem="ZyE-BX-97s" secondAttribute="height" multiplier="0.15" id="wAM-o0-GNu"/>
                         </constraints>
@@ -649,6 +659,7 @@
                     <connections>
                         <outlet property="attackCombatUIButton" destination="bdr-Oa-96f" id="PZh-at-wHC"/>
                         <outlet property="backgroundIV" destination="gmX-Dv-UPs" id="hgi-gi-Lfc"/>
+                        <outlet property="combatUILabel" destination="ta3-Qr-Wgu" id="2D9-Az-7jJ"/>
                         <outlet property="enemyDamageLabel" destination="E39-QM-H9V" id="Cur-dB-0o8"/>
                         <outlet property="enemyHealthProgress" destination="hMl-FJ-bTS" id="Id3-ma-SFg"/>
                         <outlet property="enemyIV" destination="YhM-Pr-Z8e" id="hix-sH-UnQ"/>
@@ -1113,6 +1124,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="OoZ-ay-Fpn"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Q5x-2i-l6E">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
