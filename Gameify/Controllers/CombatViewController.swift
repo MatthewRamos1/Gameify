@@ -122,7 +122,12 @@ class CombatViewController: UIViewController {
                 self.damageCalculation(attackerStrength: self.enemy.strength, defenderConstitution: self.userStats.constitution, playerWeaponAttack: nil, playerArmorDefense: nil, playerAttacking: false)
             }
         } else {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            let goldDrop = CombatFormulas.goldCalculation(gold: enemy.goldDrop)
+            combatUILabel.text! += "\n You defeated \(enemy.name)!"
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                self.combatUILabel.text! += "\n You found \(goldDrop) gold!"
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
                 self.navigationController?.popViewController(animated: true)
             }
         }
