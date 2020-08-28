@@ -58,17 +58,24 @@ class CombatViewController: UIViewController {
             enemyDamageLabel.text = String(damage)
             enemy.currentHealth = enemy.currentHealth - damage
             let healthFloat = (Float(enemy.currentHealth)) / (Float(enemy.maxHealth))
-                UIView.animate(withDuration: 0.8, delay: 0.2, animations: {
+                UIView.animate(withDuration: 0.6, delay: 0.2, animations: {
                     self.enemyHealthProgress.setProgress(healthFloat, animated: true)
                     if self.enemy.currentHealth <= 0 {
                         self.enemyIV.alpha = 0
                         self.enemyHealthProgress.alpha = 0
                     }
                 }, completion: nil)
+            UIView.transition(with: enemyIV, duration: 0.3, options: [.transitionCrossDissolve, .curveEaseOut], animations: { self.enemyIV.image = UIImage(named: self.enemy.name + "2")}) {
+                completion in
+                if self.enemy.currentHealth > 1 {
+                    UIView.transition(with: self.enemyIV, duration: 0.3, options: [.transitionCrossDissolve, .curveEaseIn], animations: { self.enemyIV.image = UIImage(named: self.enemy.name)}, completion: nil)
+
+                }
+            }
             UIView.animate(withDuration: 0.4, delay: 0.2 , animations: {
                 self.enemyDamageLabel.alpha = 1
             }) { completion in
-                UIView.animate(withDuration: 0.3, delay: 0.2 , animations: {
+                UIView.animate(withDuration: 0.2, delay: 0.2 , animations: {
                     self.enemyDamageLabel.alpha = 0
                 })
             }
