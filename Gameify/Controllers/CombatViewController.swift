@@ -114,6 +114,10 @@ class CombatViewController: UIViewController {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 self.damageCalculation(attackerStrength: self.enemy.strength, defenderConstitution: self.userStats.constitution, playerWeaponAttack: nil, playerArmorDefense: nil, playerAttacking: false)
             }
+        } else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                self.navigationController?.popViewController(animated: true)
+            }
         }
 }
 
