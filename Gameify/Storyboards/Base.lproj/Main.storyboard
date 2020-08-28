@@ -247,14 +247,14 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="xDH-1v-HFh" kind="relationship" relationship="rootViewController" id="Rq1-q1-JXh"/>
+                        <segue destination="3Za-20-IzM" kind="relationship" relationship="rootViewController" id="hse-8W-H1T"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0AB-9c-sp0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1958" y="892"/>
         </scene>
-        <!--Feed View Controller-->
+        <!--Feed-->
         <scene sceneID="cHH-2g-WpB">
             <objects>
                 <viewController id="xDH-1v-HFh" customClass="FeedViewController" customModule="Gameify" customModuleProvider="target" sceneMemberID="viewController">
@@ -263,7 +263,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="w5x-Bh-0ID">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="676"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="niO-Fa-CTa">
                                     <size key="itemSize" width="128" height="128"/>
@@ -292,12 +292,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xV8-Wa-LQx"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Feed" selectedImage="photo.fill.on.rectangle.fill" catalog="system" id="2p3-Ev-yH6"/>
                     <navigationItem key="navigationItem" id="wao-lE-hVG">
-                        <barButtonItem key="rightBarButtonItem" title="Add Friend" id="jnI-1J-cdF">
-                            <connections>
-                                <segue destination="3ON-DH-4oZ" kind="show" id="5tB-dZ-u86"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Add Friend" id="jnI-1J-cdF"/>
                     </navigationItem>
                     <connections>
                         <outlet property="feedCollectionView" destination="w5x-Bh-0ID" id="Fzo-13-dWT"/>
@@ -305,7 +302,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KlJ-eA-LFq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2866.666666666667" y="891.96428571428567"/>
+            <point key="canvasLocation" x="4367" y="368"/>
+        </scene>
+        <!--Friends List-->
+        <scene sceneID="996-Lg-1oc">
+            <objects>
+                <viewController id="DJt-To-uN7" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XOV-6q-JBB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="y2D-MH-Auc"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Friends List" selectedImage="rectangle.stack.person.crop.fill" catalog="system" id="rK3-Wn-O9E"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ewj-ot-aFe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4369" y="1030"/>
         </scene>
         <!--Add Friend View Controller-->
         <scene sceneID="pc5-Wx-scE">
@@ -337,7 +350,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UGS-Dm-2Xm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3748" y="892"/>
+            <point key="canvasLocation" x="5496" y="573"/>
         </scene>
         <!--Quest-->
         <scene sceneID="Uh9-Qj-voi">
@@ -1093,6 +1106,25 @@
             </objects>
             <point key="canvasLocation" x="1958" y="2458"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="TZS-2b-kis">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="3Za-20-IzM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="OoZ-ay-Fpn"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Q5x-2i-l6E">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="xDH-1v-HFh" kind="relationship" relationship="viewControllers" id="Uej-7a-0or"/>
+                        <segue destination="DJt-To-uN7" kind="relationship" relationship="viewControllers" id="gu1-6w-yHX"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gdP-Uq-wBe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2867" y="892"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrow.branch" catalog="system" width="128" height="108"/>
@@ -1103,7 +1135,9 @@
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="person.crop.square.fill" catalog="system" width="128" height="114"/>
+        <image name="photo.fill.on.rectangle.fill" catalog="system" width="128" height="98"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="rectangle.stack.person.crop.fill" catalog="system" width="128" height="122"/>
         <image name="repeat" catalog="system" width="128" height="99"/>
         <image name="square.and.pencil" catalog="system" width="128" height="118"/>
         <image name="star" catalog="system" width="128" height="116"/>
