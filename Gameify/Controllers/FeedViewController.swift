@@ -41,6 +41,7 @@ extension FeedViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "feedCell", for: indexPath)
+        cell.shadowConfig()
         return cell
     }
     
