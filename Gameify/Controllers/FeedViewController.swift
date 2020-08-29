@@ -12,8 +12,11 @@ class FeedViewController: UIViewController {
 
     @IBOutlet weak var feedCollectionView: UICollectionView!
     private var friendsList = [Friend]()
+    private var taskUpdates = [Task]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        feedCollectionView.dataSource = self
+        feedCollectionView.delegate = self
         fetchFriendsList()
     }
     
@@ -29,4 +32,21 @@ class FeedViewController: UIViewController {
             }
         }
     }
+}
+
+extension FeedViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "feedCell", for: indexPath)
+        return cell
+    }
+    
+    
+}
+
+extension FeedViewController: UICollectionViewDelegateFlowLayout {
+    
 }
