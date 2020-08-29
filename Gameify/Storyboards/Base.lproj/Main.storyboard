@@ -272,7 +272,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="feedCell" id="anE-uN-QHZ">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="feedCell" id="anE-uN-QHZ" customClass="FeedCell" customModule="Gameify" customModuleProvider="target">
                                         <rect key="frame" x="53" y="0.0" width="308" height="114"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="muS-fS-SLB">
@@ -310,6 +310,11 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="308" height="114"/>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="UYV-cb-H1J" id="cZB-4M-J3z"/>
+                                            <outlet property="feedFriendImageView" destination="aOP-Ir-xm1" id="tPW-zg-WXI"/>
+                                            <outlet property="feedFriendNameLabel" destination="rBB-gb-POY" id="cdm-18-zYf"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

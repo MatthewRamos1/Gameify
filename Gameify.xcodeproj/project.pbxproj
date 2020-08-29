@@ -30,6 +30,7 @@
 		0C5C53E824D29466004867F6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5C53E724D29466004867F6 /* LoginViewController.swift */; };
 		0C5C53EA24D3C4A9004867F6 /* AuthenticationSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5C53E924D3C4A9004867F6 /* AuthenticationSession.swift */; };
 		0C5C53EC24D3C691004867F6 /* UIViewController + Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5C53EB24D3C691004867F6 /* UIViewController + Alerts.swift */; };
+		0C67DB0B24FA07E2004D872C /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C67DB0A24FA07E2004D872C /* FeedCell.swift */; };
 		0C7721DC24EB2EFF0097059A /* EnemyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7721DB24EB2EFF0097059A /* EnemyData.swift */; };
 		0C7721DE24EB2FA60097059A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7721DD24EB2FA60097059A /* Item.swift */; };
 		0C7721E024EB46E80097059A /* DungeonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7721DF24EB46E70097059A /* DungeonData.swift */; };
@@ -67,6 +68,7 @@
 		0C5C53E724D29466004867F6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0C5C53E924D3C4A9004867F6 /* AuthenticationSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationSession.swift; sourceTree = "<group>"; };
 		0C5C53EB24D3C691004867F6 /* UIViewController + Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Alerts.swift"; sourceTree = "<group>"; };
+		0C67DB0A24FA07E2004D872C /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		0C7721DB24EB2EFF0097059A /* EnemyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyData.swift; sourceTree = "<group>"; };
 		0C7721DD24EB2FA60097059A /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		0C7721DF24EB46E70097059A /* DungeonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonData.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			children = (
 				0C5C53E224CE61AF004867F6 /* TaskCell.swift */,
 				0C7721E724EBB16A0097059A /* DungeonListCell.swift */,
+				0C67DB0A24FA07E2004D872C /* FeedCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				0C4BC14324156A9D00F00300 /* ProfileViewController.swift in Sources */,
 				0C5C3BE324F5735500E8C814 /* UIViewController + Extensions.swift in Sources */,
 				0C4BC13F24156A9D00F00300 /* AppDelegate.swift in Sources */,
+				0C67DB0B24FA07E2004D872C /* FeedCell.swift in Sources */,
 				0C5851DE24D9FB5900008CE5 /* UIProgressView + Extensions.swift in Sources */,
 				0C57FAB424F0756200C80222 /* AddFriendViewController.swift in Sources */,
 				0C5C53D924C579FE004867F6 /* DatabaseServices.swift in Sources */,
