@@ -124,6 +124,18 @@ class CombatViewController: UIViewController {
         } else {
             let goldDrop = CombatFormulas.goldCalculation(gold: enemy.goldDrop)
             combatUILabel.text! += "\n You defeated \(enemy.name)!"
+            userStats.gold += goldDrop
+            let tempDict = User.userToDict(user: userStats)
+            DatabaseServices.shared.updateUserStats(dict: tempDict) { [weak self] (result) in
+                switch result {
+                case .failure(let error):
+                    DispatchQueue.main.async {
+                        self?.showAlert(title: "Error", message: error.localizedDescription)
+                    }
+                case .success:
+                    print("stats updated")
+                }
+            }
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                 self.combatUILabel.text! += "\n You found \(goldDrop) gold!"
             }
