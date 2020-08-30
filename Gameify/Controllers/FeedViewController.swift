@@ -9,7 +9,7 @@
 import UIKit
 
 class FeedViewController: UIViewController {
-
+    
     @IBOutlet weak var feedCollectionView: UICollectionView!
     private var friendsList = [Friend]()
     private var taskUpdates = [CompletedTask]()
@@ -45,13 +45,17 @@ class FeedViewController: UIViewController {
                     self?.taskUpdates += tasks
                 }
             }
+        }
     }
-}
+    
+    private func sortFeedUpdatesByDate() {
+        taskUpdates = taskUpdates.sorted { $0.completionDate > $1.completionDate }
+    }
 }
 
 extension FeedViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        3
+        taskUpdates.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
