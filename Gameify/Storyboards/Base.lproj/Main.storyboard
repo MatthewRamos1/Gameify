@@ -544,10 +544,10 @@
             </objects>
             <point key="canvasLocation" x="3747.826086956522" y="2457.5892857142858"/>
         </scene>
-        <!--View Controller-->
+        <!--Shop View Controller-->
         <scene sceneID="mSz-aB-JIn">
             <objects>
-                <viewController id="6oT-fD-y4J" sceneMemberID="viewController">
+                <viewController id="6oT-fD-y4J" customClass="ShopViewController" customModule="Gameify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="olh-RM-CBb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -566,6 +566,16 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YGQ-pt-gX1">
                                 <rect key="frame" x="0.0" y="151" width="207" height="662"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="yq5-Gi-v9a">
+                                        <rect key="frame" x="0.0" y="28" width="207" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yq5-Gi-v9a" id="8Dp-od-Haq">
+                                            <rect key="frame" x="0.0" y="0.0" width="207" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6zG-XT-Xhh">
                                 <rect key="frame" x="207" y="151" width="207" height="207"/>
@@ -603,6 +613,12 @@
                         <viewLayoutGuide key="safeArea" id="eMv-xx-Uy0"/>
                     </view>
                     <navigationItem key="navigationItem" id="jXX-2n-asY"/>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="2I5-DO-9Fh" id="ZTh-RQ-jkN"/>
+                        <outlet property="itemDescriptionLabel" destination="4x6-3o-7Ys" id="eB0-zv-k7K"/>
+                        <outlet property="itemImageView" destination="6zG-XT-Xhh" id="ggm-2v-SHp"/>
+                        <outlet property="itemsTableView" destination="YGQ-pt-gX1" id="pPe-LE-mzH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vuv-sa-nAE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

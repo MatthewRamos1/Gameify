@@ -45,5 +45,5 @@ struct DropEquipmentList {
 }
 
 struct ShopEquipmentList {
-    let list: [Equipment] = [Equipment]()
+    static let list = [Equipment(name: "Iron Dagger", description: "", level: 1, id: -1, strBonus: 1, conBonus: nil, intBonus: nil, wisBonus: nil, dexBonus: 1, chaBonus: 0, sellValue: 3, equipmentType: .weapon, rarity: .common), Equipment(name: "Buckler", description: "", level: 1, id: -2, strBonus: nil, conBonus: 2, intBonus: nil, wisBonus: nil, dexBonus: nil, chaBonus: nil, sellValue: 3, equipmentType: .armor, rarity: .common)]
 }

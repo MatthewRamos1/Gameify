@@ -15,6 +15,7 @@
 		0C4BC14B24156AA100F00300 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C4BC14924156AA100F00300 /* LaunchScreen.storyboard */; };
 		0C4BC1552415708500F00300 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BC1542415708500F00300 /* UserData.swift */; };
 		0C57227424FB506C0066118A /* Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C57227324FB506C0066118A /* Update.swift */; };
+		0C57227624FC6EB60066118A /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C57227524FC6EB60066118A /* ShopViewController.swift */; };
 		0C57FAB024EE277F00C80222 /* CombatFormulas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C57FAAF24EE277F00C80222 /* CombatFormulas.swift */; };
 		0C57FAB424F0756200C80222 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C57FAB324F0756200C80222 /* AddFriendViewController.swift */; };
 		0C57FAB624F0821100C80222 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C57FAB524F0821000C80222 /* Friend.swift */; };
@@ -55,6 +56,7 @@
 		0C4BC14C24156AA100F00300 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C4BC1542415708500F00300 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		0C57227324FB506C0066118A /* Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Update.swift; sourceTree = "<group>"; };
+		0C57227524FC6EB60066118A /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		0C57FAAF24EE277F00C80222 /* CombatFormulas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatFormulas.swift; sourceTree = "<group>"; };
 		0C57FAB324F0756200C80222 /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 		0C57FAB524F0821000C80222 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				0C7721E524EB49C60097059A /* CombatViewController.swift */,
 				0C57FAB324F0756200C80222 /* AddFriendViewController.swift */,
 				0C57FAB724F0844900C80222 /* FeedViewController.swift */,
+				0C57227524FC6EB60066118A /* ShopViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 			files = (
 				0C7721E824EBB16A0097059A /* DungeonListCell.swift in Sources */,
 				0C7721E224EB499A0097059A /* DungeonListViewController.swift in Sources */,
+				0C57227624FC6EB60066118A /* ShopViewController.swift in Sources */,
 				0C7721E624EB49C60097059A /* CombatViewController.swift in Sources */,
 				0C7721DC24EB2EFF0097059A /* EnemyData.swift in Sources */,
 				0C5C53E824D29466004867F6 /* LoginViewController.swift in Sources */,
