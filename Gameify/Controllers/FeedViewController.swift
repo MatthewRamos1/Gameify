@@ -16,7 +16,7 @@ class FeedViewController: UIViewController {
             fetchFeedUpdates()
         }
     }
-    private var taskUpdates = [CompletedTask]() {
+    private var taskUpdates = [Update]() {
         didSet {
             feedCollectionView.reloadData()
             

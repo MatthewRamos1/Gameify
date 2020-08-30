@@ -25,6 +25,7 @@ struct Equipment {
     
     let name: String
     let description: String
+    let level: Int
     let id: Int
     let strBonus: Int?
     let conBonus: Int?
@@ -37,8 +38,12 @@ struct Equipment {
     let rarity: Rarity
 }
 
-struct EquipmentList {
-    let item0 =  Equipment(name: "Jelly Sword", description: "", id: 0, strBonus: 0, conBonus: nil, intBonus: nil, wisBonus: nil, dexBonus: nil, chaBonus: nil, sellValue: 1, equipmentType: .weapon, rarity: .common)
-    let item1 = Equipment(name: "Gas-Powered Stick", description: "", id: 1, strBonus: 1, conBonus: nil, intBonus: nil, wisBonus: nil, dexBonus: nil, chaBonus: nil, sellValue: 1, equipmentType: .weapon, rarity: .common)
-    let item2 = Equipment(name: "Goblin Shiv", description: "", id: 2, strBonus: 2, conBonus: nil, intBonus: nil, wisBonus: nil, dexBonus: 1, chaBonus: nil, sellValue: 3, equipmentType: .weapon, rarity: .uncommon)
+struct DropEquipmentList {
+    let item0 =  Equipment(name: "Jelly Sword", description: "", level: 0, id: 0, strBonus: 0, conBonus: nil, intBonus: nil, wisBonus: nil, dexBonus: nil, chaBonus: nil, sellValue: 1, equipmentType: .weapon, rarity: .common)
+    let item1 = Equipment(name: "Gas-Powered Stick", description: "", level: 1, id: 1, strBonus: 1, conBonus: nil, intBonus: nil, wisBonus: nil, dexBonus: nil, chaBonus: nil, sellValue: 1, equipmentType: .weapon, rarity: .common)
+    let item2 = Equipment(name: "Goblin Shiv", description: "", level: 2, id: 2, strBonus: 2, conBonus: nil, intBonus: nil, wisBonus: nil, dexBonus: 1, chaBonus: nil, sellValue: 3, equipmentType: .weapon, rarity: .uncommon)
+}
+
+struct ShopEquipmentList {
+    let list: [Equipment] = [Equipment]()
 }

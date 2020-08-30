@@ -14,7 +14,7 @@
 		0C4BC14824156AA000F00300 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C4BC14724156AA000F00300 /* Assets.xcassets */; };
 		0C4BC14B24156AA100F00300 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C4BC14924156AA100F00300 /* LaunchScreen.storyboard */; };
 		0C4BC1552415708500F00300 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BC1542415708500F00300 /* UserData.swift */; };
-		0C57227424FB506C0066118A /* CompletedTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C57227324FB506C0066118A /* CompletedTask.swift */; };
+		0C57227424FB506C0066118A /* Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C57227324FB506C0066118A /* Update.swift */; };
 		0C57FAB024EE277F00C80222 /* CombatFormulas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C57FAAF24EE277F00C80222 /* CombatFormulas.swift */; };
 		0C57FAB424F0756200C80222 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C57FAB324F0756200C80222 /* AddFriendViewController.swift */; };
 		0C57FAB624F0821100C80222 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C57FAB524F0821000C80222 /* Friend.swift */; };
@@ -54,7 +54,7 @@
 		0C4BC14A24156AA100F00300 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C4BC14C24156AA100F00300 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C4BC1542415708500F00300 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
-		0C57227324FB506C0066118A /* CompletedTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTask.swift; sourceTree = "<group>"; };
+		0C57227324FB506C0066118A /* Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Update.swift; sourceTree = "<group>"; };
 		0C57FAAF24EE277F00C80222 /* CombatFormulas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatFormulas.swift; sourceTree = "<group>"; };
 		0C57FAB324F0756200C80222 /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 		0C57FAB524F0821000C80222 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
@@ -174,7 +174,7 @@
 				0C7721DB24EB2EFF0097059A /* EnemyData.swift */,
 				0C7721DF24EB46E70097059A /* DungeonData.swift */,
 				0C57FAB524F0821000C80222 /* Friend.swift */,
-				0C57227324FB506C0066118A /* CompletedTask.swift */,
+				0C57227324FB506C0066118A /* Update.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -343,7 +343,7 @@
 				0C4BC13F24156A9D00F00300 /* AppDelegate.swift in Sources */,
 				0C67DB0B24FA07E2004D872C /* FeedCell.swift in Sources */,
 				0C5851DE24D9FB5900008CE5 /* UIProgressView + Extensions.swift in Sources */,
-				0C57227424FB506C0066118A /* CompletedTask.swift in Sources */,
+				0C57227424FB506C0066118A /* Update.swift in Sources */,
 				0C57FAB424F0756200C80222 /* AddFriendViewController.swift in Sources */,
 				0C5C53D924C579FE004867F6 /* DatabaseServices.swift in Sources */,
 				0C7721E024EB46E80097059A /* DungeonData.swift in Sources */,

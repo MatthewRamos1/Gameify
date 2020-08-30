@@ -8,7 +8,12 @@
 
 import Foundation
 
-class CompletedTask {
+class Update {
+    
+    enum UpdateType {
+        case completedTask
+        case notification
+    }
     
     var title: String
     var description: String
