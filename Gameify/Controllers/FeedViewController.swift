@@ -11,8 +11,17 @@ import UIKit
 class FeedViewController: UIViewController {
     
     @IBOutlet weak var feedCollectionView: UICollectionView!
-    private var friendsList = [Friend]()
-    private var taskUpdates = [CompletedTask]()
+    private var friendsList = [Friend]() {
+        didSet {
+            fetchFeedUpdates()
+        }
+    }
+    private var taskUpdates = [CompletedTask]() {
+        didSet {
+//            sortFeedUpdatesByDate()
+            feedCollectionView.reloadData()
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         feedCollectionView.dataSource = self
@@ -49,7 +58,8 @@ class FeedViewController: UIViewController {
     }
     
     private func sortFeedUpdatesByDate() {
-        taskUpdates = taskUpdates.sorted { $0.completionDate > $1.completionDate }
+        let sortedUpdates = taskUpdates.sorted { $0.completionDate > $1.completionDate }
+        taskUpdates = sortedUpdates
     }
 }
 
@@ -59,8 +69,10 @@ extension FeedViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "feedCell", for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "feedCell", for: indexPath) as? FeedCell else { return UICollectionViewCell() }
         cell.shadowConfig()
+        let completedTask = taskUpdates[indexPath.row]
+        cell.configureCell(completedTask: completedTask)
         return cell
     }
     
