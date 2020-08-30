@@ -163,4 +163,16 @@ class DatabaseServices {
             }
         }
     }
+    
+    public func getFriendRecentlyCompletedTasks(friendUid: String, completion: @escaping (Result <[Task], Error>) -> ())  {
+        
+        db.collection(DatabaseServices.userCollection).document(friendUid).collection(DatabaseServices.recentlyCompletedCollection).getDocuments { (snapshot, error) in
+            if let error = error {
+                completion(.failure(error))
+            } else if let snapshot = snapshot {
+                let tasks = snapshot.documents.map { Task($0.data())}
+                completion(.success(tasks))
+            }
+        }
+    }
 }
