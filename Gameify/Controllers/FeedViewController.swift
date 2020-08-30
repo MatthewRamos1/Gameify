@@ -18,8 +18,8 @@ class FeedViewController: UIViewController {
     }
     private var taskUpdates = [CompletedTask]() {
         didSet {
-//            sortFeedUpdatesByDate()
             feedCollectionView.reloadData()
+            
         }
     }
     override func viewDidLoad() {

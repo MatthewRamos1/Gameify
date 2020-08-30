@@ -21,9 +21,9 @@ class Enemy {
     var charisma: Int
     var encounterRange: ClosedRange<Int>
     var goldDrop: Int
-    var itemDrops: [Item]?
+    var itemDrops: [Equipment]?
     
-    init(name: String, level: Int, currentHealth: Int, maxHealth: Int, strength: Int, constitution: Int, intelligence: Int, wisdom: Int, dexAgi: Int, charisma: Int, encounterRange: ClosedRange<Int>, goldDrop: Int, itemDrops: [Item]?) {
+    init(name: String, level: Int, currentHealth: Int, maxHealth: Int, strength: Int, constitution: Int, intelligence: Int, wisdom: Int, dexAgi: Int, charisma: Int, encounterRange: ClosedRange<Int>, goldDrop: Int, itemDrops: [Equipment]?) {
         self.name = name
         self.level = level
         self.currentHealth = currentHealth
