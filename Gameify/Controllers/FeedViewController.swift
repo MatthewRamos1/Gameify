@@ -12,7 +12,7 @@ class FeedViewController: UIViewController {
 
     @IBOutlet weak var feedCollectionView: UICollectionView!
     private var friendsList = [Friend]()
-    private var taskUpdates = [Task]()
+    private var taskUpdates = [CompletedTask]()
     override func viewDidLoad() {
         super.viewDidLoad()
         feedCollectionView.dataSource = self
@@ -32,6 +32,21 @@ class FeedViewController: UIViewController {
             }
         }
     }
+    
+    private func fetchFeedUpdates() {
+        for friend in friendsList {
+            DatabaseServices.shared.getFriendRecentlyCompletedTasks(friendUid: friend.id) { [weak self] (result) in
+                switch result {
+                case .failure(let error):
+                    DispatchQueue.main.async {
+                        self?.showAlert(title: "Error", message: error.localizedDescription)
+                    }
+                case .success(let tasks):
+                    self?.taskUpdates += tasks
+                }
+            }
+    }
+}
 }
 
 extension FeedViewController: UICollectionViewDataSource {
