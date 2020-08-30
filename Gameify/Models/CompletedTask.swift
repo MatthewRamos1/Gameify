@@ -18,13 +18,16 @@ class CompletedTask {
     var id: String
     var completionDate: Date
     
-    init(title: String, description: String, imageURL: String?, rating: Int, statUps: [Stat], id: String, completionDate: Date ) {
-        self.title = title
-        self.description = description
-        self.imageURL = imageURL
-        self.rating = rating
-        self.statUps = statUps
-        self.id = id
-        self.completionDate = completionDate
-    }
-}
+    init(_ dictionary: [String: Any]) {
+        self.title = dictionary["title"] as? String ?? "No Title"
+        self.description = dictionary["description"] as? String ?? "No Description"
+        self.imageURL = dictionary["imageURL"] as? String ?? nil
+        self.rating = dictionary["rating"] as? Int ?? -1
+        let rawValString = dictionary["statUps"] as! String
+        let stat = Stat(rawValue: rawValString)
+        var array = [Stat]()
+        array.append(stat!)
+        self.statUps = array
+        self.id = dictionary["id"] as? String ?? ""
+        self.completionDate = dictionary["completionDate"] as? Date ?? Date()
+    }}
