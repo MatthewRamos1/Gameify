@@ -42,5 +42,8 @@ extension ShopViewController: UITableViewDataSource {
 }
 
 extension ShopViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = items[indexPath.row]
+        itemDescriptionLabel.text = item.description
+    }
 }

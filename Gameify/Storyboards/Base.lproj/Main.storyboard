@@ -602,8 +602,9 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6zG-XT-Xhh">
-                                <rect key="frame" x="207" y="131" width="207" height="207"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="6zG-XT-Xhh">
+                                <rect key="frame" x="207" y="133.5" width="207" height="202.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="6zG-XT-Xhh" secondAttribute="height" multiplier="1:1" id="3wF-KL-F0E"/>
                                 </constraints>
@@ -1284,6 +1285,7 @@
         <image name="camera.viewfinder" catalog="system" width="128" height="114"/>
         <image name="doc.on.clipboard.fill" catalog="system" width="117" height="128"/>
         <image name="dungeon" width="512" height="384"/>
+        <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="pencil.slash" catalog="system" width="128" height="113"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
