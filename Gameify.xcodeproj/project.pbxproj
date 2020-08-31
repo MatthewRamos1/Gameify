@@ -16,6 +16,7 @@
 		0C4BC1552415708500F00300 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BC1542415708500F00300 /* UserData.swift */; };
 		0C57227424FB506C0066118A /* Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C57227324FB506C0066118A /* Update.swift */; };
 		0C57227624FC6EB60066118A /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C57227524FC6EB60066118A /* ShopViewController.swift */; };
+		0C57227824FCA8350066118A /* ShopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C57227724FCA8350066118A /* ShopCell.swift */; };
 		0C57FAB024EE277F00C80222 /* CombatFormulas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C57FAAF24EE277F00C80222 /* CombatFormulas.swift */; };
 		0C57FAB424F0756200C80222 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C57FAB324F0756200C80222 /* AddFriendViewController.swift */; };
 		0C57FAB624F0821100C80222 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C57FAB524F0821000C80222 /* Friend.swift */; };
@@ -57,6 +58,7 @@
 		0C4BC1542415708500F00300 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		0C57227324FB506C0066118A /* Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Update.swift; sourceTree = "<group>"; };
 		0C57227524FC6EB60066118A /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		0C57227724FCA8350066118A /* ShopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCell.swift; sourceTree = "<group>"; };
 		0C57FAAF24EE277F00C80222 /* CombatFormulas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatFormulas.swift; sourceTree = "<group>"; };
 		0C57FAB324F0756200C80222 /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 		0C57FAB524F0821000C80222 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				0C5C53E224CE61AF004867F6 /* TaskCell.swift */,
 				0C7721E724EBB16A0097059A /* DungeonListCell.swift */,
 				0C67DB0A24FA07E2004D872C /* FeedCell.swift */,
+				0C57227724FCA8350066118A /* ShopCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				0C7721DE24EB2FA60097059A /* Equipment.swift in Sources */,
 				0C5C53E024CE3C56004867F6 /* Task.swift in Sources */,
 				0C7721E424EB49B30097059A /* DungeonProgressViewController.swift in Sources */,
+				0C57227824FCA8350066118A /* ShopCell.swift in Sources */,
 				0C57FAB024EE277F00C80222 /* CombatFormulas.swift in Sources */,
 				0C5C53EA24D3C4A9004867F6 /* AuthenticationSession.swift in Sources */,
 				0C57FAB824F0844900C80222 /* FeedViewController.swift in Sources */,
