@@ -10,5 +10,11 @@ import UIKit
 
 class ShopCell: UITableViewCell {
 
-
+    @IBOutlet weak var itemNameLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    
+    public func configureCell(equipment: Equipment) {
+        itemNameLabel.text = equipment.name
+        priceLabel.text = "\(String(equipment.sellValue * 2))g"
+    }
 }
