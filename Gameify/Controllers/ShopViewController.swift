@@ -31,7 +31,10 @@ extension ShopViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "shopCell", for: indexPath) as? ShopCell else { return UITableViewCell()
+        }
+        let item = items[indexPath.row]
+        cell.configureCell(equipment: item)
         return cell
     }
     
