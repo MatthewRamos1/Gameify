@@ -35,6 +35,7 @@
 		0C5C53EC24D3C691004867F6 /* UIViewController + Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5C53EB24D3C691004867F6 /* UIViewController + Alerts.swift */; };
 		0C67DB0B24FA07E2004D872C /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C67DB0A24FA07E2004D872C /* FeedCell.swift */; };
 		0C67DB0D24FA08D0004D872C /* UICollectionViewCell + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C67DB0C24FA08D0004D872C /* UICollectionViewCell + Extensions.swift */; };
+		0C6E858024FE0B2000B2D23C /* QuestBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6E857F24FE0B2000B2D23C /* QuestBoardController.swift */; };
 		0C7721DC24EB2EFF0097059A /* EnemyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7721DB24EB2EFF0097059A /* EnemyData.swift */; };
 		0C7721DE24EB2FA60097059A /* Equipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7721DD24EB2FA60097059A /* Equipment.swift */; };
 		0C7721E024EB46E80097059A /* DungeonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7721DF24EB46E70097059A /* DungeonData.swift */; };
@@ -77,6 +78,7 @@
 		0C5C53EB24D3C691004867F6 /* UIViewController + Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Alerts.swift"; sourceTree = "<group>"; };
 		0C67DB0A24FA07E2004D872C /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		0C67DB0C24FA08D0004D872C /* UICollectionViewCell + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell + Extensions.swift"; sourceTree = "<group>"; };
+		0C6E857F24FE0B2000B2D23C /* QuestBoardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestBoardController.swift; sourceTree = "<group>"; };
 		0C7721DB24EB2EFF0097059A /* EnemyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyData.swift; sourceTree = "<group>"; };
 		0C7721DD24EB2FA60097059A /* Equipment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equipment.swift; sourceTree = "<group>"; };
 		0C7721DF24EB46E70097059A /* DungeonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonData.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				0C57FAB324F0756200C80222 /* AddFriendViewController.swift */,
 				0C57FAB724F0844900C80222 /* FeedViewController.swift */,
 				0C57227524FC6EB60066118A /* ShopViewController.swift */,
+				0C6E857F24FE0B2000B2D23C /* QuestBoardController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				0C5C53EC24D3C691004867F6 /* UIViewController + Alerts.swift in Sources */,
 				0C4BC1552415708500F00300 /* UserData.swift in Sources */,
 				0C7721EA24EBB4A10097059A /* StorageServices.swift in Sources */,
+				0C6E858024FE0B2000B2D23C /* QuestBoardController.swift in Sources */,
 				0C5C53E324CE61AF004867F6 /* TaskCell.swift in Sources */,
 				0C57FAB624F0821100C80222 /* Friend.swift in Sources */,
 				0C4BC14124156A9D00F00300 /* SceneDelegate.swift in Sources */,
