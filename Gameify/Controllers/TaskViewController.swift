@@ -342,12 +342,14 @@ extension TaskViewController: UITableViewDelegate {
         
         if task.repeatable == .oneshot {
             deleteTask(task: task)
-            DatabaseServices.shared.createRecentlyCompletedTask(task: task) { [weak self] (result) in
-                switch result {
-                case .failure(let error):
-                    self?.showAlert(title: "Error", message: error.localizedDescription)
-                case .success:
-                    print("nice")
+            if task.rating >= 3 {
+                DatabaseServices.shared.createRecentlyCompletedTask(task: task) { [weak self] (result) in
+                    switch result {
+                    case .failure(let error):
+                        self?.showAlert(title: "Error", message: error.localizedDescription)
+                    case .success:
+                        print("nice")
+                    }
                 }
             }
         }
