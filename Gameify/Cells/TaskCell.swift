@@ -13,6 +13,10 @@ protocol editTaskButtonDelegate: AnyObject {
        func buttonWasPressed(_ cell: TaskCell, _ task: Task)
    }
 
+protocol cellLongPressDelegate: AnyObject {
+    func longPressActivated(_ cell: TaskCell, _ task: Task)
+}
+
 class TaskCell: UITableViewCell {
 
     @IBOutlet weak var taskName: UILabel!
@@ -28,6 +32,7 @@ class TaskCell: UITableViewCell {
     var cellTask: Task!
     
     weak var delegate: editTaskButtonDelegate?
+    weak var longPressDelegate: cellLongPressDelegate?
     
     func configureCell(_ task: Task) {
         cellTask = task
@@ -105,6 +110,11 @@ class TaskCell: UITableViewCell {
         if task.dayStreak >= 3 {
             descriptionLabel.text! += "\n \(task.dayStreak) Day Streak!"
         }
+    }
+    
+    @objc
+    func longPressActivated() {
+        longPressDelegate?.longPressActivated(self, cellTask)
     }
     
     @IBAction func editTaskPressed(_ sender: UIButton) {

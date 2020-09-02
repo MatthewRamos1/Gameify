@@ -1142,6 +1142,7 @@
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
+                                            <gestureRecognizers/>
                                             <constraints>
                                                 <constraint firstItem="PRo-M8-dQz" firstAttribute="width" secondItem="xjx-Zo-Jhb" secondAttribute="width" multiplier="0.35" id="1Jo-v7-QP5"/>
                                                 <constraint firstAttribute="bottom" secondItem="wsZ-X7-Bxx" secondAttribute="bottom" id="7H7-H1-wu9"/>
@@ -1170,6 +1171,7 @@
                                                 <constraint firstItem="XaJ-Pw-Ygd" firstAttribute="centerY" secondItem="CiB-QY-RNf" secondAttribute="centerY" id="zuq-xF-d1F"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <gestureRecognizers/>
                                         <connections>
                                             <outlet property="descriptionLabel" destination="x1B-Vl-PzM" id="ZyU-sB-1vd"/>
                                             <outlet property="fiveStar" destination="qL9-Ad-akr" id="QSs-GI-MPI"/>
@@ -1181,6 +1183,7 @@
                                             <outlet property="taskName" destination="CiB-QY-RNf" id="JZq-t9-Oi5"/>
                                             <outlet property="threeStar" destination="N2K-FX-aGn" id="T78-C0-Ubx"/>
                                             <outlet property="twoStar" destination="UoR-JR-AiE" id="Dni-5U-GuQ"/>
+                                            <outletCollection property="gestureRecognizers" destination="zru-u7-gOp" appends="YES" id="VbO-9z-zuy"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1208,6 +1211,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fEz-9O-XJS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="zru-u7-gOp">
+                    <connections>
+                        <action selector="longPressActivated:" destination="AZN-MI-gHj" id="SyH-pP-BHS"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2868.115942028986" y="-629.46428571428567"/>
         </scene>
