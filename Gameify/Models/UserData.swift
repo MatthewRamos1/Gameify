@@ -9,7 +9,6 @@
 import Foundation
 
 class User {
-    var name: String
     var level: Int
     var currentHealth: Int
     var maxHealth: Int
@@ -34,7 +33,6 @@ class User {
     var gold: Int
     
     init(_ dictionary: [String: Any]) {
-        self.name = dictionary["name"] as? String ?? ""
         self.level = dictionary["level"] as? Int ?? 0
         self.strength = dictionary["strength"] as? Int ?? 0
         self.currentHealth = dictionary["currentHealth"] as? Int ?? 0
@@ -60,7 +58,7 @@ class User {
     }
     
     static func userToDict(user: User) -> [String:Any] {
-        let dict = ["name": user.name, "level": user.level, "strength": user.strength, "currentHealth": user.currentHealth, "maxHealth": user.currentHealth, "constitution": user.constitution, "intelligence": user.intelligence, "wisdom": user.wisdom, "dexAgi": user.dexAgi, "charisma": user.charisma, "strengthExp": user.strengthExp, "constitutionExp": user.constitutionExp, "intelligenceExp": user.intelligenceExp, "wisdomExp": user.wisdomExp, "dexAgiExp": user.dexAgiExp, "charismaExp": user.charismaExp, "strengthCap": user.strengthCap, "constitutionCap": user.constitutionCap, "intelligenceCap": user.intelligenceCap, "wisdomCap": user.wisdomCap, "dexAgiCap": user.dexAgiCap, "charismaCap": user.charismaCap, "gold": user.gold] as [String : Any]
+            let dict = ["level": user.level, "strength": user.strength, "currentHealth": user.currentHealth, "maxHealth": user.currentHealth, "constitution": user.constitution, "intelligence": user.intelligence, "wisdom": user.wisdom, "dexAgi": user.dexAgi, "charisma": user.charisma, "strengthExp": user.strengthExp, "constitutionExp": user.constitutionExp, "intelligenceExp": user.intelligenceExp, "wisdomExp": user.wisdomExp, "dexAgiExp": user.dexAgiExp, "charismaExp": user.charismaExp, "strengthCap": user.strengthCap, "constitutionCap": user.constitutionCap, "intelligenceCap": user.intelligenceCap, "wisdomCap": user.wisdomCap, "dexAgiCap": user.dexAgiCap, "charismaCap": user.charismaCap, "gold": user.gold]
             return dict
     }
 }
