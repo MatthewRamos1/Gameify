@@ -69,11 +69,11 @@ class DatabaseServices {
         }
     }
     
-    public func createRecentlyCompletedTask(task: Task, completion: @escaping (Result<Bool, Error>) -> ()) {
+    public func createRecentlyCompletedTask(userName: String, task: Task, completion: @escaping (Result<Bool, Error>) -> ()) {
         guard let uid = Auth.auth().currentUser?.uid else {
             return
         }
-        db.collection(DatabaseServices.userCollection).document(uid).collection(DatabaseServices.recentlyCompletedCollection).document(task.id).setData(["title": task.title, "description": task.description, "imageURL": task.imageURL ?? nil , "rating": task.rating, "statUps": task.statUps.first!.rawValue, "id": task.id, "completionDate": Date()]) { (error) in
+        db.collection(DatabaseServices.userCollection).document(uid).collection(DatabaseServices.recentlyCompletedCollection).document(task.id).setData(["userName": userName, "title": task.title, "description": task.description, "imageURL": task.imageURL ?? nil , "rating": task.rating, "statUps": task.statUps.first!.rawValue, "id": task.id, "completionDate": Date()]) { (error) in
             if let error = error {
                 completion(.failure(error))
             } else {
