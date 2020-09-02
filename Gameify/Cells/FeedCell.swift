@@ -15,6 +15,7 @@ class FeedCell: UICollectionViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     
     public func configureCell(completedTask: Update) {
+        feedFriendNameLabel.titleLabel?.text = completedTask.userName
         descriptionLabel.text = "completed \(completedTask.title)!"
     }
     
