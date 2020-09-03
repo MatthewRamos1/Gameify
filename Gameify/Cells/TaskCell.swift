@@ -14,7 +14,7 @@ protocol editTaskButtonDelegate: AnyObject {
    }
 
 protocol cellLongPressDelegate: AnyObject {
-    func longPressActivated(_ cell: TaskCell, _ task: Task)
+    func longPressActivated(_ task: Task)
 }
 
 class TaskCell: UITableViewCell {
@@ -30,11 +30,13 @@ class TaskCell: UITableViewCell {
     @IBOutlet weak var fourStar: UIImageView!
     @IBOutlet weak var fiveStar: UIImageView!
     var cellTask: Task!
+    let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longPressActivated))
     
     weak var delegate: editTaskButtonDelegate?
     weak var longPressDelegate: cellLongPressDelegate?
     
     func configureCell(_ task: Task) {
+        addGestureRecognizer(longPressRecognizer)
         cellTask = task
         taskName.text = task.title
         descriptionLabel.text = task.description
@@ -114,7 +116,7 @@ class TaskCell: UITableViewCell {
     
     @objc
     func longPressActivated() {
-        longPressDelegate?.longPressActivated(self, cellTask)
+        longPressDelegate?.longPressActivated(cellTask)
     }
     
     @IBAction func editTaskPressed(_ sender: UIButton) {
