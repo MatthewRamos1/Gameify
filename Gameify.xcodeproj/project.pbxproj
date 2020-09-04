@@ -37,6 +37,7 @@
 		0C67DB0D24FA08D0004D872C /* UICollectionViewCell + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C67DB0C24FA08D0004D872C /* UICollectionViewCell + Extensions.swift */; };
 		0C6E858024FE0B2000B2D23C /* QuestBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6E857F24FE0B2000B2D23C /* QuestBoardController.swift */; };
 		0C6E858225005EF200B2D23C /* QuestBoardSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6E858125005EF200B2D23C /* QuestBoardSystem.swift */; };
+		0C6E85842502BB7900B2D23C /* DungeonStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6E85832502BB7900B2D23C /* DungeonStatus.swift */; };
 		0C7721DC24EB2EFF0097059A /* EnemyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7721DB24EB2EFF0097059A /* EnemyData.swift */; };
 		0C7721DE24EB2FA60097059A /* Equipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7721DD24EB2FA60097059A /* Equipment.swift */; };
 		0C7721E024EB46E80097059A /* DungeonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7721DF24EB46E70097059A /* DungeonData.swift */; };
@@ -81,6 +82,7 @@
 		0C67DB0C24FA08D0004D872C /* UICollectionViewCell + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell + Extensions.swift"; sourceTree = "<group>"; };
 		0C6E857F24FE0B2000B2D23C /* QuestBoardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestBoardController.swift; sourceTree = "<group>"; };
 		0C6E858125005EF200B2D23C /* QuestBoardSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestBoardSystem.swift; sourceTree = "<group>"; };
+		0C6E85832502BB7900B2D23C /* DungeonStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonStatus.swift; sourceTree = "<group>"; };
 		0C7721DB24EB2EFF0097059A /* EnemyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyData.swift; sourceTree = "<group>"; };
 		0C7721DD24EB2FA60097059A /* Equipment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equipment.swift; sourceTree = "<group>"; };
 		0C7721DF24EB46E70097059A /* DungeonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonData.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				0C7721DF24EB46E70097059A /* DungeonData.swift */,
 				0C57FAB524F0821000C80222 /* Friend.swift */,
 				0C57227324FB506C0066118A /* Update.swift */,
+				0C6E85832502BB7900B2D23C /* DungeonStatus.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				0C7721E224EB499A0097059A /* DungeonListViewController.swift in Sources */,
 				0C57227624FC6EB60066118A /* ShopViewController.swift in Sources */,
 				0C7721E624EB49C60097059A /* CombatViewController.swift in Sources */,
+				0C6E85842502BB7900B2D23C /* DungeonStatus.swift in Sources */,
 				0C7721DC24EB2EFF0097059A /* EnemyData.swift in Sources */,
 				0C5C53E824D29466004867F6 /* LoginViewController.swift in Sources */,
 				0C4BC14324156A9D00F00300 /* ProfileViewController.swift in Sources */,
