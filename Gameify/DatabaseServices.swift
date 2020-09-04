@@ -87,7 +87,7 @@ class DatabaseServices {
         guard let uid = Auth.auth().currentUser?.uid else {
             return
         }
-        db.collection(DatabaseServices.userCollection).document(uid).collection(DatabaseServices.statsCollection).document(uid).setData(["dungeon1": 0, "dungeon2": 0, "dungeon3": 0, "dungeon4": 0]) { (error) in
+        db.collection(DatabaseServices.userCollection).document(uid).collection(DatabaseServices.dungeonProgressCollection).document(uid).setData(["dungeon1": 0, "dungeon2": 0, "dungeon3": 0, "dungeon4": 0]) { (error) in
             if let error = error {
                 completion(.failure(error))
             } else {
@@ -96,12 +96,32 @@ class DatabaseServices {
         }
     }
     
-    public func updateDungeonProgressData() {
-        
+    public func updateDungeonProgressData(dict: [String: Any], completion: @escaping (Result <Bool, Error>) -> ()) {
+        guard let uid = Auth.auth().currentUser?.uid else {
+            return
+        }
+        db.collection(DatabaseServices.userCollection).document(uid).collection(DatabaseServices.dungeonProgressCollection).document(uid).updateData(dict) { (error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(true))
+            }
+        }
     }
     
-    public func getDungeonProgressData() {
-        
+    public func getDungeonProgressData(completion: @escaping (Result <DungeonStatus, Error>) -> ()) {
+        guard let uid = Auth.auth().currentUser?.uid else {
+            return
+        }
+        db.collection(DatabaseServices.userCollection).document(uid).collection(DatabaseServices.dungeonProgressCollection).getDocuments { (snapshot, error) in
+            if let error = error {
+                completion(.failure(error))
+            } else if let snapshot = snapshot {
+                let dungeonStatusArray = snapshot.documents.map { DungeonStatus($0.data())}
+                let dungeonStatus = dungeonStatusArray.first!
+                completion(.success(dungeonStatus))
+            }
+        }
     }
     
     public func updateUserTask(task: Task, dict: [String:Any], completion: @escaping (Result <Bool, Error>) -> ()) {
