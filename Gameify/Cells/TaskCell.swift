@@ -30,12 +30,13 @@ class TaskCell: UITableViewCell {
     @IBOutlet weak var fourStar: UIImageView!
     @IBOutlet weak var fiveStar: UIImageView!
     var cellTask: Task!
-    let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longPressActivated))
+    var longPressRecognizer: UILongPressGestureRecognizer!
     
     weak var delegate: editTaskButtonDelegate?
     weak var longPressDelegate: cellLongPressDelegate?
     
     func configureCell(_ task: Task) {
+        longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longPressActivated))
         addGestureRecognizer(longPressRecognizer)
         cellTask = task
         taskName.text = task.title

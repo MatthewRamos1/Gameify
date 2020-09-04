@@ -17,6 +17,7 @@ class DatabaseServices {
     static let taskCollection = "tasks"
     static let recentlyCompletedCollection = "recentlyCompleted"
     static let friendCollection = "friends"
+    static let dungeonProgressCollection = "dungeonProgress"
     private let db = Firestore.firestore()
     
     static let shared = DatabaseServices()
@@ -80,6 +81,27 @@ class DatabaseServices {
                 completion(.success(true))
             }
         }
+    }
+    
+    public func createDungeonProgressData(completion: @escaping (Result<Bool, Error>) -> ()) {
+        guard let uid = Auth.auth().currentUser?.uid else {
+            return
+        }
+        db.collection(DatabaseServices.userCollection).document(uid).collection(DatabaseServices.statsCollection).document(uid).setData(["dungeon1": 0, "dungeon2": 0, "dungeon3": 0, "dungeon4": 0]) { (error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(true))
+            }
+        }
+    }
+    
+    public func updateDungeonProgressData() {
+        
+    }
+    
+    public func getDungeonProgressData() {
+        
     }
     
     public func updateUserTask(task: Task, dict: [String:Any], completion: @escaping (Result <Bool, Error>) -> ()) {
