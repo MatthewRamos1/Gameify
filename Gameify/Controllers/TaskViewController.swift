@@ -320,40 +320,40 @@ extension TaskViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let task = sortedTasks[indexPath.section][indexPath.row]
-//        let alertString = taskCompletion(task)
-//        let statsDict = userToDict(user: user)
-//        updateUser(dict: statsDict, alertString: alertString)
-//        //        if task.repeatable == .daily && dailyStreakCalculation(completionDate: task.creationDate!) {
-//        //            task.dayStreak += 1
-//        //        }
-//        //        if task.repeatable == .daily && dailyStreakCalculation(completionDate: task.creationDate!) {
-//        //            task.dayStreak = 1
-//        //        }
-//        let dict = taskToDict(task: task)
-//        DatabaseServices.shared.updateUserTask(task: task, dict: dict) { [weak self] (result) in
-//            switch result {
-//            case .failure(let error):
-//                self?.showAlert(title: "Error", message: error.localizedDescription)
-//            case .success:
-//                print("added streak counter")
-//            }
-//        }
-//
-//        if task.repeatable == .oneshot {
-//            deleteTask(task: task)
-//            if task.rating >= 3 {
-//                let userName = Auth.auth().currentUser?.displayName
-//                DatabaseServices.shared.createRecentlyCompletedTask(userName: userName ?? "", task: task) { [weak self] (result) in
-//                    switch result {
-//                    case .failure(let error):
-//                        self?.showAlert(title: "Error", message: error.localizedDescription)
-//                    case .success:
-//                        print("nice")
-//                    }
-//                }
-//            }
-//        }
+        let task = sortedTasks[indexPath.section][indexPath.row]
+        let alertString = taskCompletion(task)
+        let statsDict = userToDict(user: user)
+        updateUser(dict: statsDict, alertString: alertString)
+        //        if task.repeatable == .daily && dailyStreakCalculation(completionDate: task.creationDate!) {
+        //            task.dayStreak += 1
+        //        }
+        //        if task.repeatable == .daily && dailyStreakCalculation(completionDate: task.creationDate!) {
+        //            task.dayStreak = 1
+        //        }
+        let dict = taskToDict(task: task)
+        DatabaseServices.shared.updateUserTask(task: task, dict: dict) { [weak self] (result) in
+            switch result {
+            case .failure(let error):
+                self?.showAlert(title: "Error", message: error.localizedDescription)
+            case .success:
+                print("added streak counter")
+            }
+        }
+        
+        if task.repeatable == .oneshot {
+            deleteTask(task: task)
+            if task.rating >= 3 {
+                let userName = Auth.auth().currentUser?.displayName
+                DatabaseServices.shared.createRecentlyCompletedTask(userName: userName ?? "", task: task) { [weak self] (result) in
+                    switch result {
+                    case .failure(let error):
+                        self?.showAlert(title: "Error", message: error.localizedDescription)
+                    case .success:
+                        print("nice")
+                    }
+                }
+            }
+        }
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let task = sortedTasks[indexPath.section][indexPath.row]

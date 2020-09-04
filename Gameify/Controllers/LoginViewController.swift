@@ -33,20 +33,26 @@ class LoginViewController: UIViewController {
                 }
             case .success(let uid):
                 DatabaseServices.shared.createUserStats(uid: uid) { (result) in
-                switch result {
-                case .failure(let error):
-                    DispatchQueue.main.async {
-                        self?.showAlert(title: "Error", message: error.localizedDescription)
-                    }
-                case .success:
-                    print("nice")
-                    DispatchQueue.main.async {
-                        self?.navigateToTaskVC()
+                    switch result {
+                    case .failure(let error):
+                        DispatchQueue.main.async {
+                            self?.showAlert(title: "Error", message: error.localizedDescription)
+                        }
+                    case .success:
+                        DatabaseServices.shared.createDungeonProgressData { (result) in
+                            switch result {
+                            case .failure(let error):
+                                self?.showAlert(title: "Error", message: error.localizedDescription)
+                            case .success:
+                                DispatchQueue.main.async {
+                                    self?.navigateToTaskVC()
+                                }
+                            }
+                        }
                     }
                 }
             }
         }
-    }
     }
     
     private func navigateToTaskVC() {
@@ -79,8 +85,8 @@ class LoginViewController: UIViewController {
                     self?.showAlert(title: "Error", message: error.localizedDescription)
                 }
             case .success(let result):
-                    self?.createDatabaseUser(authDataResult: result)
-                    
+                self?.createDatabaseUser(authDataResult: result)
+                
             }
         }
     }
