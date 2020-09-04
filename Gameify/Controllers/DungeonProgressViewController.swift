@@ -11,12 +11,39 @@ import UIKit
 class DungeonProgressViewController: UIViewController {
     
     @IBOutlet weak var spriteLeadingConstraint: NSLayoutConstraint!
-    var dungeon: Dungeon?
-    var enemiesDefeated: Int?
+    var dungeon: Dungeon? {
+        didSet {
+            fetchDungeonProgress()
+        }
+    }
+    var dungeonProgress: Int? {
+        didSet {
+            print(dungeonProgress)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+    
+    private func fetchDungeonProgress() {
+        DatabaseServices.shared.getDungeonProgressData() { [weak self] (result) in
+            switch result {
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self?.showAlert(title: "Error", message: error.localizedDescription)
+                }
+            case .success(let status):
+                switch self?.dungeon?.name {
+                case "Dungeon 1":
+                    self?.dungeonProgress = status.dungeon1
+                default:
+                    self?.dungeonProgress = 0
+                }
+            }
+            
+        }
     }
     
     @IBAction func embarkButtonPressed(_ sender: UIButton) {
@@ -29,6 +56,7 @@ class DungeonProgressViewController: UIViewController {
         }
         combatVC.dungeon = tempDungeon
         combatVC.enemy = DungeonList.getEnemy(dungeon: tempDungeon)
+        combatVC.dungeonProgress = dungeonProgress
         navigationController?.pushViewController(combatVC, animated: true)
     }
 }
