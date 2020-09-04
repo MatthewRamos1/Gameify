@@ -10,7 +10,9 @@ import UIKit
 
 class DungeonProgressViewController: UIViewController {
     
+    @IBOutlet weak var spriteLeadingConstraint: NSLayoutConstraint!
     var dungeon: Dungeon?
+    var enemiesDefeated: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()

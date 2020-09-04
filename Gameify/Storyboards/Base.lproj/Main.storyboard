@@ -701,6 +701,9 @@
                         <viewLayoutGuide key="safeArea" id="dc5-sH-41l"/>
                     </view>
                     <navigationItem key="navigationItem" id="s52-6D-rFS"/>
+                    <connections>
+                        <outlet property="spriteLeadingConstraint" destination="oQu-u4-czD" id="Juf-qC-QcR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZHW-Iu-coC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
