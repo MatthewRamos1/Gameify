@@ -18,13 +18,14 @@ class DungeonProgressViewController: UIViewController {
     }
     var dungeonProgress: Int? {
         didSet {
-            print(dungeonProgress)
+            UIView.animate(withDuration: 4, animations: {
+                self.spriteLeadingConstraint.constant += 100
+            })
         }
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
     private func fetchDungeonProgress() {

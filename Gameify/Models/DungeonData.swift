@@ -14,22 +14,22 @@ class Dungeon {
     let cellBackground: String
     let background: String
     let index: Int
-    let remainingEnemies: Int
+    let enemyCount: Int
     
-    init(name: String, enemies: [Enemy], cellBackground: String, background: String, index: Int, remainingEnemies: Int) {
+    init(name: String, enemies: [Enemy], cellBackground: String, background: String, index: Int, enemyCount: Int) {
         self.name = name
         self.enemies = enemies
         self.cellBackground = cellBackground
         self.background = background
         self.index = index
-        self.remainingEnemies = remainingEnemies
+        self.enemyCount = enemyCount
     }
     
 }
 
 struct DungeonList {
-    static let dungeon1 = Dungeon(name: "Dungeon 1", enemies: dungeon1Enemies, cellBackground: "", background: "", index: 0, remainingEnemies: 6)
-    static let dungeon2 = Dungeon(name: "Dungeon 2", enemies: dungeon2Enemies, cellBackground: "", background: "", index: 0, remainingEnemies: 8)
+    static let dungeon1 = Dungeon(name: "Dungeon 1", enemies: dungeon1Enemies, cellBackground: "", background: "", index: 0, enemyCount: 6)
+    static let dungeon2 = Dungeon(name: "Dungeon 2", enemies: dungeon2Enemies, cellBackground: "", background: "", index: 0, enemyCount: 8)
     
     static let dungeon1Enemies = [Enemy(name: "Slime", level: 1, currentHealth: 10, maxHealth: 10, strength: 1, constitution: 1, intelligence: 1, wisdom: 1, dexAgi: 1, charisma: 1, encounterRange: 0...50, goldDrop: 1, itemDrops: nil), Enemy(name: "Goblin", level: 2, currentHealth: 12, maxHealth: 12, strength: 2, constitution: 2, intelligence: 1, wisdom: 0, dexAgi: 4, charisma: 3, encounterRange: 51...100, goldDrop: 1, itemDrops: nil)]
     static let dungeon2Enemies = [Enemy(name: "Slime2", level: 1, currentHealth: 10, maxHealth: 10, strength: 1, constitution: 1, intelligence: 1, wisdom: 1, dexAgi: 1, charisma: 1, encounterRange: 0...50, goldDrop: 1, itemDrops: nil)]
