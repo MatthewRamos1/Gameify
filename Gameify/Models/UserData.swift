@@ -56,7 +56,7 @@ class User {
         self.dexAgiCap = dictionary["dexAgiCap"] as? Int ?? 0
         self.charismaCap = dictionary["charismaCap"] as? Int ?? 0
         self.gold = dictionary["gold"] as? Int ?? 0
-        self.stamina = dictionary["stamina"] as? Int ?? 0
+        self.stamina = dictionary["stamina"] as? Int ?? 3
     }
     
     static func userToDict(user: User) -> [String:Any] {
