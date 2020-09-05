@@ -22,7 +22,7 @@ class CombatViewController: UIViewController {
     @IBOutlet weak var escapeCombatUIButton: UIButton!
     @IBOutlet weak var combatUILabel: UILabel!
     
-    var dungeon: Dungeon?
+    var dungeon: Dungeon!
     var enemy: Enemy!
     var userStats: User!
     var dungeonProgress: Int!
@@ -147,7 +147,18 @@ class CombatViewController: UIViewController {
                                 self?.showAlert(title: "Error", message: error.localizedDescription)
                             }
                         case .success:
-                            print("updated progress")
+                            self?.dungeonStatus.updateStatus(dungeonRep: (self?.dungeon.dungeonRep)!)
+                            let dict = self?.dungeonStatusToDict()
+                            DatabaseServices.shared.updateDungeonProgressData(dict: dict!) { [weak self] (result) in
+                                switch result {
+                                case .failure(let error):
+                                    DispatchQueue.main.async {
+                                        self?.showAlert(title: "Error", message: error.localizedDescription)
+                                    }
+                                case .success:
+                                    return
+                                }
+                            }
                         }
                     }
                 }
