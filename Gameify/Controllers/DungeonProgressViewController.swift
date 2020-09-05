@@ -23,6 +23,7 @@ class DungeonProgressViewController: UIViewController {
             })
         }
     }
+    var dungeonStatus: DungeonStatus?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,6 +37,7 @@ class DungeonProgressViewController: UIViewController {
                     self?.showAlert(title: "Error", message: error.localizedDescription)
                 }
             case .success(let status):
+                self?.dungeonStatus = status
                 switch self?.dungeon?.name {
                 case "Dungeon 1":
                     self?.dungeonProgress = status.dungeon1
