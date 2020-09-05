@@ -19,7 +19,7 @@ class DungeonProgressViewController: UIViewController {
     var dungeonProgress: Int? {
         didSet {
             UIView.animate(withDuration: 4, animations: {
-                self.spriteLeadingConstraint.constant += 100
+                self.spriteLeadingConstraint.constant += self.constraintIncreaseCalculation()
             })
         }
     }
@@ -45,6 +45,16 @@ class DungeonProgressViewController: UIViewController {
             }
             
         }
+    }
+    
+    private func constraintIncreaseCalculation() -> CGFloat {
+        guard let enemyCount = dungeon?.enemyCount else {
+            showAlert(title: "Error", message: "No Dungeon Loaded")
+            return 0.0
+        }
+        let increaseIncrement = UIScreen.main.bounds.width / CGFloat(enemyCount)
+        let constraintIncrease = increaseIncrement * CGFloat(dungeonProgress!)
+        return constraintIncrease
     }
     
     @IBAction func embarkButtonPressed(_ sender: UIButton) {
