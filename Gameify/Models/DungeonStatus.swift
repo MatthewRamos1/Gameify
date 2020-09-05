@@ -20,4 +20,17 @@ class DungeonStatus {
         self.dungeon3 = dict["dungeon3"] as? Int ?? 0
         self.dungeon4 = dict["dungeon4"] as? Int ?? 0
     }
+    
+    public func updateStatus(dungeonRep: DungeonRep) {
+        switch dungeonRep {
+        case .dungeon1:
+            dungeon1 += 1
+        case .dungeon2:
+            dungeon2 += 1
+        case .dungeon3:
+            dungeon3 += 1
+        case .dungeon4:
+            dungeon4 += 1
+        }
+    }
 }

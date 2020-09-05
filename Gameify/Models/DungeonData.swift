@@ -8,14 +8,14 @@
 
 import Foundation
 
+enum DungeonRep {
+    case dungeon1
+    case dungeon2
+    case dungeon3
+    case dungeon4
+}
+
 class Dungeon {
-    
-    enum DungeonRep {
-        case dungeon1
-        case dungeon2
-        case dungeon3
-        case dungeon4
-    }
     
     let name: String
     let enemies: [Enemy]
