@@ -31,6 +31,7 @@ class User {
     var dexAgiCap: Int
     var charismaCap: Int
     var gold: Int
+    var stamina: Int
     
     init(_ dictionary: [String: Any]) {
         self.level = dictionary["level"] as? Int ?? 0
@@ -55,10 +56,11 @@ class User {
         self.dexAgiCap = dictionary["dexAgiCap"] as? Int ?? 0
         self.charismaCap = dictionary["charismaCap"] as? Int ?? 0
         self.gold = dictionary["gold"] as? Int ?? 0
+        self.stamina = dictionary["stamina"] as? Int ?? 0
     }
     
     static func userToDict(user: User) -> [String:Any] {
-            let dict = ["level": user.level, "strength": user.strength, "currentHealth": user.currentHealth, "maxHealth": user.currentHealth, "constitution": user.constitution, "intelligence": user.intelligence, "wisdom": user.wisdom, "dexAgi": user.dexAgi, "charisma": user.charisma, "strengthExp": user.strengthExp, "constitutionExp": user.constitutionExp, "intelligenceExp": user.intelligenceExp, "wisdomExp": user.wisdomExp, "dexAgiExp": user.dexAgiExp, "charismaExp": user.charismaExp, "strengthCap": user.strengthCap, "constitutionCap": user.constitutionCap, "intelligenceCap": user.intelligenceCap, "wisdomCap": user.wisdomCap, "dexAgiCap": user.dexAgiCap, "charismaCap": user.charismaCap, "gold": user.gold]
+        let dict = ["level": user.level, "strength": user.strength, "currentHealth": user.currentHealth, "maxHealth": user.currentHealth, "constitution": user.constitution, "intelligence": user.intelligence, "wisdom": user.wisdom, "dexAgi": user.dexAgi, "charisma": user.charisma, "strengthExp": user.strengthExp, "constitutionExp": user.constitutionExp, "intelligenceExp": user.intelligenceExp, "wisdomExp": user.wisdomExp, "dexAgiExp": user.dexAgiExp, "charismaExp": user.charismaExp, "strengthCap": user.strengthCap, "constitutionCap": user.constitutionCap, "intelligenceCap": user.intelligenceCap, "wisdomCap": user.wisdomCap, "dexAgiCap": user.dexAgiCap, "charismaCap": user.charismaCap, "gold": user.gold, "stamina": user.stamina]
             return dict
     }
 }
