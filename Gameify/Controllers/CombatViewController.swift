@@ -102,6 +102,11 @@ class CombatViewController: UIViewController {
         }
     }
     
+    private func dungeonStatusToDict() -> [String: Any] {
+        let dict = ["dungeon1": 0, "dungeon2": 0, "dungeon3": 0, "dungeon4": 0]
+        return dict //implement enum for dungeons
+    }
+    
     private func toggleCombatUIButtons() {
         attackCombatUIButton.isHidden.toggle()
         talkCombatUIButton.isHidden.toggle()
