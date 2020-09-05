@@ -140,7 +140,7 @@ class CombatViewController: UIViewController {
                         self?.showAlert(title: "Error", message: error.localizedDescription)
                     }
                 case .success:
-                    self?.dungeonStatus.updateStatus(dungeonRep: (self?.dungeon.dungeonRep)!)
+                    self?.dungeonStatus.updateStatus(enemyCount: (self?.dungeon.enemyCount)!, dungeonRep: (self?.dungeon.dungeonRep)!)
                     let dict = self?.dungeonStatusToDict()
                     DatabaseServices.shared.updateDungeonProgressData(dict: dict!) { (result) in
                         switch result {
