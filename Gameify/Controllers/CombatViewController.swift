@@ -134,7 +134,16 @@ class CombatViewController: UIViewController {
                         self?.showAlert(title: "Error", message: error.localizedDescription)
                     }
                 case .success:
-                    print("stats updated")
+                    DatabaseServices.shared.updateDungeonProgressData(dict: ["":""]) { (result) in
+                        switch result {
+                        case .failure(let error):
+                            DispatchQueue.main.async {
+                                self?.showAlert(title: "Error", message: error.localizedDescription)
+                            }
+                        case .success:
+                            print("updated progress")
+                        }
+                    }
                 }
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
