@@ -140,25 +140,16 @@ class CombatViewController: UIViewController {
                         self?.showAlert(title: "Error", message: error.localizedDescription)
                     }
                 case .success:
-                    DatabaseServices.shared.updateDungeonProgressData(dict: ["":""]) { (result) in
+                    self?.dungeonStatus.updateStatus(dungeonRep: (self?.dungeon.dungeonRep)!)
+                    let dict = self?.dungeonStatusToDict()
+                    DatabaseServices.shared.updateDungeonProgressData(dict: dict!) { (result) in
                         switch result {
                         case .failure(let error):
                             DispatchQueue.main.async {
                                 self?.showAlert(title: "Error", message: error.localizedDescription)
                             }
                         case .success:
-                            self?.dungeonStatus.updateStatus(dungeonRep: (self?.dungeon.dungeonRep)!)
-                            let dict = self?.dungeonStatusToDict()
-                            DatabaseServices.shared.updateDungeonProgressData(dict: dict!) { [weak self] (result) in
-                                switch result {
-                                case .failure(let error):
-                                    DispatchQueue.main.async {
-                                        self?.showAlert(title: "Error", message: error.localizedDescription)
-                                    }
-                                case .success:
-                                    return
-                                }
-                            }
+                            return
                         }
                     }
                 }
