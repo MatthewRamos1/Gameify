@@ -60,16 +60,15 @@ class DungeonProgressViewController: UIViewController {
     }
     
     @IBAction func embarkButtonPressed(_ sender: UIButton) {
-        guard let tempDungeon = dungeon else {
-            return
-        }
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let combatVC = storyboard.instantiateViewController(withIdentifier: "CombatViewController") as? CombatViewController else {
+        guard let combatVC = storyboard.instantiateViewController(withIdentifier: "CombatViewController") as? CombatViewController, let tempDungeon = dungeon, let progress = dungeonProgress, let status = dungeonStatus else {
+            showAlert(title: "Error", message: "Couldn't load combat vc")
             return
         }
         combatVC.dungeon = tempDungeon
         combatVC.enemy = DungeonList.getEnemy(dungeon: tempDungeon)
-        combatVC.dungeonProgress = dungeonProgress
+        combatVC.dungeonProgress = progress
+        combatVC.dungeonStatus = status
         navigationController?.pushViewController(combatVC, animated: true)
     }
 }

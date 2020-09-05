@@ -26,6 +26,7 @@ class CombatViewController: UIViewController {
     var enemy: Enemy!
     var userStats: User!
     var dungeonProgress: Int!
+    var dungeonStatus: DungeonStatus!
     
     override func viewDidLoad() {
         super.viewDidLoad()
