@@ -32,6 +32,7 @@ class User {
     var charismaCap: Int
     var gold: Int
     var stamina: Int
+    var equippedItems: [Equipment]?
     //start setting up equipped items
     
     init(_ dictionary: [String: Any]) {
