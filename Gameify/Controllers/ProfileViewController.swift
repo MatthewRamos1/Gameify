@@ -122,6 +122,9 @@ class ProfileViewController: UIViewController {
             }
         })
     }
+    @IBAction func equipmentButtonPressed(_ sender: UIButton) {
+        
+    }
     
     @IBAction func logOutPressed(_ sender: UIBarButtonItem) {
         do {
