@@ -328,6 +328,7 @@
                         <outlet property="strengthExp" destination="V1C-21-0c9" id="4j3-4s-1V0"/>
                         <outlet property="strengthLabel" destination="ol2-ri-PKY" id="eST-BS-uOv"/>
                         <outlet property="strengthProgress" destination="6Mt-di-RhS" id="fYk-F3-cwL"/>
+                        <outlet property="usernameTextField" destination="COr-kn-8Xy" id="DJN-SF-Ewk"/>
                         <outlet property="wisdomExp" destination="mWj-yd-77a" id="4NT-w3-MCG"/>
                         <outlet property="wisdomLabel" destination="bWA-cd-Gg7" id="FfK-x9-S0y"/>
                         <outlet property="wisdomProgress" destination="1oe-Ow-O85" id="xe3-TB-bql"/>

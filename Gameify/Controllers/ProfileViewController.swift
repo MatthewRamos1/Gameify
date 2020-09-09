@@ -13,6 +13,7 @@ import FirebaseFirestore
 class ProfileViewController: UIViewController {
 
     @IBOutlet weak var playerImage: UIImageView!
+    @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var currentLvlLabel: UILabel!
     @IBOutlet weak var nextLvlLabel: UILabel!
@@ -50,6 +51,7 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        usernameTextField.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -136,6 +138,13 @@ class ProfileViewController: UIViewController {
         } catch let signOutError as NSError {
             print ("Error signing out: \(signOutError.localizedDescription)")
         }
+    }
+    
+}
+
+extension ProfileViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        true
     }
     
 }
