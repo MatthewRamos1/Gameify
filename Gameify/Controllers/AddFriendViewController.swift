@@ -25,12 +25,25 @@ extension AddFriendViewController: UITextFieldDelegate {
         guard let friendCode = textField.text else {
             return true
         }
-        DatabaseServices.shared.addUserFriend(id: friendCode) { [weak self] (result) in
+        DatabaseServices.shared.getUserName(id: friendCode) { [weak self] (result) in
             switch result {
             case .failure(let error):
-                self?.showAlert(title: "Error", message: error.localizedDescription)
-            case .success:
-                self?.showAlert(title: "Success", message: "Friend Added")
+                DispatchQueue.main.async {
+                    self?.showAlert(title: "Error", message: error.localizedDescription)
+                }
+            case.success(let username):
+                DatabaseServices.shared.addUserFriend(id: friendCode, username: username) { [weak self] (result) in
+                    switch result {
+                    case .failure(let error):
+                        DispatchQueue.main.async {
+                            self?.showAlert(title: "Error", message: error.localizedDescription)
+                        }
+                    case .success:
+                        DispatchQueue.main.async {
+                            self?.showAlert(title: "Success", message: "Friend Added")
+                        }
+                    }
+                }
             }
         }
         return true
