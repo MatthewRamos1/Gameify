@@ -51,14 +51,7 @@ class FeedViewController: UIViewController {
                         self?.showAlert(title: "Error", message: error.localizedDescription)
                     }
                 case .success(let tasks):
-                    var tempTasks = [Update]()
-                    for task in tasks {
-                        task.userName = friend.username
-                        tempTasks.append(task)
-                        
-                        //nested loop, too slow
-                    }
-                    self?.taskUpdates += tempTasks
+                    self?.taskUpdates += tasks
                 }
             }
         }

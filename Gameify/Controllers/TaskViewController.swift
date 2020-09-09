@@ -399,13 +399,21 @@ extension TaskViewController: editTaskButtonDelegate, cellLongPressDelegate {
         if task.repeatable == .oneshot {
             deleteTask(task: task)
             if task.rating >= 3 {
-                let userName = Auth.auth().currentUser?.displayName
-                DatabaseServices.shared.createRecentlyCompletedTask(userName: userName ?? "", task: task) { [weak self] (result) in
+                let user = Auth.auth().currentUser!
+                DatabaseServices.shared.getUserName(id: user.uid) { [weak self] (result) in
                     switch result {
                     case .failure(let error):
                         self?.showAlert(title: "Error", message: error.localizedDescription)
-                    case .success:
-                        print("nice")
+                    case .success(let username):
+                        DatabaseServices.shared.createRecentlyCompletedTask(userName: username, task: task) { (result) in
+                            switch result {
+                            case .failure(let error):
+                                self?.showAlert(title: "Error", message: error.localizedDescription)
+                            case .success:
+                                print("nice")
+                            }
+                        }
+                        
                     }
                 }
             }
