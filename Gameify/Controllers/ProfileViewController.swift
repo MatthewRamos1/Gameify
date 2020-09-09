@@ -144,7 +144,20 @@ class ProfileViewController: UIViewController {
 
 extension ProfileViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        true
+        guard let username = textField.text else {
+            return false
+        }
+        DatabaseServices.shared.updateDatabaseUser(username: username) { [weak self] (result) in
+            switch result {
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self?.showAlert(title: "Error", message: error.localizedDescription)
+                }
+            case .success:
+                return
+            }
+        }
+        return true
     }
     
 }
