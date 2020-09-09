@@ -40,7 +40,7 @@
                                     <action selector="signUpPressed:" destination="1cs-D5-eJA" eventType="touchUpInside" id="ZZY-TX-5oH"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sUv-fI-rxw">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconforstore" translatesAutoresizingMaskIntoConstraints="NO" id="sUv-fI-rxw">
                                 <rect key="frame" x="28" y="52" width="358" height="358.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="sUv-fI-rxw" secondAttribute="height" multiplier="1:1" id="67B-f3-XF1"/>
@@ -74,4 +74,7 @@
             <point key="canvasLocation" x="15.942028985507248" y="118.52678571428571"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="iconforstore" width="671" height="671"/>
+    </resources>
 </document>

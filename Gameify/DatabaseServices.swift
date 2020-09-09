@@ -163,11 +163,11 @@ class DatabaseServices {
         }
     }
     
-    public func addUserFriend(id: String, completion: @escaping (Result<Bool, Error>) -> ()) {
+    public func addUserFriend(id: String, username: String, completion: @escaping (Result<Bool, Error>) -> ()) {
         guard let currentUser = Auth.auth().currentUser else {
             return
         }
-        db.collection(DatabaseServices.userCollection).document(currentUser.uid).collection(DatabaseServices.friendCollection).document(id).setData(["id": id]) { (error) in
+        db.collection(DatabaseServices.userCollection).document(currentUser.uid).collection(DatabaseServices.friendCollection).document(id).setData(["id": id, "username": username]) { (error) in
             if let error = error {
                 completion(.failure(error))
             } else {
@@ -187,6 +187,21 @@ class DatabaseServices {
             } else if let snapshot = snapshot {
                 let user = snapshot.documents.map { User($0.data())}
                 completion(.success(user.first!))
+            }
+        }
+    }
+    
+    public func getUserName(id: String, completion: @escaping (Result <String, Error>) -> ()) {
+        db.collection(DatabaseServices.userCollection).document(id).getDocument() { (snapshot, error) in
+            if let error = error {
+                completion(.failure(error))
+            } else if let snapshot = snapshot {
+                guard let data = snapshot.data() else {
+                    completion(.success("Error"))
+                    return
+                }
+                let username = data["username"] as? String ?? ""
+                completion(.success(username))
             }
         }
     }
