@@ -15,7 +15,7 @@ class Update {
         case notification
     }
     
-    var userName: String
+    var userName: String?
     var title: String
     var description: String
     var imageURL: String?
@@ -25,7 +25,6 @@ class Update {
     var completionDate: Date
     
     init(_ dictionary: [String: Any]) {
-        self.userName = dictionary["userName"] as? String ?? ""
         self.title = dictionary["title"] as? String ?? "No Title"
         self.description = dictionary["description"] as? String ?? "No Description"
         self.imageURL = dictionary["imageURL"] as? String ?? nil
