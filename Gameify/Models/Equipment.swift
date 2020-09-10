@@ -16,11 +16,11 @@ struct Equipment {
     }
     
     enum Rarity {
-        case common
-        case uncommon
-        case rare
-        case exotic
-        case legendary
+        case common = "common"
+        case uncommon = "uncommon"
+        case rare = "rare"
+        case exotic = "exotic"
+        case legendary = "legendary"
     }
     
     let name: String

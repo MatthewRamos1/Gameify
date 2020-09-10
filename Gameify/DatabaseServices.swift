@@ -251,6 +251,7 @@ class DatabaseServices {
         guard let currentUser = Auth.auth().currentUser else {
             return
         }
-        db.collection(DatabaseServices.userCollection).document(currentUser.uid).collection(DatabaseServices.equipmentCollection).document()
+        db.collection(DatabaseServices.userCollection).document(currentUser.uid).collection(DatabaseServices.equipmentCollection).document(equipment.equipmentType.rawValue).setData(["name": equipment.name, "description": equipment.description, "level": equipment.level, "id": equipment.id, "strBonus": equipment.strBonus, "conBonus": equipment.conBonus, "intBonus": equipment.intBonus, "wisBonus": equipment.wisBonus,
+                                                                                                                                                                                      "dexBonus": equipment.dexBonus, "chaBonus": equipment.chaBonus, "sellValue": equipment.sellValue, "equipmentType": equipment.equipmentType.rawValue, "rarity": equipment.rarity])
     }
 }
