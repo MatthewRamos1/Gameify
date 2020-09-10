@@ -15,6 +15,12 @@ class DungeonListCell: UITableViewCell {
     @IBOutlet weak var detailLabel: UILabel!
     
     func configureCell(dungeon: Dungeon) {
+        switch dungeon.dungeonRep {
+        case .dungeon1:
+            titleLabel.textColor = .white
+        default:
+            titleLabel.textColor = .black
+        }
         dungeonImageView.image = UIImage(named: dungeon.cellBackground)
         titleLabel.text = dungeon.name
         detailLabel.text = ""
