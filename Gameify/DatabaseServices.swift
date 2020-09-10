@@ -251,7 +251,17 @@ class DatabaseServices {
         guard let currentUser = Auth.auth().currentUser else {
             return
         }
-        db.collection(DatabaseServices.userCollection).document(currentUser.uid).collection(DatabaseServices.equipmentCollection).document(equipment.equipmentType.rawValue).setData(["name": equipment.name, "description": equipment.description, "level": equipment.level, "id": equipment.id, "strBonus": equipment.strBonus, "conBonus": equipment.conBonus, "intBonus": equipment.intBonus, "wisBonus": equipment.wisBonus,
-                                                                                                                                                                                      "dexBonus": equipment.dexBonus, "chaBonus": equipment.chaBonus, "sellValue": equipment.sellValue, "equipmentType": equipment.equipmentType.rawValue, "rarity": equipment.rarity])
+        let dict = equipmentToDict(equipment: equipment)
+        db.collection(DatabaseServices.userCollection).document(currentUser.uid).collection(DatabaseServices.equipmentCollection).document(equipment.equipmentType.rawValue).setData(dict) { (error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(true))
+            }
+        }
     }
+}
+
+private func equipmentToDict(equipment: Equipment) -> [String: Any] {
+    return ["name": equipment.name, "description": equipment.description, "level": equipment.level, "id": equipment.id, "strBonus": equipment.strBonus ?? nil, "conBonus": equipment.conBonus ?? nil, "intBonus": equipment.intBonus ?? nil, "wisBonus": equipment.wisBonus ?? nil,"dexBonus": equipment.dexBonus ?? nil, "chaBonus": equipment.chaBonus ?? nil, "sellValue": equipment.sellValue, "equipmentType": equipment.equipmentType.rawValue, "rarity": equipment.rarity.rawValue]
 }

@@ -15,7 +15,7 @@ struct Equipment {
         case armor = "armorSlot"
     }
     
-    enum Rarity {
+    enum Rarity: String {
         case common = "common"
         case uncommon = "uncommon"
         case rare = "rare"
