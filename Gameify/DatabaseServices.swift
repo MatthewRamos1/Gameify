@@ -15,6 +15,7 @@ class DatabaseServices {
     static let userCollection = "users"
     static let statsCollection = "stats"
     static let taskCollection = "tasks"
+    static let equipmentCollection = "equipment"
     static let recentlyCompletedCollection = "recentlyCompleted"
     static let friendCollection = "friends"
     static let dungeonProgressCollection = "dungeonProgress"
@@ -244,5 +245,12 @@ class DatabaseServices {
                 completion(.success(tasks))
             }
         }
+    }
+    
+    public func fillEquipmentSlot(equipment: Equipment, completion: @escaping (Result<Bool, Error>) ->()) {
+        guard let currentUser = Auth.auth().currentUser else {
+            return
+        }
+        db.collection(DatabaseServices.userCollection).document(currentUser.uid).collection(DatabaseServices.equipmentCollection).document()
     }
 }

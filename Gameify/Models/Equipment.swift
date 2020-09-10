@@ -10,9 +10,9 @@ import Foundation
 
 struct Equipment {
     
-    enum EquipmentType {
-        case weapon
-        case armor
+    enum EquipmentType: String {
+        case weapon = "weaponSlot"
+        case armor = "armorSlot"
     }
     
     enum Rarity {
