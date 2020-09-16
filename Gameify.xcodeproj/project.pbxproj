@@ -50,6 +50,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C3CFAA125129D5800C23DD7 /* battleTheme1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = battleTheme1.wav; path = ../../../Downloads/battleTheme1.wav; sourceTree = "<group>"; };
 		0C4BC13B24156A9D00F00300 /* Gameify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gameify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C4BC13E24156A9D00F00300 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C4BC14024156A9D00F00300 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,10 +109,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C3CFAA025129D2500C23DD7 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				0C3CFAA125129D5800C23DD7 /* battleTheme1.wav */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
 		0C4BC13224156A9D00F00300 = {
 			isa = PBXGroup;
 			children = (
 				0C4BC13D24156A9D00F00300 /* Gameify */,
+				0C3CFAA025129D2500C23DD7 /* Music */,
 				0C4BC13C24156A9D00F00300 /* Products */,
 				342BF06A3D4792714D816A39 /* Pods */,
 				284D388229F0ECB2354ED044 /* Frameworks */,

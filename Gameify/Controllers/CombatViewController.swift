@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class CombatViewController: UIViewController {
 
@@ -27,6 +28,7 @@ class CombatViewController: UIViewController {
     var userStats: User!
     var dungeonProgress: Int!
     var dungeonStatus: DungeonStatus!
+    var backgroundPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +40,7 @@ class CombatViewController: UIViewController {
         userDamageLabel.alpha = 0.0
         userDamageLabel.textColor = .systemRed
         enemyIV.image = UIImage(named: enemy.name)
+        playAudio()
     }
     
     private func fetchUser() {
@@ -51,6 +54,22 @@ class CombatViewController: UIViewController {
                 self?.userStats = user
             }
         }
+    }
+    
+    private func playAudio() {
+        guard let path = Bundle.main.path(forResource: "battleTheme1.wav", ofType: nil) else {
+            print("Couldn't play song")
+            return
+        }
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            backgroundPlayer = try AVAudioPlayer(contentsOf: url)
+            backgroundPlayer.play()
+        } catch {
+            print("couldn't load the file")
+        }
+
     }
     
     private func damageCalculation(attackerStrength: Int, defenderConstitution: Int, playerWeaponAttack: Int?, playerArmorDefense: Int?, playerAttacking: Bool) {
