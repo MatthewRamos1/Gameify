@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C3CFAA32512A14A00C23DD7 /* GuildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3CFAA22512A14A00C23DD7 /* GuildViewController.swift */; };
 		0C4BC13F24156A9D00F00300 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BC13E24156A9D00F00300 /* AppDelegate.swift */; };
 		0C4BC14124156A9D00F00300 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BC14024156A9D00F00300 /* SceneDelegate.swift */; };
 		0C4BC14324156A9D00F00300 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BC14224156A9D00F00300 /* ProfileViewController.swift */; };
@@ -51,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		0C3CFAA125129D5800C23DD7 /* battleTheme1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = battleTheme1.wav; path = ../../../Downloads/battleTheme1.wav; sourceTree = "<group>"; };
+		0C3CFAA22512A14A00C23DD7 /* GuildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildViewController.swift; sourceTree = "<group>"; };
 		0C4BC13B24156A9D00F00300 /* Gameify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gameify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C4BC13E24156A9D00F00300 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C4BC14024156A9D00F00300 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				0C7721E524EB49C60097059A /* CombatViewController.swift */,
 				0C57FAB324F0756200C80222 /* AddFriendViewController.swift */,
 				0C57FAB724F0844900C80222 /* FeedViewController.swift */,
+				0C3CFAA22512A14A00C23DD7 /* GuildViewController.swift */,
 				0C57227524FC6EB60066118A /* ShopViewController.swift */,
 				0C6E857F24FE0B2000B2D23C /* QuestBoardController.swift */,
 			);
@@ -370,6 +373,7 @@
 				0C4BC13F24156A9D00F00300 /* AppDelegate.swift in Sources */,
 				0C67DB0B24FA07E2004D872C /* FeedCell.swift in Sources */,
 				0C5851DE24D9FB5900008CE5 /* UIProgressView + Extensions.swift in Sources */,
+				0C3CFAA32512A14A00C23DD7 /* GuildViewController.swift in Sources */,
 				0C57227424FB506C0066118A /* Update.swift in Sources */,
 				0C57FAB424F0756200C80222 /* AddFriendViewController.swift in Sources */,
 				0C5C53D924C579FE004867F6 /* DatabaseServices.swift in Sources */,

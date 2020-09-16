@@ -125,7 +125,9 @@ class ProfileViewController: UIViewController {
         })
     }
     @IBAction func equipmentButtonPressed(_ sender: UIButton) {
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ShopViewController")
+        show(vc, sender: self)
     }
     
     @IBAction func logOutPressed(_ sender: UIBarButtonItem) {

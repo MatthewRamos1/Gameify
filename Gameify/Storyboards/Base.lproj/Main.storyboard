@@ -567,10 +567,10 @@
             </objects>
             <point key="canvasLocation" x="2866.666666666667" y="1684.8214285714284"/>
         </scene>
-        <!--View Controller-->
+        <!--Guild View Controller-->
         <scene sceneID="xjD-Hv-oOF">
             <objects>
-                <viewController id="cin-pB-fsp" sceneMemberID="viewController">
+                <viewController id="cin-pB-fsp" customClass="GuildViewController" customModule="Gameify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HWU-Py-JWt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -588,7 +588,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Item Shop"/>
                                 <connections>
-                                    <segue destination="6oT-fD-y4J" kind="show" id="3cD-r0-iwf"/>
+                                    <action selector="itemShopButtonPressed:" destination="cin-pB-fsp" eventType="touchUpInside" id="odO-43-Oc0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -659,16 +659,16 @@
         <!--Shop View Controller-->
         <scene sceneID="mSz-aB-JIn">
             <objects>
-                <viewController id="6oT-fD-y4J" customClass="ShopViewController" customModule="Gameify" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShopViewController" id="6oT-fD-y4J" customClass="ShopViewController" customModule="Gameify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="olh-RM-CBb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2I5-DO-9Fh">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </imageView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zWG-sn-lK2">
-                                <rect key="frame" x="40" y="100" width="334" height="32"/>
+                                <rect key="frame" x="40" y="56" width="334" height="32"/>
                                 <segments>
                                     <segment title="Weapons"/>
                                     <segment title="Armor"/>
@@ -676,7 +676,7 @@
                                 </segments>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YGQ-pt-gX1">
-                                <rect key="frame" x="0.0" y="131" width="207" height="682"/>
+                                <rect key="frame" x="0.0" y="87" width="207" height="775"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="shopCell" id="yq5-Gi-v9a" customClass="ShopCell" customModule="Gameify" customModuleProvider="target">
@@ -715,14 +715,14 @@
                                 </prototypes>
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="6zG-XT-Xhh">
-                                <rect key="frame" x="207" y="133.5" width="207" height="202.5"/>
+                                <rect key="frame" x="207" y="89.5" width="207" height="202.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="6zG-XT-Xhh" secondAttribute="height" multiplier="1:1" id="3wF-KL-F0E"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4x6-3o-7Ys">
-                                <rect key="frame" x="215" y="358" width="191" height="20.5"/>
+                                <rect key="frame" x="215" y="314" width="191" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -760,7 +760,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vuv-sa-nAE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3747.826086956522" y="3153.3482142857142"/>
+            <point key="canvasLocation" x="4561" y="2458"/>
         </scene>
         <!--Dungeon Progress View Controller-->
         <scene sceneID="rh7-c0-Jrz">
