@@ -16,6 +16,7 @@ class DatabaseServices {
     static let statsCollection = "stats"
     static let taskCollection = "tasks"
     static let equipmentCollection = "equipment"
+    static let inventoryCollection = "inventory"
     static let recentlyCompletedCollection = "recentlyCompleted"
     static let friendCollection = "friends"
     static let dungeonProgressCollection = "dungeonProgress"
@@ -245,6 +246,27 @@ class DatabaseServices {
                 completion(.success(tasks))
             }
         }
+    }
+    
+    public func addToInventory(equipment: Equipment, completion: @escaping (Result<Bool, Error>) ->()) {
+        guard let currentUser = Auth.auth().currentUser else {
+            return
+        }
+        let dict = equipmentToDict(equipment: equipment)
+        db.collection(DatabaseServices.userCollection).document(currentUser.uid).collection(DatabaseServices.inventoryCollection).document(DatabaseServices.equipmentCollection).setData(dict) { (error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(true))
+            }
+        }
+    }
+    
+    public func getInventory(completion: @escaping (Result<[Equipment], Error>) ->()){
+        guard let currentUser = Auth.auth().currentUser else {
+            return
+        }
+        
     }
     
     public func fillEquipmentSlot(equipment: Equipment, completion: @escaping (Result<Bool, Error>) ->()) {

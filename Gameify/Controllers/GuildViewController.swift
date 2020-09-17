@@ -19,7 +19,7 @@ class GuildViewController: UIViewController {
     @IBAction func itemShopButtonPressed(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "ShopViewController")
-        present(vc, animated: true)
+        show(vc, sender: self)
     }
     
 }
