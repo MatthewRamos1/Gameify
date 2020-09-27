@@ -248,26 +248,33 @@ class DatabaseServices {
         }
     }
     
-    public func addToInventory(equipment: Equipment, completion: @escaping (Result<Bool, Error>) ->()) {
-        guard let currentUser = Auth.auth().currentUser else {
-            return
-        }
-        let dict = equipmentToDict(equipment: equipment)
-        db.collection(DatabaseServices.userCollection).document(currentUser.uid).collection(DatabaseServices.inventoryCollection).document(DatabaseServices.equipmentCollection).setData(dict) { (error) in
-            if let error = error {
-                completion(.failure(error))
-            } else {
-                completion(.success(true))
-            }
-        }
-    }
-    
-    public func getInventory(completion: @escaping (Result<[Equipment], Error>) ->()){
-        guard let currentUser = Auth.auth().currentUser else {
-            return
-        }
-        
-    }
+//    public func addToInventory(equipment: Equipment, completion: @escaping (Result<Bool, Error>) ->()) {
+//        guard let currentUser = Auth.auth().currentUser else {
+//            return
+//        }
+//        let dict = equipmentToDict(equipment: equipment)
+//        db.collection(DatabaseServices.userCollection).document(currentUser.uid).collection(DatabaseServices.inventoryCollection).document(DatabaseServices.equipmentCollection).setData(dict) { (error) in
+//            if let error = error {
+//                completion(.failure(error))
+//            } else {
+//                completion(.success(true))
+//            }
+//        }
+//    }
+//
+//    public func getInventory(completion: @escaping (Result<[Equipment], Error>) ->()){
+//        guard let currentUser = Auth.auth().currentUser else {
+//            return
+//        }
+//        db.collection(DatabaseServices.userCollection).document(currentUser.uid).collection(DatabaseServices.inventoryCollection).getDocuments { (snapshot, error) in
+//            if let error = error {
+//                completion(.failure(error))
+//            } else if let snapshot = snapshot {
+//                let items = snapshot.documents.map { Equipment($0.data())}
+//            }
+//
+//        }
+//    }
     
     public func fillEquipmentSlot(equipment: Equipment, completion: @escaping (Result<Bool, Error>) ->()) {
         guard let currentUser = Auth.auth().currentUser else {

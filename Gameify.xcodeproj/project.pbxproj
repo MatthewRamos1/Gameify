@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C3491B725204FD20067B05B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3491B625204FD20067B05B /* CoreDataManager.swift */; };
 		0C3CFAA32512A14A00C23DD7 /* GuildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3CFAA22512A14A00C23DD7 /* GuildViewController.swift */; };
 		0C4BC13F24156A9D00F00300 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BC13E24156A9D00F00300 /* AppDelegate.swift */; };
 		0C4BC14124156A9D00F00300 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BC14024156A9D00F00300 /* SceneDelegate.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C3491B625204FD20067B05B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		0C3CFAA125129D5800C23DD7 /* battleTheme1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = battleTheme1.wav; path = ../../../Downloads/battleTheme1.wav; sourceTree = "<group>"; };
 		0C3CFAA22512A14A00C23DD7 /* GuildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildViewController.swift; sourceTree = "<group>"; };
 		0C4BC13B24156A9D00F00300 /* Gameify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gameify.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,6 +159,7 @@
 				0C4BC14C24156AA100F00300 /* Info.plist */,
 				0C5C53E924D3C4A9004867F6 /* AuthenticationSession.swift */,
 				0C6E858125005EF200B2D23C /* QuestBoardSystem.swift */,
+				0C3491B625204FD20067B05B /* CoreDataManager.swift */,
 			);
 			path = Gameify;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				0C7721E624EB49C60097059A /* CombatViewController.swift in Sources */,
 				0C6E85842502BB7900B2D23C /* DungeonStatus.swift in Sources */,
 				0C7721DC24EB2EFF0097059A /* EnemyData.swift in Sources */,
+				0C3491B725204FD20067B05B /* CoreDataManager.swift in Sources */,
 				0C5C53E824D29466004867F6 /* LoginViewController.swift in Sources */,
 				0C4BC14324156A9D00F00300 /* ProfileViewController.swift in Sources */,
 				0C67DB0D24FA08D0004D872C /* UICollectionViewCell + Extensions.swift in Sources */,
