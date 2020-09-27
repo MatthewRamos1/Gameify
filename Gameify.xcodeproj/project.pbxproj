@@ -113,6 +113,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C3491B82520517B0067B05B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0C4BC13E24156A9D00F00300 /* AppDelegate.swift */,
+				0C4BC14024156A9D00F00300 /* SceneDelegate.swift */,
+				0C5C53D824C579FE004867F6 /* DatabaseServices.swift */,
+				0C7721E924EBB4A10097059A /* StorageServices.swift */,
+				0C5C53E924D3C4A9004867F6 /* AuthenticationSession.swift */,
+				0C3491B625204FD20067B05B /* CoreDataManager.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0C3491B9252051CA0067B05B /* Systems */ = {
+			isa = PBXGroup;
+			children = (
+				0C6E858125005EF200B2D23C /* QuestBoardSystem.swift */,
+				0C57FAAF24EE277F00C80222 /* CombatFormulas.swift */,
+			);
+			path = Systems;
+			sourceTree = "<group>";
+		};
 		0C3CFAA025129D2500C23DD7 /* Music */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,19 +169,13 @@
 				0C5C53E124CE3F33004867F6 /* Models */,
 				0C7721EB24EBB5510097059A /* Cells */,
 				0C5C53DE24CE35EE004867F6 /* Controllers */,
+				0C3491B9252051CA0067B05B /* Systems */,
+				0C3491B82520517B0067B05B /* Supporting Files */,
 				0C5851DF24D9FB5F00008CE5 /* Extensions */,
-				0C4BC13E24156A9D00F00300 /* AppDelegate.swift */,
-				0C4BC14024156A9D00F00300 /* SceneDelegate.swift */,
-				0C5C53D824C579FE004867F6 /* DatabaseServices.swift */,
-				0C7721E924EBB4A10097059A /* StorageServices.swift */,
-				0C57FAAF24EE277F00C80222 /* CombatFormulas.swift */,
 				0C4BC14724156AA000F00300 /* Assets.xcassets */,
 				0C4BC14924156AA100F00300 /* LaunchScreen.storyboard */,
 				0C5C3BE424F5791D00E8C814 /* GoogleService-Info.plist */,
 				0C4BC14C24156AA100F00300 /* Info.plist */,
-				0C5C53E924D3C4A9004867F6 /* AuthenticationSession.swift */,
-				0C6E858125005EF200B2D23C /* QuestBoardSystem.swift */,
-				0C3491B625204FD20067B05B /* CoreDataManager.swift */,
 			);
 			path = Gameify;
 			sourceTree = "<group>";
