@@ -9,11 +9,9 @@
 import Foundation
 
 struct QuestBoardSystem {
-    static public func selectBoardDisplayedQuests(tasks: [Task]) -> [Task] {
+    static public func selectBoardDisplayedQuests(tasks: [Task]) -> [Quest] {
         var priorityTasks = [Task]()
-        for task in tasks {
-            
-        }
-        return priorityTasks
+        var dailyQuests = [Quest]()
+        return dailyQuests
     }
 }

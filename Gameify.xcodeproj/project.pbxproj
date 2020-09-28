@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0C3491B725204FD20067B05B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3491B625204FD20067B05B /* CoreDataManager.swift */; };
+		0C3491BB25219FEF0067B05B /* Quest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3491BA25219FEF0067B05B /* Quest.swift */; };
 		0C3CFAA32512A14A00C23DD7 /* GuildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3CFAA22512A14A00C23DD7 /* GuildViewController.swift */; };
 		0C4BC13F24156A9D00F00300 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BC13E24156A9D00F00300 /* AppDelegate.swift */; };
 		0C4BC14124156A9D00F00300 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BC14024156A9D00F00300 /* SceneDelegate.swift */; };
@@ -53,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		0C3491B625204FD20067B05B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		0C3491BA25219FEF0067B05B /* Quest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quest.swift; sourceTree = "<group>"; };
 		0C3CFAA125129D5800C23DD7 /* battleTheme1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = battleTheme1.wav; path = ../../../Downloads/battleTheme1.wav; sourceTree = "<group>"; };
 		0C3CFAA22512A14A00C23DD7 /* GuildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildViewController.swift; sourceTree = "<group>"; };
 		0C4BC13B24156A9D00F00300 /* Gameify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gameify.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -221,6 +223,7 @@
 				0C57FAB524F0821000C80222 /* Friend.swift */,
 				0C57227324FB506C0066118A /* Update.swift */,
 				0C6E85832502BB7900B2D23C /* DungeonStatus.swift */,
+				0C3491BA25219FEF0067B05B /* Quest.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				0C3491B725204FD20067B05B /* CoreDataManager.swift in Sources */,
 				0C5C53E824D29466004867F6 /* LoginViewController.swift in Sources */,
 				0C4BC14324156A9D00F00300 /* ProfileViewController.swift in Sources */,
+				0C3491BB25219FEF0067B05B /* Quest.swift in Sources */,
 				0C67DB0D24FA08D0004D872C /* UICollectionViewCell + Extensions.swift in Sources */,
 				0C5C3BE324F5735500E8C814 /* UIViewController + Extensions.swift in Sources */,
 				0C4BC13F24156A9D00F00300 /* AppDelegate.swift in Sources */,
