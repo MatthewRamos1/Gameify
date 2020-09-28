@@ -34,38 +34,6 @@
             endingLineNumber = "38"
             landmarkName = "uploadPhoto(taskId:image:completion:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "C01D9E00-A157-4802-A252-0526D46A329D - ec36ae58f2dac8de"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.URL&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;__C.FIRStorageMetadata&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Gameify.StorageServices.uploadPhoto(taskId: Swift.String, image: __C.UIImage, completion: (Swift.Result&lt;Foundation.URL, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Gameify"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/matthewramos/Desktop/Gameify/Gameify/StorageServices.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38"
-                  offsetFromSymbolStart = "358">
-               </Location>
-               <Location
-                  uuid = "C01D9E00-A157-4802-A252-0526D46A329D - ec36ae58f2dac8de"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.URL&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;__C.FIRStorageMetadata&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Gameify.StorageServices.uploadPhoto(taskId: Swift.String, image: __C.UIImage, completion: (Swift.Result&lt;Foundation.URL, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Gameify"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/matthewramos/Desktop/Gameify/Gameify/StorageServices.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38"
-                  offsetFromSymbolStart = "522">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

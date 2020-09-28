@@ -20,6 +20,8 @@ class QuestBoardController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        questBoardCollectionView.dataSource = self
+        questBoardCollectionView.delegate = self
 
     }
     
@@ -45,4 +47,21 @@ class QuestBoardController: UIViewController {
             }
         })
     }
+}
+
+extension QuestBoardController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = UICollectionViewCell()
+        return cell
+    }
+    
+    
+}
+
+extension QuestBoardController: UICollectionViewDelegateFlowLayout {
+    
 }
