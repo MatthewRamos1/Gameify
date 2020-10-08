@@ -10,6 +10,7 @@
 		0C3491B725204FD20067B05B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3491B625204FD20067B05B /* CoreDataManager.swift */; };
 		0C3491BB25219FEF0067B05B /* Quest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3491BA25219FEF0067B05B /* Quest.swift */; };
 		0C3491BE252E948C0067B05B /* battleTheme1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0C3491BD252E948C0067B05B /* battleTheme1.wav */; };
+		0C3491C1252E95F90067B05B /* AVAudioPlayer + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3491C0252E95F90067B05B /* AVAudioPlayer + Extensions.swift */; };
 		0C3CFAA32512A14A00C23DD7 /* GuildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3CFAA22512A14A00C23DD7 /* GuildViewController.swift */; };
 		0C4BC13F24156A9D00F00300 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BC13E24156A9D00F00300 /* AppDelegate.swift */; };
 		0C4BC14124156A9D00F00300 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BC14024156A9D00F00300 /* SceneDelegate.swift */; };
@@ -57,6 +58,7 @@
 		0C3491B625204FD20067B05B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		0C3491BA25219FEF0067B05B /* Quest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quest.swift; sourceTree = "<group>"; };
 		0C3491BD252E948C0067B05B /* battleTheme1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = battleTheme1.wav; sourceTree = "<group>"; };
+		0C3491C0252E95F90067B05B /* AVAudioPlayer + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVAudioPlayer + Extensions.swift"; sourceTree = "<group>"; };
 		0C3CFAA22512A14A00C23DD7 /* GuildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildViewController.swift; sourceTree = "<group>"; };
 		0C4BC13B24156A9D00F00300 /* Gameify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gameify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C4BC13E24156A9D00F00300 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +140,14 @@
 			path = Systems;
 			sourceTree = "<group>";
 		};
+		0C3491BF252E95160067B05B /* Songs */ = {
+			isa = PBXGroup;
+			children = (
+				0C3491BD252E948C0067B05B /* battleTheme1.wav */,
+			);
+			path = Songs;
+			sourceTree = "<group>";
+		};
 		0C4BC13224156A9D00F00300 = {
 			isa = PBXGroup;
 			children = (
@@ -159,7 +169,7 @@
 		0C4BC13D24156A9D00F00300 /* Gameify */ = {
 			isa = PBXGroup;
 			children = (
-				0C3491BD252E948C0067B05B /* battleTheme1.wav */,
+				0C3491BF252E95160067B05B /* Songs */,
 				0C5C53E424D2934D004867F6 /* Storyboards */,
 				0C5C53E124CE3F33004867F6 /* Models */,
 				0C7721EB24EBB5510097059A /* Cells */,
@@ -178,6 +188,7 @@
 		0C5851DF24D9FB5F00008CE5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0C3491C0252E95F90067B05B /* AVAudioPlayer + Extensions.swift */,
 				0C5C3BE224F5735500E8C814 /* UIViewController + Extensions.swift */,
 				0C5C53EB24D3C691004867F6 /* UIViewController + Alerts.swift */,
 				0C5851DD24D9FB5900008CE5 /* UIProgressView + Extensions.swift */,
@@ -396,6 +407,7 @@
 				0C57FAB424F0756200C80222 /* AddFriendViewController.swift in Sources */,
 				0C5C53D924C579FE004867F6 /* DatabaseServices.swift in Sources */,
 				0C7721E024EB46E80097059A /* DungeonData.swift in Sources */,
+				0C3491C1252E95F90067B05B /* AVAudioPlayer + Extensions.swift in Sources */,
 				0C5C53EC24D3C691004867F6 /* UIViewController + Alerts.swift in Sources */,
 				0C4BC1552415708500F00300 /* UserData.swift in Sources */,
 				0C7721EA24EBB4A10097059A /* StorageServices.swift in Sources */,

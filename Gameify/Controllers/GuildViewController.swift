@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import AVFoundation
 
 class GuildViewController: UIViewController {
+    
+    private var backgroundPlayer = AVAudioPlayer()
 
     override func viewDidLoad() {
         super.viewDidLoad()

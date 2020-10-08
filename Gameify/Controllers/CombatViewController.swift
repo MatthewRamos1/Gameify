@@ -40,21 +40,21 @@ class CombatViewController: UIViewController {
         userDamageLabel.alpha = 0.0
         userDamageLabel.textColor = .systemRed
         enemyIV.image = UIImage(named: enemy.name)
-        setBackgroundPlayer()
+        backgroundPlayer = AVAudioPlayer.setBackgroundPlayer(VcId: VcId.combat)!
         backgroundPlayer.prepareToPlay()
         backgroundPlayer.numberOfLoops = -1
         backgroundPlayer.play()
         
     }
     
-    private func setBackgroundPlayer() {
-        let music = Bundle.main.path(forResource: "battleTheme1", ofType: "wav")
-        do {
-            backgroundPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: music!))
-        } catch {
-            print("error")
-        }
-    }
+//    private func setBackgroundPlayer() {
+//        let music = Bundle.main.path(forResource: "battleTheme1", ofType: "wav")
+//        do {
+//            backgroundPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: music!))
+//        } catch {
+//            print("error")
+//        }
+//    }
     
     private func fetchUser() {
         DatabaseServices.shared.getUser { [weak self] (result) in
