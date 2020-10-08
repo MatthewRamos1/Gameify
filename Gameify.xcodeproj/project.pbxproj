@@ -11,6 +11,7 @@
 		0C3491BB25219FEF0067B05B /* Quest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3491BA25219FEF0067B05B /* Quest.swift */; };
 		0C3491BE252E948C0067B05B /* battleTheme1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0C3491BD252E948C0067B05B /* battleTheme1.wav */; };
 		0C3491C1252E95F90067B05B /* AVAudioPlayer + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3491C0252E95F90067B05B /* AVAudioPlayer + Extensions.swift */; };
+		0C3491C3252E98A20067B05B /* canon14.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0C3491C2252E98A20067B05B /* canon14.wav */; };
 		0C3CFAA32512A14A00C23DD7 /* GuildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3CFAA22512A14A00C23DD7 /* GuildViewController.swift */; };
 		0C4BC13F24156A9D00F00300 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BC13E24156A9D00F00300 /* AppDelegate.swift */; };
 		0C4BC14124156A9D00F00300 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BC14024156A9D00F00300 /* SceneDelegate.swift */; };
@@ -59,6 +60,7 @@
 		0C3491BA25219FEF0067B05B /* Quest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quest.swift; sourceTree = "<group>"; };
 		0C3491BD252E948C0067B05B /* battleTheme1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = battleTheme1.wav; sourceTree = "<group>"; };
 		0C3491C0252E95F90067B05B /* AVAudioPlayer + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVAudioPlayer + Extensions.swift"; sourceTree = "<group>"; };
+		0C3491C2252E98A20067B05B /* canon14.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = canon14.wav; sourceTree = "<group>"; };
 		0C3CFAA22512A14A00C23DD7 /* GuildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildViewController.swift; sourceTree = "<group>"; };
 		0C4BC13B24156A9D00F00300 /* Gameify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gameify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C4BC13E24156A9D00F00300 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				0C3491BD252E948C0067B05B /* battleTheme1.wav */,
+				0C3491C2252E98A20067B05B /* canon14.wav */,
 			);
 			path = Songs;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				0C3491BE252E948C0067B05B /* battleTheme1.wav in Resources */,
 				0C5C3BE524F5791D00E8C814 /* GoogleService-Info.plist in Resources */,
 				0C4BC14624156A9D00F00300 /* Main.storyboard in Resources */,
+				0C3491C3252E98A20067B05B /* canon14.wav in Resources */,
 				0C5C53E624D29399004867F6 /* LoginView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

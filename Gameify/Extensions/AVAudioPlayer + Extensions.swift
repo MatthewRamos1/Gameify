@@ -11,7 +11,7 @@ import AVFoundation
 
 enum VcId: String {
     case combat = "battleTheme1"
-    case guild = ""
+    case guild = "canon14"
 }
 
 extension AVAudioPlayer {
