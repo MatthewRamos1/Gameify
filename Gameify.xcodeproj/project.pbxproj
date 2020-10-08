@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0C3491B725204FD20067B05B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3491B625204FD20067B05B /* CoreDataManager.swift */; };
 		0C3491BB25219FEF0067B05B /* Quest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3491BA25219FEF0067B05B /* Quest.swift */; };
+		0C3491BE252E948C0067B05B /* battleTheme1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0C3491BD252E948C0067B05B /* battleTheme1.wav */; };
 		0C3CFAA32512A14A00C23DD7 /* GuildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3CFAA22512A14A00C23DD7 /* GuildViewController.swift */; };
 		0C4BC13F24156A9D00F00300 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BC13E24156A9D00F00300 /* AppDelegate.swift */; };
 		0C4BC14124156A9D00F00300 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BC14024156A9D00F00300 /* SceneDelegate.swift */; };
@@ -55,7 +56,7 @@
 /* Begin PBXFileReference section */
 		0C3491B625204FD20067B05B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		0C3491BA25219FEF0067B05B /* Quest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quest.swift; sourceTree = "<group>"; };
-		0C3CFAA125129D5800C23DD7 /* battleTheme1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = battleTheme1.wav; path = ../../../Downloads/battleTheme1.wav; sourceTree = "<group>"; };
+		0C3491BD252E948C0067B05B /* battleTheme1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = battleTheme1.wav; sourceTree = "<group>"; };
 		0C3CFAA22512A14A00C23DD7 /* GuildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildViewController.swift; sourceTree = "<group>"; };
 		0C4BC13B24156A9D00F00300 /* Gameify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gameify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C4BC13E24156A9D00F00300 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -137,19 +138,10 @@
 			path = Systems;
 			sourceTree = "<group>";
 		};
-		0C3CFAA025129D2500C23DD7 /* Music */ = {
-			isa = PBXGroup;
-			children = (
-				0C3CFAA125129D5800C23DD7 /* battleTheme1.wav */,
-			);
-			path = Music;
-			sourceTree = "<group>";
-		};
 		0C4BC13224156A9D00F00300 = {
 			isa = PBXGroup;
 			children = (
 				0C4BC13D24156A9D00F00300 /* Gameify */,
-				0C3CFAA025129D2500C23DD7 /* Music */,
 				0C4BC13C24156A9D00F00300 /* Products */,
 				342BF06A3D4792714D816A39 /* Pods */,
 				284D388229F0ECB2354ED044 /* Frameworks */,
@@ -167,6 +159,7 @@
 		0C4BC13D24156A9D00F00300 /* Gameify */ = {
 			isa = PBXGroup;
 			children = (
+				0C3491BD252E948C0067B05B /* battleTheme1.wav */,
 				0C5C53E424D2934D004867F6 /* Storyboards */,
 				0C5C53E124CE3F33004867F6 /* Models */,
 				0C7721EB24EBB5510097059A /* Cells */,
@@ -327,6 +320,7 @@
 			files = (
 				0C4BC14B24156AA100F00300 /* LaunchScreen.storyboard in Resources */,
 				0C4BC14824156AA000F00300 /* Assets.xcassets in Resources */,
+				0C3491BE252E948C0067B05B /* battleTheme1.wav in Resources */,
 				0C5C3BE524F5791D00E8C814 /* GoogleService-Info.plist in Resources */,
 				0C4BC14624156A9D00F00300 /* Main.storyboard in Resources */,
 				0C5C53E624D29399004867F6 /* LoginView.storyboard in Resources */,

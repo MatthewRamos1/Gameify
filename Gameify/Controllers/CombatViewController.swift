@@ -40,7 +40,20 @@ class CombatViewController: UIViewController {
         userDamageLabel.alpha = 0.0
         userDamageLabel.textColor = .systemRed
         enemyIV.image = UIImage(named: enemy.name)
-        playAudio()
+        setBackgroundPlayer()
+        backgroundPlayer.prepareToPlay()
+        backgroundPlayer.numberOfLoops = -1
+        backgroundPlayer.play()
+        
+    }
+    
+    private func setBackgroundPlayer() {
+        let music = Bundle.main.path(forResource: "battleTheme1", ofType: "wav")
+        do {
+            backgroundPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: music!))
+        } catch {
+            print("error")
+        }
     }
     
     private func fetchUser() {
@@ -54,22 +67,6 @@ class CombatViewController: UIViewController {
                 self?.userStats = user
             }
         }
-    }
-    
-    private func playAudio() {
-        guard let path = Bundle.main.path(forResource: "battleTheme1.wav", ofType: nil) else {
-            print("Couldn't play song")
-            return
-        }
-        let url = URL(fileURLWithPath: path)
-
-        do {
-            backgroundPlayer = try AVAudioPlayer(contentsOf: url)
-            backgroundPlayer.play()
-        } catch {
-            print("couldn't load the file")
-        }
-
     }
     
     private func damageCalculation(attackerStrength: Int, defenderConstitution: Int, playerWeaponAttack: Int?, playerArmorDefense: Int?, playerAttacking: Bool) {
