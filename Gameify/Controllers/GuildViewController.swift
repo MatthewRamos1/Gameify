@@ -15,8 +15,18 @@ class GuildViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        backgroundPlayer = AVAudioPlayer.setBackgroundPlayer(VcId: VcId.guild)!
+        backgroundPlayer.prepareToPlay()
+        backgroundPlayer.numberOfLoops = -1
+        backgroundPlayer.play()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        backgroundPlayer.stop()
+        backgroundPlayer = AVAudioPlayer()
     }
     
     @IBAction func itemShopButtonPressed(_ sender: UIButton) {
